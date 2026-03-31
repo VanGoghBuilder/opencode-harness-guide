@@ -81,6 +81,7 @@ If you want one quick self-check before choosing a path, this repository now als
 If you want the shortest reliable explanation of **plugins vs hooks vs MCP**, or if you specifically want a beginner-friendly explanation of **oh-my-opencode**, start here:
 
 - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) (Step-by-step vibe coding harness guide)
 - [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
 
 That guide is the repository’s main entry point for:
@@ -101,6 +102,7 @@ Pick the path that best matches what you need right now:
 | get a safe beginner starting point | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | [01-getting-started/README.md](01-getting-started/README.md) |
 | write better plan, review, commit, or PR requests | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) |
 | understand plugins, hooks, MCP, and oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) |
+| use oh-my-opencode for vibe coding (step-by-step guide) | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
 | decide whether a repeated task deserves a skill or agent | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | check whether a teammate can start without guessing | [07-team-workflows/README.md](07-team-workflows/README.md) | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
@@ -156,6 +158,7 @@ Here are the most useful things you can do with the repository as it exists toda
 | reuse a better request for planning or review | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) + [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md) |
 | draft clearer commit and PR text | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) + [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
 | learn the plugin capability map and evaluate oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
+| start a step-by-step vibe coding session using an engineering harness | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) + [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
 | decide whether a repeated task should stay a prompt or become a reusable skill | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | test whether a team can onboard without hidden knowledge | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
@@ -216,6 +219,7 @@ The current starter set is small on purpose.
 | [`07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md`](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | checklist for whether a new contributor can start without guessing |
 | [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | checklist for whether a stack-specific starter kit is actually ready |
 | [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | checklist for deciding whether a repeated process is ready to scale |
+| [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | starter kickoff template for vibe coding with oh-my-opencode |
 
 These are safe to adapt now as starter docs, and they work best after reading the matching module. They are not full production templates yet.
 

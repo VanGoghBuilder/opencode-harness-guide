@@ -68,6 +68,7 @@
 如果你最关心的是：**plugin、hook、MCP 到底怎么区分**，或者你想重点了解 **oh-my-opencode**，请直接从这里开始：
 
 - [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) (Vibe Coding 实战与脚手架指南)
 - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
 
 这份指南会集中解释：
@@ -88,6 +89,7 @@
 | 一个安全的新手起点 | [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md) | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) |
 | 更好的计划 / 评审 / 提交 / PR 请求写法 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) 等英文模板文件 |
 | 理解 plugins、hooks、MCP 与 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md) |
+| 使用 oh-my-opencode 进行 Vibe Coding 实战 | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) 等模板文件 |
 | 判断重复任务是否值得做成技能或代理 | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | 检查团队是否能无猜测上手 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
@@ -138,6 +140,7 @@
 | 复用更好的计划或评审请求 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) |
 | 写更清楚的 commit / PR 描述 | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) + [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
 | 学习插件能力地图并评估 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) |
+| 开启一次意图驱动的 Vibe Coding 实战 | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) + [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
 | 判断一个重复任务是否值得做成 skill / agent | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
 | 检查团队是否能无隐藏知识地开始使用 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) |
 
@@ -186,6 +189,7 @@
 | [`07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md`](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | 团队 onboarding 检查 |
 | [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | 技术栈 starter readiness |
 | [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | 高级工作流检查清单 |
+| [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | 使用 oh-my-opencode 启动 Vibe Coding 的模板 |
 
 ---
 

@@ -48,6 +48,7 @@
 | 记录仓库真实状态的方法 | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) |
 | 更好的计划或评审请求 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) |
 | 一份清楚的 plugin / MCP / hook 解释 | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) |
+| 一份手把手的 Vibe Coding 实战工作流指南 | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) |
 | 判断什么时候该用技能或代理 | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
 | 检查团队 onboarding 是否清晰 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) |
 

@@ -49,6 +49,7 @@ It lists what is actually present now, what is safe to copy now, and which deepe
 | [CHANGELOG.md](CHANGELOG.md) | documentation milestones for the rewrite |
 | [AGENTS.md](AGENTS.md) | repository guidance for coding agents |
 | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | plugin capability map and oh-my-opencode guidance |
+| [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) | step-by-step harness guide for vibe coding |
 | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | Chinese plugin capability map and oh-my-opencode guidance |
 
 ### `.github` support files
@@ -101,6 +102,7 @@ Chinese translations for the module entry docs now exist as matching `README.zh-
 | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | team workflows | check whether onboarding can happen without guessing |
 | [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | cross-stack planning | check whether a stack-specific starter is actually ready |
 | [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | advanced workflows | decide whether a repeated process is ready to scale |
+| [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | advanced workflows | starter kickoff template for oh-my-opencode vibe coding |
 
 These files are safe to adapt now as starter docs and checklists, and they work best after reading the matching module. They are intentionally minimal.
 

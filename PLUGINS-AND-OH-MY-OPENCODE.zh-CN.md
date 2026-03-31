@@ -159,6 +159,7 @@
 
 - [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md)
 - [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md)
+- **手把手的 Vibe Coding 工作流实战**：[VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md)
 - [09-advanced-workflows/README.zh-CN.md](09-advanced-workflows/README.zh-CN.md)
 - [10-cli-and-terminal/README.zh-CN.md](10-cli-and-terminal/README.zh-CN.md)
 

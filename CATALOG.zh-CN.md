@@ -31,6 +31,7 @@
 | [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md) | 中文学习路线图 |
 | [CATALOG.zh-CN.md](CATALOG.zh-CN.md) | 中文目录清单 |
 | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | plugins 与 oh-my-opencode 指南 |
+| [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) | Vibe Coding 与 oh-my-opencode 编排实战 |
 
 ### 当前仍为英文的支持文档
 
@@ -82,6 +83,7 @@
 | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | 团队 | 检查 onboarding 是否清楚 |
 | [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | 技术栈规划 | 检查 stack starter 是否准备好 |
 | [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | 高级流程 | 判断重复流程是否适合扩展 |
+| [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | 高级流程 | oh-my-opencode 意图启动模板 |
 
 ---
 

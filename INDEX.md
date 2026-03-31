@@ -50,6 +50,7 @@ Use it when you know what you need, but not where it lives.
 ### I need plugin or oh-my-opencode guidance
 
 - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
 - [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
 
 ### I need team or onboarding guidance
@@ -83,6 +84,7 @@ Use it when you know what you need, but not where it lives.
 
 - [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
+- [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 - [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 
 ---
@@ -134,6 +136,7 @@ Use it when you know what you need, but not where it lives.
 - [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md)
 - [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md)
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
+- [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 
 ---
 

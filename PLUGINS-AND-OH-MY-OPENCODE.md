@@ -180,6 +180,7 @@ Use this progression:
 
 - For plugin and hook framing: [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
 - For external system access and MCP: [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
+- **For a step-by-step Vibe Coding workflow using oh-my-opencode:** [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
 - For orchestrating larger workflows: [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
 - For terminal-facing boundaries: [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 

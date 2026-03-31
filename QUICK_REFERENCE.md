@@ -47,6 +47,7 @@ Use this repo in five moves:
 | a way to document what is real in the repo | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
 | a better plan or review request | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
 | a clear plugin vs MCP vs hook explanation | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
+| a step-by-step vibe coding guide with oh-my-opencode | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) |
 | help deciding whether specialization is worth it | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
 | a quick team-readiness check | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
