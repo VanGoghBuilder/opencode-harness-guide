@@ -76,6 +76,19 @@ While OpenCode continues to evolve its plugin system, hooks generally fall into 
 
 ---
 
+## 🔌 Plugins vs Hooks
+
+If you are mapping this repo to the official OpenCode docs, the easiest safe rule is:
+
+- **plugins** are the extension layer
+- **hooks** are automation points that often live inside plugin-driven workflows
+
+That means a hook is usually not the whole story by itself. A plugin can package hooks, custom tools, and stronger workflow behavior together.
+
+If you want the broader capability map, including **oh-my-opencode**, read [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md).
+
+---
+
 ## ⏭️ Suggested next step
 
 Hooks are powerful, but sometimes you need OpenCode to interact with external systems like GitHub, JIRA, or a database. That requires Model Context Protocol (MCP).

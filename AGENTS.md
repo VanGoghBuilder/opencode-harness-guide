@@ -10,8 +10,8 @@ It separates verified facts from provisional conventions.
 
 - Repository path: `/Users/vangogh/Documents/code/opencode-howto`
 - Current state: documentation-first rewrite in progress
-- Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`
-- Present Chinese entry docs: `README.zh-CN.md`, `QUICK_REFERENCE.zh-CN.md`, `INDEX.zh-CN.md`, `LEARNING-ROADMAP.zh-CN.md`, `CATALOG.zh-CN.md`
+- Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`, `PLUGINS-AND-OH-MY-OPENCODE.md`
+- Present Chinese entry docs: `README.zh-CN.md`, `QUICK_REFERENCE.zh-CN.md`, `INDEX.zh-CN.md`, `LEARNING-ROADMAP.zh-CN.md`, `CATALOG.zh-CN.md`, `PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md`
 - Present license-status file: `LICENSE`
 - Present numbered modules: `01-getting-started/README.md` through `10-cli-and-terminal/README.md`
 - Present Chinese module entry docs: `01-getting-started/README.zh-CN.md` through `10-cli-and-terminal/README.zh-CN.md`

@@ -26,6 +26,7 @@ Until a real license and a real private reporting channel are published, treat t
 - [The problem](#the-problem)
 - [How this guide helps](#how-this-guide-helps)
 - [How it works](#how-it-works)
+- [Plugins and oh-my-opencode](#plugins-and-oh-my-opencode)
 - [Choose your path](#choose-your-path)
 - [Get started in 15 minutes](#get-started-in-15-minutes)
 - [Practical use cases](#practical-use-cases)
@@ -75,6 +76,22 @@ If you want one quick self-check before choosing a path, this repository now als
 
 ---
 
+## Plugins and oh-my-opencode
+
+If you want the shortest reliable explanation of **plugins vs hooks vs MCP**, or if you specifically want a beginner-friendly explanation of **oh-my-opencode**, start here:
+
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+
+That guide is the repository’s main entry point for:
+
+- official plugin terminology
+- the difference between OpenCode plugins and MCP servers
+- where hooks fit into plugin-driven automation
+- why **oh-my-opencode** matters as a community plugin / orchestration layer
+
+---
+
 ## Choose your path
 
 Pick the path that best matches what you need right now:
@@ -83,6 +100,7 @@ Pick the path that best matches what you need right now:
 |---|---|---|
 | get a safe beginner starting point | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | [01-getting-started/README.md](01-getting-started/README.md) |
 | write better plan, review, commit, or PR requests | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) |
+| understand plugins, hooks, MCP, and oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) |
 | decide whether a repeated task deserves a skill or agent | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | check whether a teammate can start without guessing | [07-team-workflows/README.md](07-team-workflows/README.md) | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
@@ -137,6 +155,7 @@ Here are the most useful things you can do with the repository as it exists toda
 | verify repository facts before asking OpenCode to change something | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
 | reuse a better request for planning or review | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) + [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md) |
 | draft clearer commit and PR text | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) + [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
+| learn the plugin capability map and evaluate oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
 | decide whether a repeated task should stay a prompt or become a reusable skill | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | test whether a team can onboard without hidden knowledge | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 

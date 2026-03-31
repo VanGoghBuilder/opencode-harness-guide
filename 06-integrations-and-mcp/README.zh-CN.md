@@ -47,6 +47,18 @@ graph TD
 
 ---
 
+## 🔀 MCP、Plugins、内建 Tools 怎么区分
+
+可以用这个快速规则：
+
+- 如果内建工具已经够用，就先用 **built-in tools**
+- 如果你要扩展 OpenCode 本身的内部能力或自动化行为，就看 **plugins**
+- 如果你要让 OpenCode 接本地工具面之外的外部系统，就看 **MCP**
+
+如果你想把这张能力地图连同 **oh-my-opencode** 一起理解，请读 [../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)。
+
+---
+
 ## 🛡️ 安全边界
 
 当你把 OpenCode 连到外部工具时：

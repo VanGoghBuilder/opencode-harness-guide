@@ -29,12 +29,14 @@ This is a lightweight changelog for the rewrite, not a product release log.
 ### Added
 
 - `SUPPORT.md` to clarify support, reporting, and public-vs-sensitive issue boundaries
+- `PLUGINS-AND-OH-MY-OPENCODE.md` and `PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md` to explain OpenCode plugin capability boundaries and introduce oh-my-opencode as a community plugin/orchestration layer
 
 ### Changed
 
 - Made security/reporting navigation more clickable across `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, and `CODE_OF_CONDUCT.md`
 - Clarified that the repository is public but not yet under a final open-source license
 - Updated `AGENTS.md`, `INDEX.md`, `CATALOG.md`, and the PR template to reflect the current public support surface
+- Updated root navigation, quick-reference paths, and module cross-links to surface plugin terminology, hooks vs plugins, MCP vs plugins, and oh-my-opencode guidance
 
 ### Still planned
 

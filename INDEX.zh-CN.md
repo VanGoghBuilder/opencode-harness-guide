@@ -45,6 +45,11 @@
 - [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md)
 - [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md)
 
+### 我需要 plugins 或 oh-my-opencode 指南
+
+- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+
 ### 我需要团队协作或 onboarding 指南
 
 - [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md)

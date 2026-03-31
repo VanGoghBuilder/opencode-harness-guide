@@ -30,6 +30,7 @@
 | [INDEX.zh-CN.md](INDEX.zh-CN.md) | 中文可浏览索引 |
 | [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md) | 中文学习路线图 |
 | [CATALOG.zh-CN.md](CATALOG.zh-CN.md) | 中文目录清单 |
+| [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | plugins 与 oh-my-opencode 指南 |
 
 ### 当前仍为英文的支持文档
 
@@ -42,6 +43,7 @@
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 行为规范 |
 | [LICENSE](LICENSE) | 许可证状态 |
 | [CHANGELOG.md](CHANGELOG.md) | 变更记录 |
+| [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | 插件能力地图与 oh-my-opencode 指南（英文） |
 
 ---
 

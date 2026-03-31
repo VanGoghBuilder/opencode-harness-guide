@@ -48,6 +48,8 @@ graph LR
 - Destructive commands (like `git push --force`) require explicit user consent.
 - Commands with interactive prompts (like `git rebase -i` or `vim`) will hang or fail unless handled properly (e.g., via `interactive_bash` in tmux).
 
+Terminal use is also where people most often confuse built-in behavior, plugin behavior, and community workflow layers. If you need a cleaner mental model for that boundary, read [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md).
+
 ---
 
 ## 🛠️ Hands-on Exercise: Documenting Verified Commands

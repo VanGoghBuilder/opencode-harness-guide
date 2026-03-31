@@ -47,6 +47,11 @@ Use it when you know what you need, but not where it lives.
 - [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
 - [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
 
+### I need plugin or oh-my-opencode guidance
+
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+
 ### I need team or onboarding guidance
 
 - [07-team-workflows/README.md](07-team-workflows/README.md)

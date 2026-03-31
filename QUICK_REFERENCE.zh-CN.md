@@ -17,7 +17,7 @@
 
 ## 快速复制与改写路径
 
-按这四步走：
+按这五步走：
 
 1. **先建立上下文**
    - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
@@ -33,6 +33,8 @@
 4. **最后再加边界与集成**
    - [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md)
    - [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
+5. **理解扩展与编排能力**
+   - [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
 
 > 这些模板文件当前仍为英文原文，但中文模块会解释它们应该怎么用。
 
@@ -45,6 +47,7 @@
 | 新项目的安全起步文档 | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) |
 | 记录仓库真实状态的方法 | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) |
 | 更好的计划或评审请求 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) |
+| 一份清楚的 plugin / MCP / hook 解释 | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) |
 | 判断什么时候该用技能或代理 | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
 | 检查团队 onboarding 是否清晰 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) |
 

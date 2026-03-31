@@ -50,6 +50,12 @@ graph TD
 - **The Planning Gate**: Never start implementation without a written plan for multi-step tasks.
 - **Verification Loop**: Run `lsp_diagnostics`, tests, and builds after *every* change.
 
+One more boundary matters in advanced workflows:
+
+- if you need more internal extension behavior, think **plugins**
+- if you need outside systems, think **MCP**
+- if you need stronger community orchestration on top of OpenCode, study **oh-my-opencode**
+
 ---
 
 ## 🛠️ Hands-on Exercise: Scaling a Process

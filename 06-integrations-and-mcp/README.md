@@ -44,6 +44,18 @@ graph TD
 
 ---
 
+## 🔀 MCP vs Plugins vs Built-in Tools
+
+Use this quick rule:
+
+- use **built-in tools** when the local OpenCode tool surface already solves the problem
+- use **plugins** when you want to extend OpenCode itself with stronger internal capability or automation behavior
+- use **MCP** when OpenCode needs access to systems outside that local tool surface
+
+If you want a beginner-friendly capability map, including where **oh-my-opencode** fits, read [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md).
+
+---
+
 ## 🛡️ Security Boundaries
 
 When integrating OpenCode with external tools:

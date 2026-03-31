@@ -2,7 +2,7 @@
 
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
-这个模块讨论自动化边界：哪些内容适合自动化，哪些内容应该继续保留人工控制。
+这个模块讨论自动化边界，并通过官方 plugins 语境来理解 hooks：哪些内容适合自动化，哪些内容应该继续保留人工控制。
 目标是在不制造脆弱隐性规则的前提下，为 OpenCode 建立安全护栏。
 
 ---
@@ -78,6 +78,19 @@ graph LR
 
 - **Pre-action hooks**：在执行工具之前运行，用来做质量门槛
 - **Post-action hooks**：在动作完成后运行，用来做通知或收尾
+
+---
+
+## 🔌 Plugins 和 Hooks 的关系
+
+如果你在对照 OpenCode 官方术语，最容易记住的规则是：
+
+- **plugins** 是扩展层
+- **hooks** 往往是这个扩展层里的自动化触发点
+
+也就是说，hook 往往不是完整故事本身。一个 plugin 可以同时打包 hooks、自定义工具和更强的工作流行为。
+
+如果你想把这个能力地图连同 **oh-my-opencode** 一起看清楚，请读 [../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)。
 
 ---
 

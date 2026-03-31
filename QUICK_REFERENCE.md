@@ -18,7 +18,7 @@ That path is enough to understand the basic workflow and start using one starter
 
 ## Fast copy-and-adapt path
 
-Use this repo in four moves:
+Use this repo in five moves:
 
 1. **Start with context**
    - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
@@ -34,6 +34,8 @@ Use this repo in four moves:
 4. **Add guardrails only when justified**
    - [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md)
    - [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
+5. **Understand extensions and orchestration**
+   - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
 
 ---
 
@@ -44,6 +46,7 @@ Use this repo in four moves:
 | a safe starting doc for a new project | [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) |
 | a way to document what is real in the repo | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
 | a better plan or review request | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
+| a clear plugin vs MCP vs hook explanation | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
 | help deciding whether specialization is worth it | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
 | a quick team-readiness check | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 

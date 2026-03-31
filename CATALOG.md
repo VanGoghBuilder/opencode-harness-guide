@@ -48,6 +48,8 @@ It lists what is actually present now, what is safe to copy now, and which deepe
 | [SUPPORT.md](SUPPORT.md) | support and reporting boundaries for public contributors |
 | [CHANGELOG.md](CHANGELOG.md) | documentation milestones for the rewrite |
 | [AGENTS.md](AGENTS.md) | repository guidance for coding agents |
+| [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | plugin capability map and oh-my-opencode guidance |
+| [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | Chinese plugin capability map and oh-my-opencode guidance |
 
 ### `.github` support files
 

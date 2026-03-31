@@ -13,6 +13,7 @@
 - [问题是什么](#问题是什么)
 - [这份指南怎么帮你](#这份指南怎么帮你)
 - [它是怎么工作的](#它是怎么工作的)
+- [Plugins 与 oh-my-opencode](#plugins-与-oh-my-opencode)
 - [选择你的路径](#选择你的路径)
 - [15 分钟开始](#15-分钟开始)
 - [当前能解决的实际问题](#当前能解决的实际问题)
@@ -62,6 +63,22 @@
 
 ---
 
+## Plugins 与 oh-my-opencode
+
+如果你最关心的是：**plugin、hook、MCP 到底怎么区分**，或者你想重点了解 **oh-my-opencode**，请直接从这里开始：
+
+- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+
+这份指南会集中解释：
+
+- 官方 plugin 术语应该怎么理解
+- OpenCode plugins 和 MCP servers 的区别
+- hooks 在自动化里应该放在哪一层理解
+- 为什么 **oh-my-opencode** 作为社区插件 / 编排层值得重点学习
+
+---
+
 ## 选择你的路径
 
 按你当前最想解决的问题开始：
@@ -70,6 +87,7 @@
 |---|---|---|
 | 一个安全的新手起点 | [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md) | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) |
 | 更好的计划 / 评审 / 提交 / PR 请求写法 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) 等英文模板文件 |
+| 理解 plugins、hooks、MCP 与 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md) |
 | 判断重复任务是否值得做成技能或代理 | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | 检查团队是否能无猜测上手 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
 
@@ -119,6 +137,7 @@
 | 在让 OpenCode 改东西前先确认仓库事实 | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) + [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
 | 复用更好的计划或评审请求 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) |
 | 写更清楚的 commit / PR 描述 | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) + [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
+| 学习插件能力地图并评估 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) |
 | 判断一个重复任务是否值得做成 skill / agent | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
 | 检查团队是否能无隐藏知识地开始使用 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) |
 
