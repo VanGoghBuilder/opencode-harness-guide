@@ -2,70 +2,147 @@
 
 > **Harness role**: This module defines execution boundaries between human intent, OpenCode, plugins, and the system shell.
 
-This module covers truthful command documentation and terminal-facing workflow habits. It emphasizes aligning TUI/CLI wording with the official docs and knowing when command docs should stay `TBD`.
+This module covers truthful command documentation and terminal-facing workflow habits.
+
+---
+
+## Why this matters
+
+The terminal is where a harness turns from documentation into action.
+It is also where false claims become obvious fastest: invented commands fail, unsafe commands damage trust, and ambiguous shell boundaries create fragile workflows.
+
+This module is about keeping command truth and execution boundaries honest.
 
 ---
 
 ## 🧭 Who this module is for
 
 Use this module if:
-- you want to run OpenCode from the command line or terminal UI (TUI)
-- you need to script OpenCode interactions in CI/CD or local bash scripts
-- you want to understand how OpenCode executes shell commands on your behalf
+- you want to run OpenCode from the CLI or terminal UI
+- you need to script parts of your workflow
+- you want truthful command documentation in a docs-first repo
 
 ---
 
 ## ⏱️ What you can finish in 15 minutes
 
 By the end of this module, you should be able to:
-1. understand the boundary between OpenCode's CLI and your system's shell
-2. safely grant terminal access to agents
-3. document CLI commands for your team truthfully
+1. explain the boundary between OpenCode and the system shell
+2. audit a command section for truthfulness
+3. document command absence as safely as command presence
 
 ---
 
-## 🧠 OpenCode in the Terminal
+## What this module assumes, and does not assume
 
-OpenCode can interact with your terminal in two ways:
-1. **As an interface**: You run `opencode` (or your specific CLI binary) to chat.
-2. **As an actor**: OpenCode runs `bash` tools to execute commands (e.g., `git status`, `npm install`).
+This module assumes:
+- terminal commands will eventually matter to the harness
+- command docs are part of the system of record
+
+This module does **not** assume:
+- the repo already has verified install, test, or build commands
+- every terminal task should be delegated automatically
+
+---
+
+## 🧠 OpenCode in the terminal
+
+OpenCode interacts with the terminal in two ways:
+1. **As an interface**: you run OpenCode from a CLI or TUI
+2. **As an actor**: it executes shell commands through tools such as `bash`
 
 ```mermaid
 graph LR
     A["Developer"] -->|Runs CLI| B["OpenCode Interface"]
     B -->|Agent decides| C["Bash Tool"]
-    C -->|Executes| D["System Shell (CWD)"]
+    C -->|Executes| D["System Shell"]
     D -->|Returns output| C
     C -->|Parses| B
     B -->|Reports| A
-    
-    style B fill:#1565C0,color:#fff
-    style C fill:#F57C00,color:#fff
-    style D fill:#C62828,color:#fff
 ```
 
-### Safety and Boundaries
-- OpenCode runs commands in the current working directory.
-- Avoid using `cd <dir> && <command>`. Instead, specify the `workdir`.
-- Destructive commands (like `git push --force`) require explicit user consent.
-- Commands with interactive prompts (like `git rebase -i` or `vim`) will hang or fail unless handled properly (e.g., via `interactive_bash` in tmux).
+---
+
+## Demo case: audit a command section for truthfulness
+
+### Situation
+A repo has a documentation section listing install, lint, test, and build commands, but the repo may not actually contain the files needed to support those commands.
+
+### Goal
+Rewrite the command section so it reflects reality, not aspiration.
+
+### Desired result
+A new contributor can read the docs and know exactly which commands are verified, which are absent, and which remain `TBD`.
+
+---
+
+## 🛠️ Step-by-step workflow
+
+1. **Open the command docs**
+   - `AGENTS.md`
+   - README command section
+   - stack-specific notes if they exist
+2. **List each claimed command**
+   - install
+   - lint
+   - test
+   - typecheck
+   - build
+3. **Ask what file proves the command exists**
+   - package manifest
+   - Makefile
+   - CI config
+   - tool config with documented script path
+4. **Classify each command**
+   - verified
+   - not yet present
+   - `TBD`
+5. **Rewrite the docs accordingly**
+6. **Check for shell safety boundaries**
+   - does the doc imply destructive commands are safe by default?
+   - does it confuse built-in behavior with plugin behavior?
+7. **Keep the absence explicit**
+   - an honest `TBD` is better than a fake command
+
+---
+
+## Safety and boundaries
+
+- OpenCode runs commands in the current working directory
+- prefer explicit `workdir` over `cd && ...`
+- destructive commands require explicit user consent
+- interactive commands need special handling or they may hang
 
 Terminal use is also where people most often confuse built-in behavior, plugin behavior, and community workflow layers. If you need a cleaner mental model for that boundary, read [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md).
 
 ---
 
-## 🛠️ Hands-on Exercise: Documenting Verified Commands
+## Truthful command checklist
 
-A common mistake is documenting commands that don't exist yet, confusing both humans and AI agents.
+Before you document a command, confirm:
+- what file defines it?
+- can a new contributor discover it from the repo?
+- is it local-only, CI-only, or generally usable?
+- should it be written as verified, absent, or `TBD`?
 
-### Exercise Instructions:
-1. Open your project's `AGENTS.md` (or your stack-specific documentation).
-2. Look at the commands section (Install, Lint, Test, Build).
-3. Open your terminal and manually run each command exactly as written.
-4. If a command fails (e.g., `npm run test` fails because there is no test script in `package.json`), **change the documentation to `TBD`**.
-5. Do not invent commands. If the project uses `make build`, write `make build`. If it has no build step, write "No build command is currently verified."
+---
 
-> **Core Rule**: Terminal documentation must reflect reality, not aspiration.
+## Failure modes and recovery
+
+### Failure mode 1: documenting commands because “most repos have them”
+Recovery: require evidence from real files.
+
+### Failure mode 2: exposing a destructive command without a safety boundary
+Recovery: add explicit consent language.
+
+### Failure mode 3: confusing plugin workflows with native CLI behavior
+Recovery: document the capability boundary and link back to the plugin guide.
+
+---
+
+## Reader outcome
+
+After this module, you should be able to write command documentation that reflects repo reality and preserves shell safety boundaries.
 
 ---
 

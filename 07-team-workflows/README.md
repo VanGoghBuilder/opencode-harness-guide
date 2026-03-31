@@ -2,78 +2,132 @@
 
 > **Harness role**: This module makes the harness durable for teams instead of only useful to one operator.
 
-This module covers onboarding, shared conventions, and keeping team guidance aligned with repository reality. It is designed to help teams adopt OpenCode without chaos.
+This module covers onboarding, shared conventions, and keeping team guidance aligned with repository reality.
+
+---
+
+## Why this matters
+
+A harness that only works for one person is not really a harness. It is a personal habit stack.
+Team reliability starts when repo rules stop living only in one operator's head.
 
 ---
 
 ## 🧭 Who this module is for
 
 Use this module if:
-- you are introducing OpenCode to a team of developers
-- you want to avoid everyone using different prompts, tools, and workflows
-- you need to ensure new contributors can start without guessing
+- you are introducing OpenCode to a team
+- you want to avoid every teammate inventing their own workflow
+- you want new contributors to start without guessing
 
 ---
 
 ## ⏱️ What you can finish in 15 minutes
 
 By the end of this module, you should be able to:
-1. define a shared "source of truth" for your team's OpenCode usage
-2. audit your repository's onboarding readiness
-3. prevent "works on my machine" AI workflows
+1. identify what belongs in the repo vs what stays local
+2. audit onboarding readiness for a new contributor
+3. close one documentation gap that currently depends on tribal knowledge
 
 ---
 
-## 🧠 The Shared Source of Truth
+## What this module assumes, and does not assume
 
-When an individual uses OpenCode, they build personal habits. When a team uses OpenCode, those habits need to be encoded in the repository.
+This module assumes:
+- one or more people besides you may use the repo soon
+- some workflow knowledge already exists informally
 
-```mermaid
-graph TD
-    A["Individual Workflows<br/>(Personal Prompts, Local MCPs)"] --> B{"Is it documented?"}
-    B -->|No| C["Chaos & Inconsistency<br/>'Works on my machine'"]
-    B -->|Yes| D["Shared Source of Truth<br/>(AGENTS.md, Prompts dir)"]
-    D --> E["✅ Predictable Team Output"]
-    
-    style C fill:#C62828,color:#fff
-    style E fill:#2E7D32,color:#fff
-```
-
-### What belongs in the repository:
-- `AGENTS.md`: The core rules and verified facts.
-- `prompts/`: Shared `.md` templates (like `PLAN-REQUEST.md`).
-- `skills/`: Reusable OpenCode skills (`SKILL.md`).
-- `docs/integrations.md`: How to set up required MCP servers.
-
-### What stays local:
-- `.env` files or `openclaw.json` (API keys, personal tokens).
-- Personal preference configurations.
+This module does **not** assume:
+- the repo already has complete onboarding docs
+- every local setup can be safely committed
 
 ---
 
-## 🛠️ Hands-on Exercise: Team Onboarding
+## 🧠 Shared harness vs private habit
 
-The test of a good team workflow is how quickly a new contributor can become productive.
+A team harness is the documented layer that survives turnover, memory loss, and tool churn.
 
-**Starter template path**:
+Good shared harness artifacts live in the repo.
+Private secrets and personal preferences do not.
+
+---
+
+## Demo case: onboard a new contributor using only repo docs
+
+### Situation
+A new contributor needs to update one module README and keep navigation honest.
+
+### Goal
+See whether they can succeed without asking a teammate for hidden rules.
+
+### Artifacts in play
+- `AGENTS.md`
+- `README.md`
+- `INDEX.md`
+- `CATALOG.md`
 - [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md)
 
-### Exercise Instructions:
-1. Open the checklist.
-2. Pretend you are a new developer joining the project today.
-3. Attempt to complete the onboarding steps using *only* the documentation in the repository.
-4. If you have to ask a teammate or look at a personal file, the repository is missing a source of truth.
-5. Update `AGENTS.md` or create a missing template to close the gap.
+### Desired result
+You discover exactly which parts of the harness are still trapped in private knowledge.
 
 ---
 
-## 🔄 Keeping Guidance Aligned
+## 🛠️ Step-by-step workflow
 
-Team documentation rots quickly. Make it a habit to update `AGENTS.md` during Pull Request reviews. If a PR introduces a new testing framework, the PR must also update `AGENTS.md`.
+1. **Pick one realistic newcomer task**
+2. **Attempt it using only repo docs**
+3. **Record every point where outside help was needed**
+4. **Classify each missing piece**
+   - missing rule
+   - missing navigation
+   - missing template
+   - missing support doc link
+5. **Patch the repo, not the memory gap**
+6. **Repeat later with a different task**
+
+---
+
+## What belongs in the repo
+
+- harness rules and repo facts
+- shared execution contracts
+- plugin and integration guidance
+- team-readable onboarding notes
+
+## What stays local
+
+- secrets and tokens
+- personal preference settings
+- machine-specific private data
+
+---
+
+## Failure modes and recovery
+
+### Failure mode 1: saying “just ask me if you're confused”
+Recovery: write the missing rule into the repo.
+
+### Failure mode 2: committing secrets just to make onboarding easier
+Recovery: document setup shape, not secret values.
+
+### Failure mode 3: treating one successful onboarding as proof the harness is complete
+Recovery: test a different task and look for new hidden assumptions.
+
+---
+
+## Starter asset
+
+Use:
+- [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md)
+
+---
+
+## Reader outcome
+
+After this module, you should be able to identify and reduce one concrete piece of tribal knowledge in your repo.
 
 ---
 
 ## ⏭️ Suggested next step
 
-Once your team is aligned, you can start building robust templates for specific tech stacks.
-Proceed to [08 - Cross-Stack Templates](../08-cross-stack-templates/README.md).
+Continue to [08 - Cross-Stack Templates](../08-cross-stack-templates/README.md) to decide what in the harness is universal and what should remain stack-specific.

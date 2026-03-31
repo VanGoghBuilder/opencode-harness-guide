@@ -1,100 +1,131 @@
-# Skills and Agents（中文版）
+# Skills and Agents
 
 > **Harness 职责**：这个模块帮助你把任务路由到正确能力边界，而不是所有事都混着处理。
 
-**语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
+这个模块解释：什么时候一个 prompt contract 就够了，什么时候应该使用 skill，什么时候应该把任务交给 agent。
 
-这个模块解释的是：什么时候值得把能力做成可复用的 skill，什么时候应该交给更专业的 agent，以及什么时候一个普通 prompt 就够了。
+---
 
-目标是帮助新手理解“专业化”这件事，而不是一开始就把工作流搞得过于复杂。
+## 为什么这很重要
+
+很多 agent 系统不稳定，并不是因为“能力不够”，而是因为所有任务都被当成同一种任务处理。
+有些任务只需要一个 prompt，有些任务需要 skill，有些则需要专门 agent 去承担不同的 reasoning role。
+
+这个模块就是能力路由（capability routing）。
 
 ---
 
 ## 🧭 这个模块适合谁
 
-如果你已经开始看到这些问题，就读这一章：
-
-- 某类工作在你的仓库里反复出现
-- 你想让计划、评审或写作行为更稳定
-- 你在判断到底值不值得做专业化
-- 你想理解 OpenCode 的内建专业代理，例如 `explore`、`librarian`、`oracle`
+如果你有这些问题，就看这一章：
+- 某类工作在 repo 里反复出现
+- 你想让探索、规划、评审行为更稳定
+- 你不确定该继续写 prompt，还是应该升格成 skill / agent
 
 ---
 
 ## ⏱️ 15 分钟内你能完成什么
 
-学完这个模块后，你应该能：
-
-1. 解释可复用 skill 和专业 agent 的区别
-2. 判断专业化什么时候真正有帮助，什么时候只是过早优化
-3. 描述一条从 prompt 走向复用的安全路径
-4. 理解 OpenCode 里 `skill` 工具的大致角色
+读完之后，你应该能：
+1. 解释 prompt contract、skill、agent 的区别
+2. 为一个重复任务选择更合理的 routing strategy
+3. 避免过早专业化
 
 ---
 
-## 🧠 一个实用区分法
+## 这个模块假设什么，不假设什么
 
-可以用这个简单模型：
+这个模块假设：
+- 你已经懂 repo context 和执行合同
+- 你已经开始看到重复模式
 
-- **prompt pattern**：重复请求的固定写法
-- **skill**：通常以 `SKILL.md` 形式存在的可复用能力
-- **agent**：承担更明确角色边界的专业代理，例如 `explore`、`librarian`、`oracle`
-
-并不是每个项目都需要把三者都用上。
-
-```mermaid
-graph TD
-    A["我需要稳定结果"] --> B{"只是简单文本指令吗？"}
-    B -->|是| C["Prompt Pattern<br/>(例如 PLAN-REQUEST.md)"]
-    B -->|否，需要工具和流程编排| D{"更像领域能力还是角色边界？"}
-    D -->|具体任务/工作流| E["Custom Skill"]
-    D -->|更宽的角色| F["Specialized Agent"]
-```
+这个模块不假设：
+- 每个重复任务都值得做 skill
+- 每个困难问题都需要新 agent
+- 社区插件工作流能替代原生 OpenCode 能力
 
 ---
 
-## ⚙️ OpenCode 内建代理
+## 🧠 一个实用 routing 模型
 
-OpenCode 自带一些专业代理，适用于不同任务：
+可以用这个顺序：
+- **Prompt contract**：任务局部、结构清楚，光靠合同就够
+- **Skill**：任务反复出现，而且每次都需要相似的专业指令
+- **Agent**：任务需要独立的 reasoning role、搜索方式或质量边界
 
-| 代理 / 类别 | 最擅长 | 什么时候用 |
-|---|---|---|
-| `explore` | 在你自己的代码库里做上下文搜索 | 找结构、找模式、找已有实现 |
-| `librarian` | 查外部文档、开源例子和网页资料 | 理解外部依赖、官方 API、现成实践 |
-| `oracle` | 咨询式高质量判断 | 架构权衡、困难调试、自审 |
-| `visual-engineering` | 前端 / UI / 样式 | CSS、布局、动画、界面实现 |
-| `ultrabrain` | 硬逻辑与复杂设计 | 复杂算法、棘手结构问题 |
-| `deep` | 目标导向的端到端研究 | 更长链路的问题求解 |
-
-> **小建议**：在你真正开始改东西之前，先并行跑 `explore` 和 `librarian` 往往更稳。
+这就是 harness 里的 capability routing。
 
 ---
 
-## 🛠️ 动手练习：什么时候该专业化
+## Demo case：一个重复的 docs 任务要不要做成 skill？
 
-一般来说，当同一类工作不断重复，而且质量依赖稳定方式时，专业化才值得做。
+### Situation
+你反复要求 agent 去做 docs 审计：检查 broken assumptions、导航是否同步、present-vs-planned wording 是否漂移。
 
-**起步检查清单：**
+### Better question
+重复的到底是什么？
+- wording？
+- decision rules？
+- search behavior？
+- review boundary？
 
-- [`templates/SPECIALIZATION-DECISION-CHECKLIST.md`](templates/SPECIALIZATION-DECISION-CHECKLIST.md)（英文模板）
+这决定了它更适合继续做 prompt、升格成 skill，还是直接交给 agent。
 
-**起步 skill 示例：**
+### Artifacts in play
+- 一个重复出现的 repo 任务
+- 一份现有 prompt contract
+- 一个候选的 skill 或 agent 路由
 
-- [`templates/skills/self-assessment/README.md`](templates/skills/self-assessment/README.md)（英文说明页）
+### Desired result
+你能解释为什么这个任务应该继续做 prompt、升格成 skill，或交给专门 agent，而不是盲目增加复杂度。
 
-### 练习步骤
-
-1. 找一个你工作里会反复出现的任务
-2. 打开 `SPECIALIZATION-DECISION-CHECKLIST.md`
-3. 回答问题，判断它更适合继续保持为 prompt pattern、做成 custom skill，还是交给专业 agent
-4. 如果结论是值得做 skill，再开始设计一个基础 `SKILL.md`
-
-如果你想看一个更具体的新手示例，就从 self-assessment 模板说明开始。
 
 ---
 
-## ⏭️ 建议的下一步
+## 🛠️ Step-by-step workflow
 
-当你已经理解什么时候该用 skill、什么时候该用 agent，下一步就是考虑：哪些行为应该自动触发，哪些仍然要保留人工边界。
+1. **先给重复任务命名**
+2. **判断真正重复的部分**
+   - instructions
+   - rules
+   - search pattern
+3. **选择最轻的有效路由**
+   - prompt first
+   - skill second
+   - agent when role boundary matters
+4. **用一个真实任务试跑**
+5. **看它是否真的减少了 guesswork**
+6. **只有收益真实时，才提升复杂度**
+
+---
+
+## 常见失败模式与修复
+
+### 失败模式 1：本来只需要更好的 prompt，却做了一个 skill
+修复：先强化执行合同。
+
+### 失败模式 2：小任务也用昂贵或高度专业 agent
+修复：把 routing 往下调，不要默认往上加系统。
+
+### 失败模式 3：把社区插件工作流和 OpenCode 原生能力混为一谈
+修复：把 capability boundary 单独写清楚。
+
+---
+
+## Starter assets
+
+使用：
+- [`templates/SPECIALIZATION-DECISION-CHECKLIST.md`](templates/SPECIALIZATION-DECISION-CHECKLIST.md)
+- [`templates/skills/self-assessment/README.md`](templates/skills/self-assessment/README.md)
+
+---
+
+## Reader outcome
+
+学完这个模块后，你应该能判断一个重复任务应该继续保持为 prompt、升格成 skill，还是交给 agent。
+
+---
+
+## ⏭️ 建议下一步
 
 继续看 [05 - Hooks and Automation](../05-hooks-and-automation/README.zh-CN.md)。

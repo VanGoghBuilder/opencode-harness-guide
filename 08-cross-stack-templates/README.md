@@ -2,7 +2,14 @@
 
 > **Harness role**: This module keeps the harness portable across different stacks without inventing unverified tooling.
 
-This module explains what stays universal across projects and when stack-specific starter kits are justified. It emphasizes the importance of verified commands before creating stack-specific documentation.
+This module explains what stays universal across projects and when stack-specific starter kits are justified.
+
+---
+
+## Why this matters
+
+A harness should be portable, but not fake-portable.
+The universal parts should transfer cleanly across repos. The stack-specific parts should wait until real files and commands justify them.
 
 ---
 
@@ -10,70 +17,105 @@ This module explains what stays universal across projects and when stack-specifi
 
 Use this module if:
 - you work across multiple languages or frameworks
-- you want to know which OpenCode patterns apply everywhere
-- you are tempted to create a massive boilerplate repository but aren't sure if it's worth it
+- you want to know what parts of the harness are universal
+- you are tempted to write stack-specific guides too early
 
 ---
 
 ## ⏱️ What you can finish in 15 minutes
 
 By the end of this module, you should be able to:
-1. separate universal OpenCode practices from stack-specific implementation details
-2. audit a project to see if it's ready for a stack-specific starter kit
-3. understand why verified commands must precede stack-specific docs
+1. separate universal harness patterns from stack-specific details
+2. audit whether a stack starter is actually ready
+3. prevent fake portability in your docs
 
 ---
 
-## 🧠 Universal vs. Stack-Specific
+## What this module assumes, and does not assume
 
-Good AI workflows have a universal core, but execution depends entirely on the stack.
+This module assumes:
+- you may want to reuse this harness approach in other repos
 
-```mermaid
-graph LR
-    A["Universal Patterns"] --> B["Facts-first approach"]
-    A --> C["Planning before coding"]
-    A --> D["Small, verifiable steps"]
-    
-    E["Stack-Specific Execution"] --> F["npm run test vs. pytest"]
-    E --> G["Prettier vs. Black"]
-    E --> H["React hooks vs. Go goroutines"]
-    
-    B -.-> F
-    C -.-> G
-    D -.-> H
-```
-
-### Universal Patterns (Apply Everywhere):
-- Using `AGENTS.md` to ground the AI.
-- Using `explore` and `librarian` agents to gather context.
-- Writing structured prompts (`PLAN-REQUEST.md`).
-- Documenting MCP integrations.
-
-### Stack-Specific Details (Vary by Project):
-- The exact test command (`npm test`, `cargo test`, `pytest`).
-- The linting rules and formatters.
-- The build process.
-
-> **Core Rule**: Do not write stack-specific documentation until the commands actually exist and are verified in the repository.
+This module does **not** assume:
+- the current repo has a chosen stack
+- stack-specific commands are already verified
 
 ---
 
-## 🛠️ Hands-on Exercise: Starter Kit Readiness
+## 🧠 Universal vs stack-specific harness layers
 
-Before you build a "React + Node + OpenCode Starter Kit," make sure the foundation is solid.
+Universal harness patterns include:
+- repo context
+- execution contracts
+- capability routing
+- automation boundaries
+- feedback and review habits
 
-**Starter template path**:
+Stack-specific layers include:
+- concrete commands
+- formatter names
+- build pipelines
+- framework-specific structure
+
+---
+
+## Demo case: decide whether a Next.js starter harness is actually ready
+
+### Situation
+You want to create a “Next.js + OpenCode harness starter,” but the repo you are looking at has no verified `package.json`, no lint script, and no build command.
+
+### Goal
+Prevent yourself from writing a fake starter kit.
+
+### Desired result
+You leave the universal harness docs reusable, but keep stack-specific guidance marked as not ready.
+
+### Micro-example
+- Keep now: `AGENTS.md`, project-facts checklist, planning/review contracts
+- Move to `TBD`: `npm run lint`, `npm test`, framework-specific build steps, starter-kit claims without file evidence
+
+---
+
+## 🛠️ Step-by-step workflow
+
+1. **List the universal harness pieces**
+   - `AGENTS.md`
+   - facts checklist
+   - planning and review contracts
+2. **List the stack-specific claims you want to make**
+3. **Demand file evidence for each stack claim**
+4. **Keep only the verified pieces**
+5. **Move the rest to `TBD` or future work**
+6. **Publish the universal layer now, not the fake starter later**
+
+---
+
+## Failure modes and recovery
+
+### Failure mode 1: copying a stack guide from another repo and assuming it applies here
+Recovery: verify every command against real files.
+
+### Failure mode 2: claiming portability when only the wording is portable
+Recovery: separate reusable patterns from stack-bound details.
+
+### Failure mode 3: delaying all documentation because stack choices are not final
+Recovery: publish the universal harness layer first.
+
+---
+
+## Starter asset
+
+Use:
 - [`templates/STACK-STARTER-READINESS-CHECKLIST.md`](templates/STACK-STARTER-READINESS-CHECKLIST.md)
 
-### Exercise Instructions:
-1. Pick a stack you use frequently (e.g., Python/FastAPI, TypeScript/Next.js).
-2. Open the readiness checklist.
-3. Check if your repository actually has working commands for linting, testing, and building. If a human can't run them locally, OpenCode can't run them reliably either.
-4. Only when the checklist is fully verified should you start baking those specific commands into your prompt templates or custom skills.
+---
+
+## Reader outcome
+
+After this module, you should be able to decide what part of a harness can be reused immediately and what part must wait for verified stack facts.
 
 ---
 
 ## ⏭️ Suggested next step
 
-Once your universal and stack-specific foundations are solid, you can scale up your workflows.
-Proceed to [09 - Advanced Workflows](../09-advanced-workflows/README.md).
+Continue to [09 - Advanced Workflows](../09-advanced-workflows/README.md) to orchestrate more complex work once the harness layers are clear.

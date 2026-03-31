@@ -3,7 +3,16 @@
 > **Harness role**: This module helps you create the first readable entry point for the agent and the human reviewer.
 
 This module is for people opening OpenCode for the first time and wondering what to do next.
-The goal is to give you one safe mental model, one small starter file, and one clear next step.
+The goal is to help you build the **first usable harness layer** in a repo that does not yet have strong structure.
+
+---
+
+## Why this matters
+
+Most first-session failures happen because people start asking for implementation before the repository has a readable map.
+Without that map, the agent has no system of record, no safe boundary, and no reliable way to tell present facts from future intent.
+
+This module prevents that failure.
 
 ---
 
@@ -12,7 +21,7 @@ The goal is to give you one safe mental model, one small starter file, and one c
 Use this module if any of these sound like you:
 - you are new to OpenCode
 - you can chat with it, but have no reusable setup yet
-- you want to understand how to start a project without inventing structure
+- you want to understand how to start a repo without inventing structure
 - you want a starter file you can copy with minimal cleanup
 
 ---
@@ -22,7 +31,21 @@ Use this module if any of these sound like you:
 By the end of this module, you should be able to:
 1. explain the basic OpenCode workflow in plain language
 2. separate verified repository facts from future plans
-3. copy a minimal starter `AGENTS.md` into a project that has no established tooling yet
+3. create a minimal harness entry point with `AGENTS.md`
+
+---
+
+## What this module assumes, and does not assume
+
+This module assumes:
+- you can inspect files in a repository
+- you are willing to document facts before asking for bigger changes
+
+This module does **not** assume:
+- a package manager exists
+- test or build commands exist
+- the repo already has CI, hooks, or integrations
+- the agent can safely infer missing structure
 
 ---
 
@@ -35,81 +58,98 @@ graph TD
     A["🗣️ 1. Conversation<br/>Ask, explore, inspect reality"] --> B["📝 2. Planning<br/>Decide changes & success criteria"]
     B --> C["🔨 3. Implementation<br/>Make small changes & verify"]
     C --> A
-    
-    style A fill:#2E7D32,color:#fff
-    style B fill:#1565C0,color:#fff
-    style C fill:#C62828,color:#fff
 ```
 
-The common beginner mistake is skipping straight to implementation before the repository state is clear. That is how people end up inventing commands, files, and structure that are not actually present.
+The common beginner mistake is skipping straight to implementation before the repository state is clear.
+In harness terms, that means trying to execute without first creating the map.
 
 ---
 
-## 🛠️ Hands-on Exercise: A safe first-session workflow
+## Demo case: your first 15 minutes in a blank-ish repo
 
-When you start with a new repository, use this order:
+### Situation
+You open a repo that has a `README.md`, a few folders, and some docs, but no obvious package manifest and no command reference.
 
-1. **Inspect** what files actually exist (e.g., `ls -la`, check for `package.json` or `Makefile`).
-2. **Identify** which facts are verified by those files.
-3. **Mark** unknowns as `TBD` instead of guessing.
-4. **Decide** whether the task is docs, scaffolding, templates, or executable code.
-5. **Make** the smallest useful change.
-6. **Verify** links, filenames, and claims before moving on.
+### Goal
+Create the smallest possible harness entry point so the agent stops guessing.
 
-That workflow matters even in documentation-heavy repos. Good docs are still software assets, and they still break when links, assumptions, and status claims drift out of sync.
-
----
-
-## 📋 Facts first, plans second
-
-This repository uses a simple distinction that is worth learning early:
-
-- **Verified fact**: something supported by files that exist right now
-- **Future direction**: something the project intends to become
-
-Examples:
-- `README.md exists` is a verified fact
-- `This repo will include cross-stack starter kits` is future direction
-- `npm test` is only a fact if a real file defines it
-
-> **Core Rule**: Never describe future intent as current reality.
-
----
-
-## 📄 Your first project-context file
-
-One of the fastest ways to make OpenCode more reliable is to give it a small project-context file. This repository uses `AGENTS.md` as that project-context file.
-
-For a new or lightly structured project, a starter `AGENTS.md` should do four things:
-- state what is actually present today
-- list what is not yet configured
-- tell agents not to invent commands or structure
-- set a small, safe default way of working
-
----
-
-## 🚀 Copy this starter template
-
-Starter template path:
+### Artifacts in play
+- `README.md`
+- current directory listing
 - [`templates/AGENTS.md`](templates/AGENTS.md)
 
-### Exercise: Set up your project context
-1. Copy the template into your project as `AGENTS.md`
-2. Replace the placeholder repository facts with real ones
-3. Remove placeholder wording as soon as your project gains real commands and structure
-4. Keep updating it when repository reality changes
+### Desired result
+At the end, the repo has a starter `AGENTS.md` that says what is real, what is missing, and what the agent should not invent.
 
-**What not to do**:
-- do not leave placeholder stack references that are no longer true
-- do not claim lint, test, or build commands exist unless files define them
-- do not turn a starter template into a fantasy project spec
+---
+
+## 🛠️ Step-by-step workflow
+
+1. **Inspect the root**
+   - look at the top-level files and folders
+   - do not interpret yet, just inventory
+2. **Separate facts from assumptions**
+   - `README.md exists` is a fact
+   - `npm test probably works` is an assumption until proven
+3. **Mark unknowns as `TBD`**
+   - this is the first entropy-control move in the harness
+4. **Copy the starter `AGENTS.md`**
+   - use the template as a shell, not as truth
+5. **Replace placeholders with real repo facts**
+   - present files
+   - absent toolchains
+   - current project direction if documented
+6. **Add one safe operating rule**
+   - for example: “Do not invent commands that no file defines.”
+7. **Re-read the file once as if you were the agent**
+   - can you tell what exists?
+   - can you tell what is missing?
+   - can you tell what would be unsafe to assume?
+
+---
+
+## What good output looks like
+
+A good first harness entry point does four things:
+- states what is actually present today
+- states what is not yet configured
+- prevents invention of commands or structure
+- gives the next operator a safe default way to work
+
+---
+
+## Failure modes and recovery
+
+### Failure mode 1: copying the template without replacing placeholders
+Recovery: replace every placeholder that could be mistaken for fact.
+
+### Failure mode 2: documenting intended future tooling as present reality
+Recovery: move it to `TBD`, `Planned`, or `Not yet present`.
+
+### Failure mode 3: trying to cover every future rule immediately
+Recovery: keep the first harness small. Add detail only after repo reality supports it.
+
+---
+
+## Starter asset
+
+Use:
+- [`templates/AGENTS.md`](templates/AGENTS.md)
+
+Optional companion:
+- [../02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](../02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
+
+---
+
+## Reader outcome
+
+After this module, you should be able to open a lightly structured repo and create the first harness artifact without inventing tooling.
 
 ---
 
 ## ⏭️ Suggested next step
 
 After this module:
-- go back to [LEARNING-ROADMAP.md](../LEARNING-ROADMAP.md) to see the broader path
-- browse [CATALOG.md](../CATALOG.md) to see which reusable artifact types are planned next
-
-The next natural slice after this one is [02 - Project Context](../02-project-context/README.md).
+- go to [02 - Project Context](../02-project-context/README.md)
+- go back to [LEARNING-ROADMAP.md](../LEARNING-ROADMAP.md)
+- browse [CATALOG.md](../CATALOG.md) for other starter harness assets

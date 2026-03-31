@@ -1,86 +1,131 @@
-# Team Workflows（中文版）
+# Team Workflows
 
 > **Harness 职责**：这个模块让 harness 不只对一个操作者有效，而能长期支持团队协作。
 
-**语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
+这个模块讨论 onboarding、共享约定，以及如何让团队文档始终和仓库现实保持一致。
 
-这个模块讨论团队 onboarding、共享约定，以及如何让团队文档始终和仓库现实保持一致。
-目标是帮助团队使用 OpenCode，而不是让每个人都靠自己的私有习惯各自为战。
+---
+
+## 为什么这很重要
+
+如果一套 harness 只对一个人有效，那它本质上只是个人习惯，而不是团队系统。
+真正可靠的团队协作，要求 repo 本身承载规则，而不是靠口头传承。
 
 ---
 
 ## 🧭 这个模块适合谁
 
-如果你在做这些事，就读这一章：
-
-- 你准备把 OpenCode 引入团队
-- 你不想让每个人都用不一样的 prompts、工具和流程
-- 你需要确保新同事可以在不猜的情况下开始工作
+如果你正在做这些事情，就读这一章：
+- 把 OpenCode 引入团队
+- 不想让每个 teammate 都发明自己的 workflow
+- 想让新 contributor 不靠猜就能开始工作
 
 ---
 
 ## ⏱️ 15 分钟内你能完成什么
 
 读完之后，你应该能：
-
-1. 定义团队共享的“事实来源”
-2. 审查你的仓库 onboarding 是否已经足够清楚
-3. 避免“works on my machine”式的 AI 工作流
+1. 说清什么属于 repo、什么应该留在本地
+2. 审查 onboarding readiness
+3. 找出并修掉一个依赖 tribal knowledge 的缺口
 
 ---
 
-## 🧠 团队共享的事实来源
+## 这个模块假设什么，不假设什么
 
-个人使用 OpenCode 时，很多习惯会停留在脑子里；团队使用时，这些习惯必须被写进仓库。
+这个模块假设：
+- 除了你之外，还会有其他人使用这个 repo
+- 一部分 workflow 知识目前还停留在脑子里
 
-```mermaid
-graph TD
-    A["个人工作流<br/>(私有 prompts、本地 MCPs)"] --> B{"是否写进仓库？"}
-    B -->|否| C["混乱与不一致<br/>‘works on my machine’"]
-    B -->|是| D["共享事实来源<br/>(AGENTS.md、模板目录等)"]
-    D --> E["✅ 团队输出更可预测"]
-```
+这个模块不假设：
+- repo 的 onboarding 文档已经完善
+- 所有本地 setup 都适合提交进仓库
 
-### 哪些内容应该进仓库
+---
 
-- `AGENTS.md`：核心规则和已验证事实
-- 共享的 `.md` 模板
-- 可复用的 OpenCode skills
-- 关于 MCP server 的集成说明
+## 🧠 Shared harness vs private habit
 
-### 哪些内容应该留在本地
+团队 harness 是能穿越人员变动、记忆丢失和工具变更的那一层。
+应该写进 repo 的，必须写进 repo；应该留在本地的，不要为了“方便”就提交进去。
 
-- `.env`、个人 token、私密密钥
+---
+
+## Demo case：只靠 repo 文档 onboarding 一个新 contributor
+
+### Situation
+一个新 contributor 需要更新一个模块 README，并保持导航和事实边界一致。
+
+### Goal
+验证 TA 是否能在不问同事的情况下完成任务。
+
+### Artifacts in play
+- `AGENTS.md`
+- `README.md`
+- `INDEX.md`
+- `CATALOG.md`
+- [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md)
+
+### Desired result
+你能明确看到：repo 里还有哪些规则其实还藏在私有记忆里。
+
+---
+
+## 🛠️ Step-by-step workflow
+
+1. **挑一个真实 newcomer task**
+2. **只依赖 repo 文档尝试完成**
+3. **记录每一个必须靠外部帮助的地方**
+4. **给每个缺口分类**
+   - missing rule
+   - missing navigation
+   - missing template
+   - missing support doc link
+5. **修补 repo，而不是接受记忆缺口**
+6. **过一段时间换另一个任务再测一次**
+
+---
+
+## 什么应该进 repo
+
+- harness 规则与 repo facts
+- 共享 execution contracts
+- plugin 与 integration 指南
+- team-readable onboarding notes
+
+## 什么应该留在本地
+
+- secrets 和 tokens
 - 个人偏好配置
+- 机器专属私有数据
 
 ---
 
-## 🛠️ 动手练习：团队 onboarding
+## 常见失败模式与修复
 
-团队工作流好不好，最直接的检验方式就是：一个新贡献者能不能只靠仓库文档就开始工作。
+### 失败模式 1：说“有问题来问我”
+修复：把缺失规则写进 repo。
 
-**起步模板路径：**
+### 失败模式 2：为了 onboarding 方便而提交 secrets
+修复：记录 setup 形状，不记录 secret value。
 
-- [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md)（英文模板）
-
-### 练习步骤
-
-1. 打开这份检查清单
-2. 假设你今天是第一次加入这个项目
-3. 试着只依赖仓库文档完成 onboarding
-4. 如果你不得不问同事或查看某个私人文件，说明仓库里缺少共享事实来源
-5. 用 `AGENTS.md` 或新的模板把这个缺口补上
+### 失败模式 3：一次 onboarding 成功就以为 harness 完整了
+修复：换另一类任务再测试一次。
 
 ---
 
-## 🔄 让团队指导持续对齐
+## Starter asset
 
-团队文档很容易过期。一个很有价值的习惯是：每当 PR 引入新规则、新工具或新流程时，同时更新 `AGENTS.md` 和相关文档。
+使用：
+- [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md)
 
 ---
 
-## ⏭️ 建议的下一步
+## Reader outcome
 
-当团队协作层已经比较稳了，你就可以开始思考：哪些内容是跨技术栈通用的，哪些又应该等到真实 stack 决定后再写。
+学完这个模块后，你应该能找出并修掉 repo 里至少一个 tribal knowledge 缺口。
+
+---
+
+## ⏭️ 建议下一步
 
 继续看 [08 - Cross-Stack Templates](../08-cross-stack-templates/README.zh-CN.md)。

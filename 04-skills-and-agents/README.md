@@ -3,95 +3,126 @@
 > **Harness role**: This module helps you route work to the right capability boundary instead of treating every task the same.
 
 This module explains when reusable capabilities are worth creating and how to route work through OpenCode's built-in agents and skills as part of a harness.
-The goal is to help beginners understand specialization without turning every workflow into a complex system too early.
 
-Official OpenCode docs use **Agents** and **Agent Skills** as real product terms. In this repository, “prompt pattern” remains a teaching term for reusable request structure, while agent and skill references should stay aligned with the official product vocabulary.
+---
+
+## Why this matters
+
+One of the fastest ways to make an agent system unreliable is to use the same workflow for every problem.
+Some tasks need a prompt contract only. Others need a specialized agent, a reusable skill, or external reference search.
+
+This module is about choosing the right capability boundary.
 
 ---
 
 ## 🧭 Who this module is for
 
 Use this module if:
-- you see repeated kinds of work in your repository
-- you want more consistent planning, review, or writing behavior
-- you are trying to decide whether specialization is worth it yet
-- you want to understand OpenCode's built-in specialized agents (`explore`, `librarian`, `oracle`, etc.)
+- you see repeated types of work in your repo
+- you want more stable exploration, planning, or review behavior
+- you are deciding whether a task should stay a prompt, become a skill, or be routed to an agent
 
 ---
 
 ## ⏱️ What you can finish in 15 minutes
 
 By the end of this module, you should be able to:
-1. explain the difference between a reusable skill and a specialized agent
-2. identify when specialization helps and when it is premature
-3. describe a small, safe path from prompting to reuse
-4. load a custom skill using OpenCode's `skill` tool
+1. explain the difference between a prompt contract, a skill, and an agent
+2. choose a safer routing strategy for a repeated task
+3. avoid over-specializing too early
 
 ---
 
-## 🧠 A practical distinction
+## What this module assumes, and does not assume
 
-Use this simple model:
+This module assumes:
+- you already understand repo context and prompt contracts
+- you are starting to see patterns in recurring work
 
-- **prompt pattern**: reusable wording for a repeated request in this repo’s teaching language
-- **skill**: a reusable OpenCode skill, typically packaged as `SKILL.md`, providing specialized knowledge and step-by-step guidance.
-- **agent**: an OpenCode subagent with a more specialized role or workflow boundary (e.g., `explore`, `librarian`, `oracle`, `visual-engineering`, `ultrabrain`, `deep`).
-
-You do not need all three at once.
-
-```mermaid
-graph TD
-    A["Need a consistent result"] --> B{"Is it a simple text instruction?"}
-    B -->|Yes| C["Prompt Pattern<br/>(e.g., PLAN-REQUEST.md)"]
-    B -->|No, needs tool orchestration| D{"Is it a domain/workflow?"}
-    D -->|Specific task/workflow| E["Custom Skill<br/>(loaded via skill tool)"]
-    D -->|Broad role| F["Specialized Agent<br/>(e.g., oracle, explore)"]
-    
-    style C fill:#2E7D32,color:#fff
-    style E fill:#1565C0,color:#fff
-    style F fill:#C62828,color:#fff
-```
+This module does **not** assume:
+- every repeated task deserves a skill
+- every hard problem needs a new agent
+- community workflows replace built-in OpenCode capability
 
 ---
 
-## ⚙️ Built-in OpenCode Agents
+## 🧠 A practical routing model
 
-OpenCode ships with several powerful built-in agents designed for specific domains. You invoke them via the `task()` tool:
+Use this simple progression:
 
-| Agent / Category | Best For | When to use |
-|---|---|---|
-| `explore` | Contextual Grep | Searching your own codebase, finding patterns |
-| `librarian` | Reference Grep | Searching external docs, OSS examples, web |
-| `oracle` | Consultation | Architecture decisions, hard debugging, self-review |
-| `visual-engineering` | Frontend/UI | CSS, layout, animations, design implementation |
-| `ultrabrain` | Hard logic | Complex algorithms, architecture design |
-| `deep` | Autonomous | Goal-oriented problem-solving with thorough research |
+- **Prompt contract** if the task is local and the structure alone is enough
+- **Skill** if the task repeats and benefits from the same specialized instructions every time
+- **Agent** if the work needs a distinct reasoning role, search strategy, or quality boundary
 
-> **Pro Tip**: Use `explore` and `librarian` agents in parallel as background tasks to gather context before making changes.
+In harness terms, this is capability routing.
 
 ---
 
-## 🛠️ Hands-on Exercise: When to Specialize
+## Demo case: should a repeated docs task become a skill?
 
-Specialization usually becomes worth it when the same work keeps happening and quality depends on a consistent approach.
+### Situation
+You keep asking the agent to audit docs for broken assumptions, missing navigation updates, and present-vs-planned drift.
 
-**Starter checklist path**:
+### Possible routes
+1. Keep writing a stronger review prompt every time
+2. Turn the task into a reusable skill
+3. Route parts of it to `explore` or `oracle`
+
+### Better harness question
+What is repeating?
+- the wording?
+- the search behavior?
+- the judgment boundary?
+
+That answer tells you whether you need a prompt, a skill, or an agent.
+
+---
+
+## 🛠️ Step-by-step workflow
+
+1. **Name the repeating task**
+   - for example: “doc consistency audit”
+2. **Ask what repeats most**
+   - instructions
+   - decision rules
+   - search pattern
+3. **Choose the lightest useful route**
+   - prompt contract first
+   - skill second
+   - agent when reasoning role or tooling boundary is distinct
+4. **Test the route on one real task**
+5. **Check if it reduces guesswork**
+6. **Promote only if the benefit is real**
+
+---
+
+## Failure modes and recovery
+
+### Failure mode 1: making a skill for a task that only needs a better prompt
+Recovery: improve the contract first.
+
+### Failure mode 2: using an expensive or specialized agent for trivial work
+Recovery: route down, not up.
+
+### Failure mode 3: confusing community plugin workflows with native OpenCode capabilities
+Recovery: document the capability boundary clearly and keep official terms accurate.
+
+---
+
+## Starter assets
+
+Use:
 - [`templates/SPECIALIZATION-DECISION-CHECKLIST.md`](templates/SPECIALIZATION-DECISION-CHECKLIST.md)
-
-**Starter skill template**:
 - [`templates/skills/self-assessment/README.md`](templates/skills/self-assessment/README.md)
 
-### Exercise Instructions:
-1. Identify a repeated task in your workflow.
-2. Open the `SPECIALIZATION-DECISION-CHECKLIST.md`.
-3. Answer the questions to determine if this task should remain a prompt pattern, become a custom skill, or be delegated to a specialized agent.
-4. If it's a skill, try creating a basic `SKILL.md` file in your repository.
+---
 
-If you want a concrete beginner-friendly example of a reusable skill artifact, start with the self-assessment template and its usage notes in `templates/skills/self-assessment/`.
+## Reader outcome
+
+After this module, you should be able to decide whether a repeated task should remain a prompt contract, become a reusable skill, or be routed to a specialized agent.
 
 ---
 
 ## ⏭️ Suggested next step
 
-Once you have specialized skills and agents working for you, the next step is automating the triggers.
-Proceed to [05 - Hooks and Automation](../05-hooks-and-automation/README.md).
+Continue to [05 - Hooks and Automation](../05-hooks-and-automation/README.md) to add safe internal guardrails once routing is stable.
