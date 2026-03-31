@@ -184,6 +184,7 @@
 | [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | 跨栈 readiness 检查 |
 | [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | 复杂工作流编排检查 |
 | [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | harness 驱动的 Vibe Coding 启动模板 |
+| [`examples/nextjs-saas-harness.zh-CN.md`](examples/nextjs-saas-harness.zh-CN.md) | 真实的 Next.js SaaS harness 示例 |
 
 这些都应该被理解为 harness 起步资产，而不是可直接无脑粘贴的成品。
 

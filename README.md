@@ -188,6 +188,7 @@ The repository already has a strong first-pass harness scaffold.
 | [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | portability and readiness check |
 | [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | complex-work orchestration check |
 | [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | structured kickoff for harness-driven vibe coding |
+| [`examples/nextjs-saas-harness.md`](examples/nextjs-saas-harness.md) | real-world Next.js SaaS harness example |
 
 These are starter harness artifacts, not production-complete drop-ins.
 

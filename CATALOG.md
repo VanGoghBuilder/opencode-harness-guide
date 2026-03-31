@@ -13,6 +13,7 @@ It explains what harness assets exist now, what is safe to adapt now, and which 
 | Root support docs | Present |
 | Harness modules | Present (`01` through `10`) |
 | Starter harness templates | Present |
+| Real-world harness cases | Present |
 | Plugin and vibe-coding guides | Present |
 | Deeper feedback-loop examples | Planned |
 | Stack-specific harness kits | Planned |
@@ -100,6 +101,7 @@ It explains what harness assets exist now, what is safe to adapt now, and which 
 | [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | portability | stack-readiness check |
 | [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | orchestration | repeated-process readiness check |
 | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | orchestration | structured kickoff for harness-driven vibe coding |
+| [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md) | real-world case | Next.js SaaS full harness example |
 
 ---
 

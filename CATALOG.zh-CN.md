@@ -13,6 +13,7 @@
 | 根支持文档 | 已存在 |
 | Harness 模块 | 已存在（`01` 到 `10`） |
 | Starter harness 模板 | 已存在 |
+| 真实 harness 案例 | 已存在 |
 | plugin 与 vibe coding 指南 | 已存在 |
 | 更深入 feedback loop 示例 | 计划中 |
 | stack-specific harness kit | 计划中 |
@@ -96,6 +97,7 @@
 | [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | portability | stack readiness 检查 |
 | [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | orchestration | 重复流程 readiness 检查 |
 | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | orchestration | harness 驱动的 Vibe Coding 启动模板 |
+| [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md) | 真实案例 | Next.js SaaS 完整 harness 案例 |
 
 ---
 
