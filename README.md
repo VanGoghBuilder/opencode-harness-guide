@@ -8,8 +8,21 @@ Go from opening OpenCode for the first time to building repeatable workflows wit
 
 ---
 
+## Current public status
+
+This repository is public and contribution-ready as a documentation project, but it is **not yet under a final open-source license**.
+
+- Read [LICENSE](LICENSE) before assuming reuse rights.
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a contribution.
+- Read [SECURITY.md](SECURITY.md) and [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md) before reporting anything sensitive.
+
+Until a real license and a real private reporting channel are published, treat this repo as a public project with intentionally limited reuse clarity and no safe private disclosure path hosted inside the repo itself.
+
+---
+
 ## Table of contents
 
+- [Current public status](#current-public-status)
 - [The problem](#the-problem)
 - [How this guide helps](#how-this-guide-helps)
 - [How it works](#how-it-works)
@@ -95,6 +108,7 @@ Use:
 - [AGENTS.md](AGENTS.md) for repo-grounded agent guidance
 - [STYLE_GUIDE.md](STYLE_GUIDE.md) for writing consistency
 - [CONTRIBUTING.md](CONTRIBUTING.md) for contribution flow
+- [SUPPORT.md](SUPPORT.md) for support and reporting boundaries
 
 ---
 
@@ -198,6 +212,10 @@ Because this repository is still documentation-first and has not added real pack
 
 The starter templates listed above, especially the project-context, planning, and review templates. They are safe to adapt, but not meant to be pasted blindly without replacing placeholders.
 
+**Is this already an open-source repository in the normal reuse sense?**
+
+Not yet. The repository is public, but [LICENSE](LICENSE) still states that no final open-source license has been chosen. Until that changes, do not assume broad reuse rights.
+
 **Why do some docs emphasize `TBD` and `Not yet present` so much?**
 
 Because the repository is trying to be honest about what is real now. That distinction is one of the core design rules of the rewrite.
@@ -234,12 +252,16 @@ The repository now also includes basic support and governance docs:
 - [SECURITY.md](SECURITY.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [LICENSE](LICENSE)
+- [SUPPORT.md](SUPPORT.md)
 
 And under `.github/`:
 
-- `.github/pull_request_template.md`
-- `.github/ISSUE_TEMPLATE/*`
-- `.github/SECURITY_REPORTING.md`
+- [.github/pull_request_template.md](.github/pull_request_template.md)
+- [.github/ISSUE_TEMPLATE/bug_report.md](.github/ISSUE_TEMPLATE/bug_report.md)
+- [.github/ISSUE_TEMPLATE/feature_request.md](.github/ISSUE_TEMPLATE/feature_request.md)
+- [.github/ISSUE_TEMPLATE/documentation.md](.github/ISSUE_TEMPLATE/documentation.md)
+- [.github/ISSUE_TEMPLATE/question.md](.github/ISSUE_TEMPLATE/question.md)
+- [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
 
 These do not add product features. They make the repository easier to maintain, reuse, and report issues against safely.
 

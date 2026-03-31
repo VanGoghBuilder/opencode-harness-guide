@@ -45,6 +45,7 @@ It lists what is actually present now, what is safe to copy now, and which deepe
 | [SECURITY.md](SECURITY.md) | security policy for repository content and templates |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | collaboration expectations for contributors |
 | [LICENSE](LICENSE) | current license-status placeholder until a final license is chosen |
+| [SUPPORT.md](SUPPORT.md) | support and reporting boundaries for public contributors |
 | [CHANGELOG.md](CHANGELOG.md) | documentation milestones for the rewrite |
 | [AGENTS.md](AGENTS.md) | repository guidance for coding agents |
 

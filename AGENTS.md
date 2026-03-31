@@ -10,7 +10,7 @@ It separates verified facts from provisional conventions.
 
 - Repository path: `/Users/vangogh/Documents/code/opencode-howto`
 - Current state: documentation-first rewrite in progress
-- Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`
+- Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`
 - Present Chinese entry docs: `README.zh-CN.md`, `QUICK_REFERENCE.zh-CN.md`, `INDEX.zh-CN.md`, `LEARNING-ROADMAP.zh-CN.md`, `CATALOG.zh-CN.md`
 - Present license-status file: `LICENSE`
 - Present numbered modules: `01-getting-started/README.md` through `10-cli-and-terminal/README.md`
@@ -35,6 +35,7 @@ It separates verified facts from provisional conventions.
 - No `.cursorrules` file was found
 - No `.cursor/rules/**` files were found
 - No `.github/copilot-instructions.md` file was found
+- Present `.github` support files: `.github/pull_request_template.md`, `.github/SECURITY_REPORTING.md`, `.github/ISSUE_TEMPLATE/bug_report.md`, `.github/ISSUE_TEMPLATE/feature_request.md`, `.github/ISSUE_TEMPLATE/documentation.md`, `.github/ISSUE_TEMPLATE/question.md`, `.github/ISSUE_TEMPLATE/config.yml`
 
 ## Project direction
 

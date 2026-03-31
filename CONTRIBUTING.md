@@ -3,6 +3,8 @@
 Thanks for helping improve `opencode-howto`.
 This repository is a documentation-first rewrite for first-time OpenCode users, so the best contributions are usually the ones that make the project easier to enter, easier to trust, and easier to copy from.
 
+Before contributing, also read [LICENSE](LICENSE). This repository is public, but it does **not yet publish a final open-source license**, so reuse and downstream expectations should not be assumed beyond what that file currently states.
+
 ---
 
 ## What good contributions look like
@@ -51,8 +53,10 @@ If a command, toolchain, or stack choice is not verified, do not write it as if 
 6. if the change affects the beginner path or starter-template set, update `README.md`, `QUICK_REFERENCE.md`, and `INDEX.md` too
 
 For public issues, use the repository issue templates.
-For security-sensitive reports, use [SECURITY.md](SECURITY.md) and `.github/SECURITY_REPORTING.md` instead of a normal issue.
-For serious conduct issues, use the same maintainer-contact approach described there and avoid posting sensitive personal details in public threads.
+For security-sensitive reports, use [SECURITY.md](SECURITY.md) and [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md) instead of a normal issue.
+For serious conduct issues, use [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SUPPORT.md](SUPPORT.md) first and avoid posting sensitive personal details in public threads.
+
+> Current limitation: this repository does not yet publish a dedicated private reporting channel for security or conduct issues. If a report requires private handling, do not post sensitive details publicly.
 
 ---
 

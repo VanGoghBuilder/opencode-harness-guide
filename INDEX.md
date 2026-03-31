@@ -58,6 +58,7 @@ Use it when you know what you need, but not where it lives.
 - [SECURITY.md](SECURITY.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [LICENSE](LICENSE)
+- [SUPPORT.md](SUPPORT.md)
 
 ### I need issue or reporting templates
 

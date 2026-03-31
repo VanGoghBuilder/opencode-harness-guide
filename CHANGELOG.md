@@ -24,6 +24,18 @@ This is a lightweight changelog for the rewrite, not a product release log.
 - Strengthened the roadmap, catalog, and agent guidance to match the expanded repo structure
 - Clarified present-versus-planned wording across the repository
 
+## 2026-03-31
+
+### Added
+
+- `SUPPORT.md` to clarify support, reporting, and public-vs-sensitive issue boundaries
+
+### Changed
+
+- Made security/reporting navigation more clickable across `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, and `CODE_OF_CONDUCT.md`
+- Clarified that the repository is public but not yet under a final open-source license
+- Updated `AGENTS.md`, `INDEX.md`, `CATALOG.md`, and the PR template to reflect the current public support surface
+
 ### Still planned
 
 - richer quickstart walkthroughs

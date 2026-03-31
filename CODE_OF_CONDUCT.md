@@ -45,7 +45,7 @@ Accuracy and clarity are part of good conduct here.
 
 ## Reporting problems
 
-If you encounter a serious conduct issue, use the reporting guidance in `CONTRIBUTING.md`.
+If you encounter a serious conduct issue, start with [CONTRIBUTING.md](CONTRIBUTING.md) and [SUPPORT.md](SUPPORT.md).
 At the moment, this repository does not publish a dedicated private conduct-reporting channel, so contributors should avoid posting sensitive personal details in public threads.
 
-For security-sensitive reports, use `SECURITY.md` instead of a public thread.
+For security-sensitive reports, use [SECURITY.md](SECURITY.md) instead of a public thread.

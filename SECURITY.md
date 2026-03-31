@@ -35,16 +35,18 @@ Those should go through the normal issue process instead.
 Please do **not** open a public issue for a real secret exposure or sensitive vulnerability.
 
 At the moment, this repository does **not** publish a dedicated private security mailbox or reporting portal.
-Until one exists, avoid posting sensitive details publicly and use the safest maintainer contact path available from the repository context.
+Until one exists, avoid posting sensitive details publicly.
 
 Instead:
 
-1. use the security reporting guidance in `.github/SECURITY_REPORTING.md`
+1. read the security reporting guidance in [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
 2. include the affected file paths
 3. describe the risk clearly and briefly
 4. avoid reposting any secret value in full
 
 If a tracked secret appears in this repository, limit disclosure first and avoid publishing the secret in a public issue.
+
+> Current limitation: this repository documents the reporting boundary, but it does **not** yet offer a dedicated private reporting address inside the repo. Until maintainers publish one, the safest action is to avoid public disclosure of sensitive details.
 
 ---
 

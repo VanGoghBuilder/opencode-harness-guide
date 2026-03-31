@@ -17,8 +17,8 @@ Interactive quiz to evaluate OpenCode proficiency across all 10 feature areas. G
 - Q5: "Have you successfully set up an MCP (Model Context Protocol) server to connect OpenCode to external tools (like GitHub or a database)?"
 
 ### Scoring & Recommendation:
-- **0-1 Yes**: Level 1 (Beginner). Recommend starting at [Module 01: Getting Started](../../../01-getting-started/README.md).
-- **2-3 Yes**: Level 2 (Intermediate). Recommend starting at [Module 04: Skills and Agents](../../../04-skills-and-agents/README.md).
-- **4-5 Yes**: Level 3 (Advanced). Recommend checking out [Module 09: Advanced Workflows](../../../09-advanced-workflows/README.md) and [Module 06: Integrations and MCP](../../../06-integrations-and-mcp/README.md).
+- **0-1 Yes**: Level 1 (Beginner). Recommend starting at [Module 01: Getting Started](../../../../01-getting-started/README.md).
+- **2-3 Yes**: Level 2 (Intermediate). Recommend starting at [Module 04: Skills and Agents](../../../README.md).
+- **4-5 Yes**: Level 3 (Advanced). Recommend checking out [Module 09: Advanced Workflows](../../../../09-advanced-workflows/README.md) and [Module 06: Integrations and MCP](../../../../06-integrations-and-mcp/README.md).
 
 3. After all questions are answered, calculate the score, announce their Level, and provide the specific module links they should read next based on their gaps.
