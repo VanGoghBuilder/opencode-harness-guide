@@ -1,6 +1,8 @@
 # Skills and Agents
 
-This module explains when reusable capabilities are worth creating and how to use OpenCode's built-in agents and skills.
+> **Harness role**: This module helps you route work to the right capability boundary instead of treating every task the same.
+
+This module explains when reusable capabilities are worth creating and how to route work through OpenCode's built-in agents and skills as part of a harness.
 The goal is to help beginners understand specialization without turning every workflow into a complex system too early.
 
 Official OpenCode docs use **Agents** and **Agent Skills** as real product terms. In this repository, “prompt pattern” remains a teaching term for reusable request structure, while agent and skill references should stay aligned with the official product vocabulary.

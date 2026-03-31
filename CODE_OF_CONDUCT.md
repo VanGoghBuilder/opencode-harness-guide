@@ -1,6 +1,6 @@
 # Code of Conduct
 
-`opencode-howto` is meant to be beginner-friendly, practical, and safe to learn from.
+`opencode-harness-guide` is meant to be beginner-friendly, practical, and safe to learn from.
 That standard applies to collaboration too.
 
 ---

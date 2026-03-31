@@ -1,5 +1,7 @@
 # Getting Started（中文版）
 
+> **Harness 职责**：这个模块帮助你建立 agent 和人类 reviewer 都能读懂的第一个入口。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块面向第一次打开 OpenCode、但不知道下一步应该做什么的人。

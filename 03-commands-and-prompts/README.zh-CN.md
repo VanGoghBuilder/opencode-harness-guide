@@ -1,5 +1,7 @@
 # Commands and Prompts（中文版）
 
+> **Harness 职责**：这个模块为 agent 提供明确执行合同，而不是模糊聊天意图。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块讨论的是：如何把重复出现的请求整理成可复用的结构。

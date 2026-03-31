@@ -1,5 +1,7 @@
 # Skills and Agents（中文版）
 
+> **Harness 职责**：这个模块帮助你把任务路由到正确能力边界，而不是所有事都混着处理。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块解释的是：什么时候值得把能力做成可复用的 skill，什么时候应该交给更专业的 agent，以及什么时候一个普通 prompt 就够了。

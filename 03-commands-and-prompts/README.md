@@ -1,5 +1,7 @@
 # Commands and Prompts
 
+> **Harness role**: This module defines execution contracts so the agent works against explicit intent instead of vague chat.
+
 This module covers reusable request patterns. It separates official OpenCode command terminology (like `/help` or `/skills`) from the structured prompts you use to ask for work.
 
 ---
@@ -25,7 +27,7 @@ By the end of this module, you should be able to:
 ## 🧠 Commands vs. Prompts
 
 In OpenCode:
-- **Commands**: Built-in instructions starting with a slash (e.g., `/skills`, `/playwright`, `/start-work`) or native tools.
+- **Commands**: Built-in instructions starting with a slash (e.g., `/skills`, `/playwright`) or native tools. Community extensions may add their own workflow entrypoints, but those should be documented separately from built-in commands.
 - **Prompts**: Natural language instructions you provide to guide an agent's behavior.
 
 When we talk about "reusable request structures" here, we mean **Prompts**, not custom slash commands (which OpenCode handles via Skills and Agents).

@@ -1,5 +1,7 @@
 # Getting Started
 
+> **Harness role**: This module helps you create the first readable entry point for the agent and the human reviewer.
+
 This module is for people opening OpenCode for the first time and wondering what to do next.
 The goal is to give you one safe mental model, one small starter file, and one clear next step.
 

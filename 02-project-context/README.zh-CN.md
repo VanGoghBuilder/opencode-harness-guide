@@ -1,5 +1,7 @@
 # Project Context（中文版）
 
+> **Harness 职责**：这个模块把仓库从“很多假设”变成真正的 system of record。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块解释的是：怎样把 OpenCode 锚定在你仓库的真实状态上。

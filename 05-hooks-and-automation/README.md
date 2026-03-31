@@ -1,5 +1,7 @@
 # Hooks and Automation
 
+> **Harness role**: This module adds internal guardrails and repeatable automation behavior to the harness.
+
 This module covers automation boundaries, with hooks understood through the official plugins framing. The goal is to establish safe guardrails for OpenCode without creating fragile, invisible rules.
 
 ---

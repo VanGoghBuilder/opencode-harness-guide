@@ -1,5 +1,7 @@
 # Advanced Workflow Checklist
 
+Use this to decide whether a repeated multi-step process is ready to become part of your harness.
+
 Use this checklist before turning a repeated process into a multi-step workflow.
 
 ---

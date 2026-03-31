@@ -1,5 +1,7 @@
 # Cross-Stack Templates
 
+> **Harness role**: This module keeps the harness portable across different stacks without inventing unverified tooling.
+
 This module explains what stays universal across projects and when stack-specific starter kits are justified. It emphasizes the importance of verified commands before creating stack-specific documentation.
 
 ---

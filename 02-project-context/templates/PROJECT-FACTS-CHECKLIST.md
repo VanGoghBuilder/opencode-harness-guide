@@ -1,5 +1,7 @@
 # Project Facts Checklist
 
+Use this checklist to turn the repository into a **system of record** before asking agents to make stronger claims.
+
 Use this checklist before writing or expanding a project instruction file.
 Only mark something as true if a real file, config, or documented workflow supports it.
 

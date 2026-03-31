@@ -1,41 +1,39 @@
-# OpenCode Quick Reference
+# OpenCode Harness Quick Reference
 
-Use this file when you want the fastest path through the repository.
-It is the shortest root-level guide for first-time OpenCode users.
+Use this file when you want the fastest path through the repository as a **harness builder**, not just a feature reader.
 
 ---
 
 ## If you only have 15 minutes
 
 1. Read [01-getting-started/README.md](01-getting-started/README.md)
-2. Copy the starter `AGENTS.md` from [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
-3. Use [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) to replace placeholders with real repository facts
-4. Read [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) if you want better planning and review requests next
+2. Copy the starter [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
+3. Fill in facts with [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
+4. Pick one execution contract from [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
 
-That path is enough to understand the basic workflow and start using one starter template safely.
+That gives you a minimal harness: map, facts, and one structured way to ask for work.
 
 ---
 
-## Fast copy-and-adapt path
+## Fast harness path
 
 Use this repo in five moves:
 
-1. **Start with context**
+1. **Create the map**
    - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
    - [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
-2. **Improve your requests**
+2. **Define execution contracts**
    - [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md)
    - [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md)
-   - [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md)
-   - [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md)
-3. **Decide whether to specialize**
+3. **Route work to the right capability**
+   - [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
    - [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md)
-   - [04-skills-and-agents/templates/skills/self-assessment/README.md](04-skills-and-agents/templates/skills/self-assessment/README.md)
-4. **Add guardrails only when justified**
-   - [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md)
-   - [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
-5. **Understand extensions and orchestration**
+4. **Expand capability safely**
+   - [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
+   - [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
+5. **Adopt a stronger orchestration harness**
    - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+   - [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
 
 ---
 
@@ -43,48 +41,43 @@ Use this repo in five moves:
 
 | If you need... | Start here |
 |---|---|
-| a safe starting doc for a new project | [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) |
-| a way to document what is real in the repo | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
-| a better plan or review request | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
+| a minimal repo harness | [01-getting-started/README.md](01-getting-started/README.md) |
+| a repo facts system of record | [02-project-context/README.md](02-project-context/README.md) |
+| a better execution contract | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
+| a capability-routing guide | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
 | a clear plugin vs MCP vs hook explanation | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
-| a step-by-step vibe coding guide with oh-my-opencode | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) |
-| help deciding whether specialization is worth it | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
-| a quick team-readiness check | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
+| a step-by-step vibe coding harness | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) |
 
 ---
 
-## Which file answers which question
+## Which file answers which harness question
 
 | Question | File |
 |----------|------|
-| What is this repo for? | [README.md](README.md) |
-| What should I learn first? | [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md) |
+| What is a harness in this repo? | [README.md](README.md) |
+| What should I build first? | [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md) |
 | What files and templates exist now? | [CATALOG.md](CATALOG.md) |
-| What rules should coding agents follow here? | [AGENTS.md](AGENTS.md) |
-| How do I start without inventing commands? | [01-getting-started/README.md](01-getting-started/README.md) |
-| How do I document repository facts honestly? | [02-project-context/README.md](02-project-context/README.md) |
-| How do I ask for a better plan or review? | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
-| How do I know whether specialization is worth it? | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
-| How do I check team readiness? | [07-team-workflows/README.md](07-team-workflows/README.md) |
+| What rules should agents follow? | [AGENTS.md](AGENTS.md) |
+| How do I make the repo agent-readable? | [02-project-context/README.md](02-project-context/README.md) |
+| How do I define execution contracts? | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) |
+| How do I route work better? | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) |
+| How do I extend capability with plugins or MCP? | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) |
+| How do I run a stronger vibe coding workflow? | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) |
 
 ---
 
-## Safe starter templates to copy now
+## Safe harness starter templates to copy now
 
 | Need | File |
 |------|------|
-| Minimal project guidance | [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) |
-| Repo-facts checklist | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
-| Planning request | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) |
-| Review request | [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md) |
-| Commit message request | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) |
-| Pull request draft | [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
-| Specialization decision check | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
-| Self-assessment skill template | [04-skills-and-agents/templates/skills/self-assessment/README.md](04-skills-and-agents/templates/skills/self-assessment/README.md) |
+| Minimal harness entry point | [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) |
+| Repo facts checklist | [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
+| Planning contract | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) |
+| Review contract | [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md) |
+| Capability routing decision check | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
 | Automation boundary check | [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md) |
 | Local integration notes | [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md) |
-
-These files are safe to adapt now. They are starter docs, not production-ready drop-ins.
+| oh-my-opencode vibe coding kickoff | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
 
 ---
 
@@ -94,7 +87,7 @@ Do not assume:
 
 - a package manager is chosen
 - install, lint, test, typecheck, or build commands exist
-- any stack-specific starter kit is complete
+- any stack-specific harness kit is complete
 - integration configs in this repo are executable
 
 Use `TBD` and `Not yet present` until real files support stronger claims.
@@ -103,9 +96,7 @@ Use `TBD` and `Not yet present` until real files support stronger claims.
 
 ## Best next reads after the fast path
 
-- [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
-- [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
-- [INDEX.md](INDEX.md) for a browseable root map
-- [STYLE_GUIDE.md](STYLE_GUIDE.md) if you are writing or editing repo docs
-
-If you want the guided full path instead of the fast path, go to [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md).
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
+- [INDEX.md](INDEX.md)
+- [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md)

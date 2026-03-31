@@ -3,13 +3,14 @@
 ## Purpose
 
 This repository is in an early documentation-first rewrite state.
-This file gives coding agents a grounded operating guide while the `opencode-howto` rewrite is being scaffolded.
+This file gives coding agents a grounded operating guide while the public documentation identity is being rewritten toward `opencode-harness-guide`.
 It separates verified facts from provisional conventions.
 
 ## Verified repository facts
 
 - Repository path: `/Users/vangogh/Documents/code/opencode-howto`
-- Current state: documentation-first rewrite in progress
+- Public documentation identity in progress: `opencode-harness-guide`
+- Current state: documentation-first rewrite in progress, with the content being reframed around harness engineering
 - Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`, `PLUGINS-AND-OH-MY-OPENCODE.md`
 - Present Chinese entry docs: `README.zh-CN.md`, `QUICK_REFERENCE.zh-CN.md`, `INDEX.zh-CN.md`, `LEARNING-ROADMAP.zh-CN.md`, `CATALOG.zh-CN.md`, `PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md`
 - Present license-status file: `LICENSE`
@@ -39,7 +40,7 @@ It separates verified facts from provisional conventions.
 
 ## Project direction
 
-The intended direction is a rewrite of `opencode-howto` inspired by `/Users/vangogh/Documents/code/claude-howto`.
+The intended direction is a rewrite of the project into `opencode-harness-guide`, still inspired by `/Users/vangogh/Documents/code/claude-howto` in structure, but centered on harness engineering rather than generic how-to onboarding.
 That means documentation-first structure, a clear learning path, and copy-paste-ready templates.
 
 ### Target reader
@@ -115,9 +116,9 @@ Prefer a documentation-first shape with strong navigation from the root.
 
 ### Provisional structure target
 
-- Root `README.md` with project purpose, audience, and fastest starting path
-- `LEARNING-ROADMAP.md` or equivalent
-- `CATALOG.md`, `INDEX.md`, or another browseable topic map
+- Root `README.md` with the harness definition, audience, and fastest starting path
+- `LEARNING-ROADMAP.md` or equivalent harness build path
+- `CATALOG.md`, `INDEX.md`, or another browseable harness map
 - Numbered lesson or module directories if sequential learning is chosen
 - Copy-paste examples, prompts, templates, or config artifacts in obvious locations
 

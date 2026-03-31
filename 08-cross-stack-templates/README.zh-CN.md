@@ -1,5 +1,7 @@
 # Cross-Stack Templates（中文版）
 
+> **Harness 职责**：这个模块帮助你让 harness 跨技术栈迁移，而不发明不存在的工具链。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块讨论：哪些 OpenCode 实践是跨项目通用的，什么时候才值得做技术栈专用 starter kit。

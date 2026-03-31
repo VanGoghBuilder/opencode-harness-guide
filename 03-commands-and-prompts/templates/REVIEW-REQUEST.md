@@ -1,5 +1,7 @@
 # Review Request
 
+Use this as a **feedback-loop contract** when you want the agent to evaluate work instead of immediately changing it.
+
 Use this prompt when you want a review focused on findings and risks instead of a generic summary.
 
 ---

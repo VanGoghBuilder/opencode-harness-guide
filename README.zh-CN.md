@@ -1,24 +1,37 @@
-# OpenCode How To 中文版
+# OpenCode Harness Guide 中文版
 
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
-帮助你从第一次打开 OpenCode，逐步走到能建立可复用工作流：用文档、起步模板和清晰学习路径，把常见做法固定下来。
+帮助你为 OpenCode 建立一套**工程 harness（工程脚手架 / 控制系统）**：让仓库可被 agent 读取、让约束可被执行、让反馈回路能真正纠错。
 
-**[15 分钟开始](#15-分钟开始)** | **[选择你的路径](#选择你的路径)** | **[查看完整中文索引](INDEX.zh-CN.md)**
+**[15 分钟开始](#15-分钟开始)** | **[选择你的 Harness 路径](#选择你的-harness-路径)** | **[查看完整中文索引](INDEX.zh-CN.md)** | **[查看中文目录](CATALOG.zh-CN.md)**
+
+---
+
+## 当前公开状态
+
+这个仓库已经公开，也欢迎贡献，但它**还没有最终开源许可证**。
+
+- 在假设可复用权限前，请先看 [LICENSE](LICENSE)
+- 在贡献前，请先看 [CONTRIBUTING.md](CONTRIBUTING.md)
+- 在提交敏感问题前，请先看 [SECURITY.md](SECURITY.md) 和 [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
+
+在真正的许可证和私下报告渠道出现之前，请把它理解成一个公开的文档项目，而不是已经完全明确复用边界的开源仓库。
 
 ---
 
 ## 目录
 
-- [问题是什么](#问题是什么)
-- [这份指南怎么帮你](#这份指南怎么帮你)
-- [它是怎么工作的](#它是怎么工作的)
+- [当前公开状态](#当前公开状态)
+- [为什么需要这份指南](#为什么需要这份指南)
+- [这里说的 Harness 是什么](#这里说的-harness-是什么)
+- [Harness 模型](#harness-模型)
 - [Plugins 与 oh-my-opencode](#plugins-与-oh-my-opencode)
-- [选择你的路径](#选择你的路径)
+- [选择你的 Harness 路径](#选择你的-harness-路径)
 - [15 分钟开始](#15-分钟开始)
-- [当前能解决的实际问题](#当前能解决的实际问题)
-- [现在仓库里已经有什么](#现在仓库里已经有什么)
-- [现在就能复制使用的模板](#现在就能复制使用的模板)
+- [Harness 实际使用场景](#harness-实际使用场景)
+- [现在已经有什么](#现在已经有什么)
+- [现在就能复制的模板](#现在就能复制的模板)
 - [常见问题](#常见问题)
 - [仓库支持文档](#仓库支持文档)
 - [仍在计划中的内容](#仍在计划中的内容)
@@ -26,205 +39,196 @@
 
 ---
 
-## 问题是什么
+## 为什么需要这份指南
 
-如果你刚开始用 OpenCode，最难的通常不是少了某个功能，而是不知道应该先学什么、怎么安全地组织项目上下文、以及哪些做法现在就能复制，哪些还只是未来方向。
+很多 AI 编码失败，真正出问题的不是模型本身，而是 **harness 设计失败**。
 
-你也许能找到零散功能介绍，但找不到一条适合新手的路径；你也许能找到一些例子，但不确定哪些在当前仓库里已经真实存在、哪些只是想法。
+常见缺口包括：
 
----
+- 仓库里没有 agent 真正能读懂的 system of record
+- 约束条件和边界不清楚
+- 执行方式没有固定合同
+- 没有反馈回路去验证和纠错
+- 长时间之后仓库会进入文档和模式漂移，也就是 entropy
 
-## 这份指南怎么帮你
-
-`opencode-howto` 是一个文档优先的重写仓库。它受 `claude-howto` 启发，但内容针对 OpenCode 调整，并尽量与官方文档 `https://opencode.ai/docs/` 的术语保持一致。
-
-这个仓库面向的是第一次使用 OpenCode 的人，重点提供：
-
-- 清楚的起点
-- 渐进式学习路径
-- 可以直接复制和改写的起步模板
-- 对“当前真实存在”和“未来计划内容”的明确边界
-
-它不会假装自己已经有成熟的工具链。对当前现实诚实，本身就是设计目标的一部分。
+所以，这个仓库现在的目标不只是“教你怎么用 OpenCode”，而是**教你怎么为 OpenCode 设计和维护工程 harness**。
 
 ---
 
-## 它是怎么工作的
+## 这里说的 Harness 是什么
 
-最简单的使用方式，是把这个仓库当成一条小而清晰的路径：
+这里的 harness，指的是下面这些东西的组合：
 
-1. 先用起步版 [`AGENTS.md`](01-getting-started/templates/AGENTS.md) 把 OpenCode 锚定在现实上
-2. 用 [`PROJECT-FACTS-CHECKLIST.md`](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 记录已验证事实
-3. 用 [`03-commands-and-prompts/README.zh-CN.md`](03-commands-and-prompts/README.zh-CN.md) 里的请求模板改进计划、评审、提交和 PR 描述
-4. 再决定什么时候需要技能或代理，而不是一开始就过度复杂化
-5. 最后在仓库成熟后，再进入自动化、集成、团队协作和高级工作流
+- agent 能真正读取的仓库上下文
+- 它必须遵守的规则和约束
+- 明确表达意图的结构化工作流
+- 安全扩展能力的自动化和集成方式
+- 能告诉它“改对了没有”的反馈回路
+- 能长期控制混乱和漂移的维护机制
 
-如果你想先做一个自检，仓库里现在也有一个 self-assessment 技能模板说明页：[`04-skills-and-agents/templates/skills/self-assessment/README.md`](04-skills-and-agents/templates/skills/self-assessment/README.md)。它是一个模板资产，不是仓库里已经启用的内建命令。
+好的 harness 不是替人做决策，而是让人负责 steering，让 agent 负责 execution。
+
+---
+
+## Harness 模型
+
+可以先记住这 5 步：
+
+1. **先建地图**：用 `AGENTS.md`、索引和模块文档建立入口
+2. **再写事实**：让仓库变成 system of record
+3. **再加约束**：用模板、规则、hooks 和边界定义行为
+4. **再加反馈回路**：通过诊断、测试、评审和外部信号纠错
+5. **再管熵增**：通过文档维护、导航整洁和复查流程维持系统可读性
+
+一句最重要的话：**如果信息不在仓库里，agent 就无法可靠地使用它。**
 
 ---
 
 ## Plugins 与 oh-my-opencode
 
-如果你最关心的是：**plugin、hook、MCP 到底怎么区分**，或者你想重点了解 **oh-my-opencode**，请直接从这里开始：
+如果你最关心的是：**plugins、hooks、MCP 到底怎么区分**，或者你想重点理解 **oh-my-opencode**，请从这里开始：
 
 - [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
-- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) (Vibe Coding 实战与脚手架指南)
+- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md)
 - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
 
-这份指南会集中解释：
-
-- 官方 plugin 术语应该怎么理解
-- OpenCode plugins 和 MCP servers 的区别
-- hooks 在自动化里应该放在哪一层理解
-- 为什么 **oh-my-opencode** 作为社区插件 / 编排层值得重点学习
+这个仓库把 **oh-my-opencode** 理解为一个值得学习的**社区 harness 层**，而不是 OpenCode 的原生内建功能。
 
 ---
 
-## 选择你的路径
+## 选择你的 Harness 路径
 
-按你当前最想解决的问题开始：
-
-| 如果你想要…… | 先看 | 然后看 |
+| 如果你想…… | 先看 | 然后看 |
 |---|---|---|
-| 一个安全的新手起点 | [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md) | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) |
-| 更好的计划 / 评审 / 提交 / PR 请求写法 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) 等英文模板文件 |
+| 建一个安全的 starter harness | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) |
+| 给 agent 明确意图和执行合同 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
 | 理解 plugins、hooks、MCP 与 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) | [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md) |
-| 使用 oh-my-opencode 进行 Vibe Coding 实战 | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) 等模板文件 |
-| 判断重复任务是否值得做成技能或代理 | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) | [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) |
-| 检查团队是否能无猜测上手 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) | [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) |
-
-### 如果你是第一次使用 OpenCode
-
-建议按这个顺序：
-
-1. [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
-2. [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
-3. [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md)
-
-### 如果你想按需求浏览
-
-- 用 [INDEX.zh-CN.md](INDEX.zh-CN.md) 浏览完整中文索引
-- 用 [CATALOG.zh-CN.md](CATALOG.zh-CN.md) 查看当前文件和模板清单
-
-### 如果你需要贡献规则或代理规则
-
-这部分目前仍以英文为主：
-
-- [AGENTS.md](AGENTS.md)
-- [STYLE_GUIDE.md](STYLE_GUIDE.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
+| 用更强的 harness 跑 Vibe Coding | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) | [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
+| 给系统增加安全自动化与外部能力 | [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md) | [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md) |
+| 让 harness 能长期支持团队协作 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) | [08-cross-stack-templates/README.zh-CN.md](08-cross-stack-templates/README.zh-CN.md) |
 
 ---
 
 ## 15 分钟开始
 
-如果你现在只有很短的时间，按这个顺序做：
-
 1. 读 [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
-2. 读 [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
-3. 参考英文模板 [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
-4. 用 [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 把占位内容替换成真实仓库事实
+2. 复制起步模板 [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
+3. 用 [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 补全真实仓库事实
+4. 从 [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) 里选一个执行合同开始使用
 
-这样你会得到一个安全起步文档、一个事实核对清单，以及一个明确的下一步。
-
-如果你想继续往下走，下一层就是 [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md)。
+这已经足够搭起一个最小 harness：入口、事实、约束，以及一种明确的工作方式。
 
 ---
 
-## 当前能解决的实际问题
+## Harness 实际使用场景
 
 | 使用场景 | 该看什么 |
 |---|---|
-| 给新仓库写一个更可靠的 `AGENTS.md` 起步版 | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) + [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) |
-| 在让 OpenCode 改东西前先确认仓库事实 | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) + [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
-| 复用更好的计划或评审请求 | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) |
-| 写更清楚的 commit / PR 描述 | [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md) + [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md) |
-| 学习插件能力地图并评估 oh-my-opencode | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) |
-| 开启一次意图驱动的 Vibe Coding 实战 | [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) + [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) |
-| 判断一个重复任务是否值得做成 skill / agent | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) |
-| 检查团队是否能无隐藏知识地开始使用 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) |
+| 让仓库变成 agent 可读的 system of record | [AGENTS.md](AGENTS.md) + [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) |
+| 防止 agent 发明命令和结构 | [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) + [PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) |
+| 给 agent 更好的执行合同 | [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md) + [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md) |
+| 引入更强的社区编排层 | [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md) + [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md) |
+| 增加外部系统能力但不失控 | [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md) + [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md) |
+| 减少长期文档和模式漂移 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) + [SUPPORT.md](SUPPORT.md) |
 
 ---
 
-## 现在仓库里已经有什么
+## 现在已经有什么
 
-当前已经有：
+这个仓库已经有一套第一版的 harness 骨架。
 
-- 英文根文档入口层
-- 中文根文档入口层（本次新增）
-- `01` 到 `10` 的模块 README 中英双入口
-- 一组可复制的起步模板（模板正文当前仍是英文）
-- 根层支持文档，如贡献、风格、安全、行为规范等
-
-### 当前中文根文档
+### 根文档
 
 - [README.zh-CN.md](README.zh-CN.md)
 - [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
 - [INDEX.zh-CN.md](INDEX.zh-CN.md)
 - [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md)
 - [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md)
+- [README.md](README.md)
+- [CATALOG.md](CATALOG.md)
+- [AGENTS.md](AGENTS.md)
 
-### 当前中文模块入口
+### Harness 模块
 
-`01-getting-started/README.zh-CN.md` 到 `10-cli-and-terminal/README.zh-CN.md`
+| 顺序 | 模块 | Harness 职责 |
+|---|---|---|
+| 01 | [Getting Started](01-getting-started/README.zh-CN.md) | 建立初始 harness 入口 |
+| 02 | [Project Context](02-project-context/README.zh-CN.md) | 把仓库变成 system of record |
+| 03 | [Commands and Prompts](03-commands-and-prompts/README.zh-CN.md) | 建立执行合同 |
+| 04 | [Skills and Agents](04-skills-and-agents/README.zh-CN.md) | 把任务路由到正确能力 |
+| 05 | [Hooks and Automation](05-hooks-and-automation/README.zh-CN.md) | 增加内部扩展和自动化护栏 |
+| 06 | [Integrations and MCP](06-integrations-and-mcp/README.zh-CN.md) | 安全接入外部能力 |
+| 07 | [Team Workflows](07-team-workflows/README.zh-CN.md) | 让 harness 可以共享和延续 |
+| 08 | [Cross-Stack Templates](08-cross-stack-templates/README.zh-CN.md) | 提高可迁移性 |
+| 09 | [Advanced Workflows](09-advanced-workflows/README.zh-CN.md) | 编排复杂多阶段工作 |
+| 10 | [CLI and Terminal Usage](10-cli-and-terminal/README.zh-CN.md) | 定义终端边界 |
 
 ---
 
-## 现在就能复制使用的模板
+## 现在就能复制的模板
 
-下面这些模板文件当前都是真实存在的，但**模板正文仍为英文版**：
-
-| 路径 | 用途 |
+| 路径 | Harness 用途 |
 |---|---|
-| [`01-getting-started/templates/AGENTS.md`](01-getting-started/templates/AGENTS.md) | 最小可用的项目上下文起步文件 |
-| [`02-project-context/templates/PROJECT-FACTS-CHECKLIST.md`](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) | 事实核对清单 |
-| [`03-commands-and-prompts/templates/PLAN-REQUEST.md`](03-commands-and-prompts/templates/PLAN-REQUEST.md) | 计划请求模板 |
-| [`03-commands-and-prompts/templates/REVIEW-REQUEST.md`](03-commands-and-prompts/templates/REVIEW-REQUEST.md) | 评审请求模板 |
-| [`03-commands-and-prompts/templates/COMMIT-REQUEST.md`](03-commands-and-prompts/templates/COMMIT-REQUEST.md) | 提交信息请求模板 |
-| [`03-commands-and-prompts/templates/PR-REQUEST.md`](03-commands-and-prompts/templates/PR-REQUEST.md) | PR 描述请求模板 |
-| [`04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md`](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) | 判断是否需要技能/代理 |
-| [`04-skills-and-agents/templates/skills/self-assessment/SKILL.md`](04-skills-and-agents/templates/skills/self-assessment/SKILL.md) | self-assessment 技能模板正文 |
+| [`01-getting-started/templates/AGENTS.md`](01-getting-started/templates/AGENTS.md) | 最小 harness 入口 |
+| [`02-project-context/templates/PROJECT-FACTS-CHECKLIST.md`](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) | agent 可读事实清单 |
+| [`03-commands-and-prompts/templates/PLAN-REQUEST.md`](03-commands-and-prompts/templates/PLAN-REQUEST.md) | 规划合同 |
+| [`03-commands-and-prompts/templates/REVIEW-REQUEST.md`](03-commands-and-prompts/templates/REVIEW-REQUEST.md) | 评审合同 |
+| [`03-commands-and-prompts/templates/COMMIT-REQUEST.md`](03-commands-and-prompts/templates/COMMIT-REQUEST.md) | 变更摘要合同 |
+| [`03-commands-and-prompts/templates/PR-REQUEST.md`](03-commands-and-prompts/templates/PR-REQUEST.md) | 合并准备合同 |
+| [`04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md`](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md) | 能力路由决策辅助 |
 | [`05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md`](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md) | 自动化边界检查 |
-| [`06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md`](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md) | 本地集成说明 |
-| [`07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md`](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | 团队 onboarding 检查 |
-| [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | 技术栈 starter readiness |
-| [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | 高级工作流检查清单 |
-| [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | 使用 oh-my-opencode 启动 Vibe Coding 的模板 |
+| [`06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md`](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md) | 外部能力记录 |
+| [`07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md`](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md) | 团队共享 onboarding 检查 |
+| [`08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md`](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md) | 跨栈 readiness 检查 |
+| [`09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md`](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md) | 复杂工作流编排检查 |
+| [`09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md`](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) | harness 驱动的 Vibe Coding 启动模板 |
+
+这些都应该被理解为 harness 起步资产，而不是可直接无脑粘贴的成品。
 
 ---
 
 ## 常见问题
 
-**为什么这里没有已验证的安装、测试或构建命令？**
+**和以前的 “how-to” 写法相比，最大的变化是什么？**
 
-因为这个仓库目前仍然是文档优先阶段，还没有真实的包管理器、测试框架或构建链文件。只要这些文件不存在，相关命令就应该保持 `TBD`。
+仓库的中心从“功能教程”转成了“如何为 OpenCode 设计和维护 harness”。
 
-**中文版是不是把所有内容都翻译完了？**
+**这里最核心的一条 harness 规则是什么？**
 
-这次范围是：根层入口文档 + `01` 到 `10` 的模块 README。模板正文和部分支持文档目前仍为英文。
+如果信息不在仓库里，agent 就无法可靠地使用它。
 
-**我现在最适合复制什么？**
+**这里能替代 OpenCode 官方文档吗？**
 
-最适合复制的是起步模板和请求模板，但复制之后要立刻替换占位信息，不要盲贴。
+不能。这里是基于官方术语构建的 harness guide 层。
 
-**这里能替代官方 OpenCode 文档吗？**
+**我应该去哪里验证官方行为？**
 
-不能。这里更像学习路径和起步模板层；涉及产品真实行为、术语和边界时，仍然应当回到 `https://opencode.ai/docs/`。
+先看 <https://opencode.ai/docs/>，重点包括：
+
+- Rules / `AGENTS.md`: <https://opencode.ai/docs/rules/>
+- Agents: <https://opencode.ai/docs/agents/>
+- Commands: <https://opencode.ai/docs/commands/>
+- Tools: <https://opencode.ai/docs/tools/>
+- MCP servers: <https://opencode.ai/docs/mcp-servers/>
+- Plugins: <https://opencode.ai/docs/plugins/>
 
 ---
 
 ## 仓库支持文档
 
-当前这些支持文档仍以英文为主：
-
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [SECURITY.md](SECURITY.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SUPPORT.md](SUPPORT.md)
 - [LICENSE](LICENSE)
-- [AGENTS.md](AGENTS.md)
-- [STYLE_GUIDE.md](STYLE_GUIDE.md)
-
-它们不增加产品功能，但会影响仓库维护、协作方式和代理行为。
+- [.github/pull_request_template.md](.github/pull_request_template.md)
+- [.github/ISSUE_TEMPLATE/bug_report.md](.github/ISSUE_TEMPLATE/bug_report.md)
+- [.github/ISSUE_TEMPLATE/feature_request.md](.github/ISSUE_TEMPLATE/feature_request.md)
+- [.github/ISSUE_TEMPLATE/documentation.md](.github/ISSUE_TEMPLATE/documentation.md)
+- [.github/ISSUE_TEMPLATE/question.md](.github/ISSUE_TEMPLATE/question.md)
+- [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
 
 ---
 
@@ -232,10 +236,10 @@
 
 当前还没有：
 
-- 带已验证命令的 stack-specific starter kits
-- 绑定真实 package manifest 的可执行例子
-- 更深入的自动化和集成示例
-- 中文版模板正文和更多中文支持文档
+- 绑定真实 repo tooling 的更深入 harness walkthrough
+- 绑定真实测试或观测系统的 feedback loop 示例
+- 有已验证命令的 stack-specific harness kit
+- 更深入的 entropy management 与长期维护方法
 
 ---
 
@@ -243,15 +247,12 @@
 
 ### 今天已经验证存在
 
-- 英文根文档存在
-- 中文根文档入口存在
-- `01` 到 `10` 的模块中英 README 入口存在
-- 一组英文起步模板存在
-- 当前没有已验证的 package manager / build / lint / test / typecheck 命令
+- 仓库仍然是 documentation-first
+- 当前没有已验证 package manager
+- 当前没有已验证 install / lint / test / typecheck / build 命令
+- 中英文根入口都存在
+- harness 视角下的 plugin 与 vibe coding 指南已存在
 
 ### 这意味着什么
 
-- 优先使用文档和模板，不要假设代码脚手架已经准备好
-- 不要发明不存在的命令
-- 模板可以复制，但要按真实仓库情况改写
-- 当前的中文层已经能支撑完整阅读路径，但模板正文仍主要是英文
+这个仓库已经能教你 **一个好 harness 的形状**，但它还不是一个带可执行工具链的完整参考实现。

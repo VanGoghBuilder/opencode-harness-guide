@@ -1,5 +1,7 @@
 # Integrations and MCP
 
+> **Harness role**: This module expands the harness beyond the local repo by connecting external systems safely.
+
 This module explains how to safely connect OpenCode to external tools and data sources using the Model Context Protocol (MCP). It focuses on security, documentation, and managing secrets.
 
 ---

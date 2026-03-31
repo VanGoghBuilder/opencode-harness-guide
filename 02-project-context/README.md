@@ -1,5 +1,7 @@
 # Project Context
 
+> **Harness role**: This module turns your repository into a system of record instead of a pile of assumptions.
+
 This module explains how to ground OpenCode in your repository's actual state.
 The goal is to move from a beginner's mental model to a repeatable, documented repository pattern.
 

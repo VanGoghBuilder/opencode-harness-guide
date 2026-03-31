@@ -1,5 +1,7 @@
 # Hooks and Automation（中文版）
 
+> **Harness 职责**：这个模块为 harness 增加内部护栏和可重复自动化行为。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块讨论自动化边界，并通过官方 plugins 语境来理解 hooks：哪些内容适合自动化，哪些内容应该继续保留人工控制。

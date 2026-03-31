@@ -1,5 +1,7 @@
 # Advanced Workflows
 
+> **Harness role**: This module is about orchestrating complex, multi-step work without losing control or verification.
+
 This module covers multi-step workflow design, review and validation points, and scaling repeated processes without losing control.
 
 ---

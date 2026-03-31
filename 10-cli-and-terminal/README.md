@@ -1,5 +1,7 @@
 # CLI and Terminal Usage
 
+> **Harness role**: This module defines execution boundaries between human intent, OpenCode, plugins, and the system shell.
+
 This module covers truthful command documentation and terminal-facing workflow habits. It emphasizes aligning TUI/CLI wording with the official docs and knowing when command docs should stay `TBD`.
 
 ---
@@ -69,7 +71,7 @@ A common mistake is documenting commands that don't exist yet, confusing both hu
 
 ## 🎉 Conclusion
 
-You've completed the core OpenCode learning modules! You now have a solid understanding of how to ground OpenCode in reality, use structured prompts, orchestrate agents, automate safely with hooks and MCP, and scale your workflows across your team.
+You've completed the core OpenCode harness path. You now have a stronger map for grounding OpenCode in repo reality, using structured execution contracts, orchestrating agents, adding safe automation and MCP capability, and scaling the harness across your team.
 
 For specific feature references, always check the [official OpenCode documentation](https://opencode.ai/docs/).
 

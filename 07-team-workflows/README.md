@@ -1,5 +1,7 @@
 # Team Workflows
 
+> **Harness role**: This module makes the harness durable for teams instead of only useful to one operator.
+
 This module covers onboarding, shared conventions, and keeping team guidance aligned with repository reality. It is designed to help teams adopt OpenCode without chaos.
 
 ---

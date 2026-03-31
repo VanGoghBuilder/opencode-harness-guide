@@ -1,11 +1,11 @@
-# OpenCode Index
+# OpenCode Harness Index
 
 This is the broadest browseable map of the repository.
-Use it when you know what you need, but not where it lives.
+Use it when you know the harness question you need to answer, but not where the answer lives.
 
 ---
 
-## Start by need
+## Start by harness need
 
 ### I need the Chinese version
 
@@ -14,19 +14,19 @@ Use it when you know what you need, but not where it lives.
 - [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
 - [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md)
 
-### I am new to OpenCode
+### I need the harness overview
 
 - [README.md](README.md)
 - [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-- [01-getting-started/README.md](01-getting-started/README.md)
+- [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md)
 
-### I need project context guidance
+### I need repo context or system-of-record guidance
 
 - [02-project-context/README.md](02-project-context/README.md)
 - [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
 - [AGENTS.md](AGENTS.md)
 
-### I need reusable prompt or review patterns
+### I need execution contracts
 
 - [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
 - [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md)
@@ -34,58 +34,37 @@ Use it when you know what you need, but not where it lives.
 - [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md)
 - [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md)
 
-### I need guidance on specialization
+### I need capability routing guidance
 
 - [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
 - [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md)
 - [04-skills-and-agents/templates/skills/self-assessment/README.md](04-skills-and-agents/templates/skills/self-assessment/README.md)
 
-### I need automation or integration guidance
-
-- [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
-- [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md)
-- [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
-- [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
-
-### I need plugin or oh-my-opencode guidance
+### I need plugins, hooks, MCP, or oh-my-opencode guidance
 
 - [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
 - [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
-- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
+- [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
 
-### I need team or onboarding guidance
-
-- [07-team-workflows/README.md](07-team-workflows/README.md)
-- [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-
-### I need repository support or governance docs
-
-- [SECURITY.md](SECURITY.md)
-- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- [LICENSE](LICENSE)
-- [SUPPORT.md](SUPPORT.md)
-
-### I need issue or reporting templates
-
-- [.github/pull_request_template.md](.github/pull_request_template.md)
-- [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
-- [.github/ISSUE_TEMPLATE/bug_report.md](.github/ISSUE_TEMPLATE/bug_report.md)
-- [.github/ISSUE_TEMPLATE/feature_request.md](.github/ISSUE_TEMPLATE/feature_request.md)
-- [.github/ISSUE_TEMPLATE/documentation.md](.github/ISSUE_TEMPLATE/documentation.md)
-- [.github/ISSUE_TEMPLATE/question.md](.github/ISSUE_TEMPLATE/question.md)
-
-### I need future stack planning guidance
-
-- [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md)
-- [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md)
-
-### I need stronger workflow or terminal guidance
+### I need advanced orchestration guidance
 
 - [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
+
+### I need team durability or long-term maintenance guidance
+
+- [07-team-workflows/README.md](07-team-workflows/README.md)
+- [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md)
+- [SUPPORT.md](SUPPORT.md)
+
+### I need execution-boundary guidance
+
 - [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
+- [SECURITY.md](SECURITY.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [LICENSE](LICENSE)
 
 ---
 
@@ -96,17 +75,20 @@ Use it when you know what you need, but not where it lives.
 - [INDEX.md](INDEX.md)
 - [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md)
 - [CATALOG.md](CATALOG.md)
+- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
+- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
 - [STYLE_GUIDE.md](STYLE_GUIDE.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [SECURITY.md](SECURITY.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SUPPORT.md](SUPPORT.md)
 - [LICENSE](LICENSE) *(license-status placeholder)*
 - [CHANGELOG.md](CHANGELOG.md)
 - [AGENTS.md](AGENTS.md)
 
 ---
 
-## Numbered modules
+## Harness modules
 
 1. [01-getting-started/README.md](01-getting-started/README.md)
 2. [02-project-context/README.md](02-project-context/README.md)
@@ -121,7 +103,7 @@ Use it when you know what you need, but not where it lives.
 
 ---
 
-## Starter templates
+## Starter harness assets
 
 - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
 - [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
@@ -130,29 +112,9 @@ Use it when you know what you need, but not where it lives.
 - [03-commands-and-prompts/templates/COMMIT-REQUEST.md](03-commands-and-prompts/templates/COMMIT-REQUEST.md)
 - [03-commands-and-prompts/templates/PR-REQUEST.md](03-commands-and-prompts/templates/PR-REQUEST.md)
 - [04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md](04-skills-and-agents/templates/SPECIALIZATION-DECISION-CHECKLIST.md)
-- [04-skills-and-agents/templates/skills/self-assessment/README.md](04-skills-and-agents/templates/skills/self-assessment/README.md)
 - [05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md](05-hooks-and-automation/templates/AUTOMATION-BOUNDARY-CHECKLIST.md)
 - [06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)
 - [07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md](07-team-workflows/templates/TEAM-ONBOARDING-CHECKLIST.md)
 - [08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md](08-cross-stack-templates/templates/STACK-STARTER-READINESS-CHECKLIST.md)
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
-
----
-
-## Present now vs planned later
-
-### Present now
-
-- root onboarding docs
-- repository support and governance docs
-- `.github` support files for issue intake and reporting
-- modules `01` through `10`
-- a first-pass starter template library
-
-### Planned later
-
-- stack-specific starter kits
-- verified command references tied to real toolchains
-- deeper executable examples
-- richer integration examples

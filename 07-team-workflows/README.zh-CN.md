@@ -1,5 +1,7 @@
 # Team Workflows（中文版）
 
+> **Harness 职责**：这个模块让 harness 不只对一个操作者有效，而能长期支持团队协作。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块讨论团队 onboarding、共享约定，以及如何让团队文档始终和仓库现实保持一致。

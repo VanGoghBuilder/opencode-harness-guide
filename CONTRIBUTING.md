@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve `opencode-howto`.
+Thanks for helping improve `opencode-harness-guide`.
 This repository is a documentation-first rewrite for first-time OpenCode users, so the best contributions are usually the ones that make the project easier to enter, easier to trust, and easier to copy from.
 
 Before contributing, also read [LICENSE](LICENSE). This repository is public, but it does **not yet publish a final open-source license**, so reuse and downstream expectations should not be assumed beyond what that file currently states.

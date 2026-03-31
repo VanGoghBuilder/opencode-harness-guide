@@ -1,131 +1,99 @@
-# OpenCode 学习路线图（中文版）
+# OpenCode Harness 路线图
 
-**语言 / Language：** [简体中文](LEARNING-ROADMAP.zh-CN.md) | [English](LEARNING-ROADMAP.md)
+这份路线图面向的是：想为 OpenCode 建立一套可靠 **harness** 的人，而不只是零散学习单个功能的人。
 
-这份路线图面向第一次使用 OpenCode 的人。它和中文快速参考、中文索引一起工作，让你可以按时间或按模块顺序学习。
-
-> **当前状态**：`01` 到 `10` 的文档模块已经存在，并且现在都有中文 README 入口。起步模板存在，但模板正文目前主要仍为英文。
+> **当前状态**：仓库已经有第一版中英文 harness 骨架。更深入的 feedback loop 示例和 stack-specific harness kit 仍然属于未来工作。
 
 ---
 
-## 🧭 判断你的起点
+## 🧭 你的 Harness 现在处于哪个阶段？
 
-每个人的起点不一样。你可以用下面这组问题快速判断自己应该从哪里开始。
+用这些问题判断你当前的阶段：
 
-- [ ] 我已经能启动 OpenCode 并进行基本对话
-- [ ] 我写过 `AGENTS.md` 或类似的上下文文件
-- [ ] 我会使用结构化请求模板（例如 `PLAN-REQUEST.md`）
-- [ ] 我使用过 `explore`、`librarian` 之类的专业代理
-- [ ] 我配置过 MCP 服务连接外部工具
-- [ ] 我理解 hooks 或自动化边界
+- [ ] 我已经给 agent 提供了可读入口，例如 `AGENTS.md`
+- [ ] 仓库事实已经写进 repo，而不是只存在于人口述里
+- [ ] 我使用的是结构化执行合同，而不是模糊的一次性 prompt
+- [ ] 我知道什么时候该把任务路由给 skill 或 agent
+- [ ] 我已经有至少一条 feedback loop，例如 diagnostics、tests 或 review contract
+- [ ] 我理解 built-in tools、plugins 和 MCP servers 的区别
+- [ ] 我已经考虑过 drift、onboarding 和长期维护问题
 
-| 勾选数 | 级别 | 建议开始位置 | 重点 |
+| 勾选数 | 阶段 | 建议开始位置 | 重点 |
 |---|---|---|---|
-| 0-1 | **Level 1：Beginner** | [01 - Getting Started](01-getting-started/README.zh-CN.md) | 安全起步 |
-| 2-3 | **Level 2：Intermediate** | [04 - Skills and Agents](04-skills-and-agents/README.zh-CN.md) | 可复用模式 |
-| 4-6 | **Level 3：Advanced** | [06 - Integrations and MCP](06-integrations-and-mcp/README.zh-CN.md) | 自动化与集成 |
-
-> **模板版自检**：仓库中有一个 self-assessment 技能模板说明页：[`04-skills-and-agents/templates/skills/self-assessment/README.md`](04-skills-and-agents/templates/skills/self-assessment/README.md)。它是模板说明，不是已经启用的仓库功能。
+| 0-2 | **阶段 1：Map** | [01 - Getting Started](01-getting-started/README.zh-CN.md) | 建立 harness 入口 |
+| 3-4 | **阶段 2：Constraints** | [03 - Commands & Prompts](03-commands-and-prompts/README.zh-CN.md) | 建立执行合同和路由 |
+| 5-7 | **阶段 3：Feedback** | [05 - Hooks & Automation](05-hooks-and-automation/README.zh-CN.md) | 扩展能力和纠错回路 |
 
 ---
 
-## 学习建议
+## 这个仓库使用的 Harness 原则
 
-- 如果不确定，从更低一级开始通常更安全
-- 一次只复制一个模板，不要一次全上
-- 遇到未知内容时，写 `TBD` 而不是猜
-- 不要假设仓库里已经有 package、lint、test 或 build 命令
-- 需要浏览时优先用 [INDEX.zh-CN.md](INDEX.zh-CN.md) 或 [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
+- 仓库本身是 system of record
+- progressive disclosure 比“大而全说明书”更可靠
+- 约束比微观管理更可靠
+- feedback loop 比单次生成速度更重要
+- entropy management 是日常工作的一部分，不是以后再补的清理活
 
 ---
 
-## 🗺️ 你的学习路径
+## 🗺️ Harness 构建路径
 
 ```mermaid
 graph TD
-    Q["🧭 自检模板<br/>判断起点"] --> L1
-    Q --> L2
-    Q --> L3
-
-    subgraph L1["🟢 Level 1：安全起步"]
-        direction LR
-        A["01：Getting Started<br/>基本心智模型"] --> B["02：Project Context<br/>事实与 AGENTS.md"]
-    end
-
-    subgraph L2["🔵 Level 2：可复用模式"]
-        direction LR
-        C["03：Commands & Prompts<br/>结构化请求"] --> D["04：Skills & Agents<br/>专业化决策"]
-    end
-
-    subgraph L3["🔴 Level 3：自动化与集成"]
-        direction LR
-        E["05：Hooks & Automation<br/>边界与防护"] --> F["06：Integrations & MCP<br/>外部工具接入"]
-    end
-
-    subgraph L4["🟠 Level 4：团队与高级流程"]
-        direction LR
-        G["07：Team Workflows<br/>Onboarding"] --> H["08：Cross-Stack Templates<br/>Readiness"]
-        H --> I["09：Advanced Workflows<br/>多阶段流程"]
-        I --> J["10：CLI & Terminal Usage<br/>终端边界"]
-    end
-
-    L1 --> L2
-    L2 --> L3
-    L3 --> L4
+    A["01：Getting Started<br/>建立地图"] --> B["02：Project Context<br/>记录事实"]
+    B --> C["03：Commands & Prompts<br/>建立执行合同"]
+    C --> D["04：Skills & Agents<br/>做能力路由"]
+    D --> E["05：Hooks & Automation<br/>增加内部护栏"]
+    E --> F["06：Integrations & MCP<br/>增加外部能力"]
+    F --> G["07：Team Workflows<br/>共享 Harness"]
+    G --> H["08：Cross-Stack Templates<br/>提升可迁移性"]
+    H --> I["09：Advanced Workflows<br/>编排复杂工作"]
+    I --> J["10：CLI & Terminal Usage<br/>控制执行边界"]
 ```
 
 ---
 
-## 📊 完整路线表
+## 📊 完整 Harness 路线表
 
-| 步骤 | 模块 | 重点 | 级别 | 收获 |
-|---|---|---|---|---|
-| 01 | [Getting Started](01-getting-started/README.zh-CN.md) | 安全习惯、起步 `AGENTS.md` | L1 | 成为可以安全开始的新手 |
-| 02 | [Project Context](02-project-context/README.zh-CN.md) | 已验证事实、上下文文件 | L1 | 减少幻觉式命令和假设 |
-| 03 | [Commands & Prompts](03-commands-and-prompts/README.zh-CN.md) | 可复用请求结构 | L2 | 请求更稳定 |
-| 04 | [Skills & Agents](04-skills-and-agents/README.zh-CN.md) | 官方 OpenCode 能力与专业化判断 | L2 | 知道什么时候该正式复用 |
-| 05 | [Hooks & Automation](05-hooks-and-automation/README.zh-CN.md) | 自动化边界 | L3 | 更安全的质量门槛 |
-| 06 | [Integrations & MCP](06-integrations-and-mcp/README.zh-CN.md) | MCP 与本地 secrets | L3 | 更安全地连接外部工具 |
-| 07 | [Team Workflows](07-team-workflows/README.zh-CN.md) | onboarding 与共享约定 | L4 | 团队更少靠口头传承 |
-| 08 | [Cross-Stack Templates](08-cross-stack-templates/README.zh-CN.md) | 什么时候该做 stack starter | L4 | 更好地判断 starter readiness |
-| 09 | [Advanced Workflows](09-advanced-workflows/README.zh-CN.md) | 多阶段流程设计 | L4 | 更好地协调重复性复杂工作 |
-| 10 | [CLI & Terminal Usage](10-cli-and-terminal/README.zh-CN.md) | 真实命令文档 | L4 | 更好的终端文档与边界意识 |
+| 步骤 | 模块 | Harness 职责 | 结果 |
+|---|---|---|---|
+| **01** | [Getting Started](01-getting-started/README.zh-CN.md) | 建立初始 harness 入口 | agent 有地图可看 |
+| **02** | [Project Context](02-project-context/README.zh-CN.md) | 把仓库变成 system of record | 更少幻觉式假设 |
+| **03** | [Commands & Prompts](03-commands-and-prompts/README.zh-CN.md) | 建立执行合同 | 意图更清晰，计划更稳定 |
+| **04** | [Skills & Agents](04-skills-and-agents/README.zh-CN.md) | 把任务路由到正确能力 | 更少随机执行 |
+| **05** | [Hooks & Automation](05-hooks-and-automation/README.zh-CN.md) | 增加内部护栏 | 重复工作更安全 |
+| **06** | [Integrations & MCP](06-integrations-and-mcp/README.zh-CN.md) | 安全增加外部能力 | 能力变强但不失控 |
+| **07** | [Team Workflows](07-team-workflows/README.zh-CN.md) | 让 harness 可共享 | 更少 tribal knowledge |
+| **08** | [Cross-Stack Templates](08-cross-stack-templates/README.zh-CN.md) | 提高可迁移性 | 更容易跨仓库复用 |
+| **09** | [Advanced Workflows](09-advanced-workflows/README.zh-CN.md) | 编排复杂多阶段工作 | 更高杠杆的自动化 |
+| **10** | [CLI & Terminal Usage](10-cli-and-terminal/README.zh-CN.md) | 定义 shell 边界 | 执行控制更安全 |
 
 ---
 
 ## 按时间选择路径
 
 ### 如果你只有 15 分钟
-
-1. 读 [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
-2. 参考 [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
-3. 用 [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 填写真是仓库事实
-4. 再带着这些上下文去问 OpenCode 一个真实问题
+1. 用 [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md) 建地图
+2. 用 [PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 写事实
+3. 从 [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) 里选一个执行合同
 
 ### 如果你有 1 小时
-
-1. **上下文**（15 分钟）：完成 `AGENTS.md` 起步稿并核对仓库事实
-2. **请求模板**（15 分钟）：试一次 `PLAN-REQUEST.md` 或 `REVIEW-REQUEST.md`
-3. **专业化**（15 分钟）：阅读 [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md)
-4. **团队视角**（15 分钟）：浏览 [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md)
+1. **Map**：创建或清理 `AGENTS.md`
+2. **Facts**：验证命令和仓库现实
+3. **Contracts**：采用一个 planning 或 review 模板
+4. **Routing**：判断是否需要 skills、agents、plugins 或 MCP
 
 ### 如果你有一个周末
-
-1. 先读 [01](01-getting-started/README.zh-CN.md) 到 [03](03-commands-and-prompts/README.zh-CN.md)，建立安全起点和更好的请求方式
-2. 再读 [04](04-skills-and-agents/README.zh-CN.md) 到 [07](07-team-workflows/README.zh-CN.md)，理解专业化、自动化边界、MCP 与团队协作
-3. 最后按需进入 [08](08-cross-stack-templates/README.zh-CN.md) 到 [10](10-cli-and-terminal/README.zh-CN.md)
-4. 全程保持 `TBD` 边界，不要把未来计划写成当前事实
+1. 用 [01](01-getting-started/README.zh-CN.md) 到 [03](03-commands-and-prompts/README.zh-CN.md) 建立根 harness
+2. 用 [04](04-skills-and-agents/README.zh-CN.md) 到 [06](06-integrations-and-mcp/README.zh-CN.md) 增加能力和 feedback loops
+3. 用 [07](07-team-workflows/README.zh-CN.md) 到 [10](10-cli-and-terminal/README.zh-CN.md) 让 harness 更 durable
+4. 所有未知内容继续标记为 `TBD`
 
 ---
 
 ## 仍在未来阶段的内容
 
-这份路线图有真实文件支撑，但下面这些内容仍然属于未来工作：
-
-- 带已验证命令的 stack-specific starter kits
-- 与真实 manifest 绑定的命令参考
-- 更深入的自动化示例
-- 更深入的 MCP / integration 示例
-- 中文版模板正文
-
-当前最合理的边界就是这样：结构已经有了，接下来是逐步加深。
+- 更深入的 feedback loop 示例
+- 绑定真实观测或测试系统的例子
+- 带已验证命令的 stack-specific harness kit
+- 更多长期 entropy management 模式

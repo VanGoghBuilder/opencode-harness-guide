@@ -1,5 +1,7 @@
 # Integrations and MCP（中文版）
 
+> **Harness 职责**：这个模块安全地把 harness 从本地仓库扩展到外部系统。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块解释如何通过 Model Context Protocol（MCP）把 OpenCode 安全地连接到外部工具和数据源。

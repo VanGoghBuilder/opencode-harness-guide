@@ -1,5 +1,7 @@
 # Advanced Workflows（中文版）
 
+> **Harness 职责**：这个模块讨论如何编排复杂多阶段工作，同时不丢失控制和验证。
+
 **语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
 
 这个模块讨论多阶段工作流设计、评审和验证点，以及如何在不失控的前提下扩展重复流程。

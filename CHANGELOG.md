@@ -1,6 +1,6 @@
 # Changelog
 
-All notable documentation milestones for `opencode-howto` should be recorded here.
+All notable documentation milestones for `opencode-harness-guide` should be recorded here.
 
 This is a lightweight changelog for the rewrite, not a product release log.
 

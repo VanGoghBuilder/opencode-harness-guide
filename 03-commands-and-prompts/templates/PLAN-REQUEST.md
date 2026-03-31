@@ -1,5 +1,7 @@
 # Plan Request
 
+Use this as an **execution contract** when you want the agent to explore first and plan before changing anything.
+
 Use this prompt when you want OpenCode to inspect a repository, identify unknowns, and propose the smallest useful plan.
 
 ---
