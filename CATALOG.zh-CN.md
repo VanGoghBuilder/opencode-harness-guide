@@ -89,7 +89,9 @@ README 是主入口。CATALOG 是完整目录。
 
 ## 真实案例
 
+- [examples/docs-repo-harness.zh-CN.md](examples/docs-repo-harness.zh-CN.md)
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
 - [examples/long-running-app-harness.zh-CN.md](examples/long-running-app-harness.zh-CN.md)
+- [examples/docs-repo-harness.md](examples/docs-repo-harness.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
 - [examples/long-running-app-harness.md](examples/long-running-app-harness.md)

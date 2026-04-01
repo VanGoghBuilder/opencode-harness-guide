@@ -89,7 +89,9 @@ These templates are still mainly English-only.
 
 ## Worked examples
 
+- [examples/docs-repo-harness.md](examples/docs-repo-harness.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
 - [examples/long-running-app-harness.md](examples/long-running-app-harness.md)
+- [examples/docs-repo-harness.zh-CN.md](examples/docs-repo-harness.zh-CN.md)
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
 - [examples/long-running-app-harness.zh-CN.md](examples/long-running-app-harness.zh-CN.md)
