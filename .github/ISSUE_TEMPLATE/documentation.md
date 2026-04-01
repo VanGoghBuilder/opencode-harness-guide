@@ -4,7 +4,7 @@ about: Report a docs problem or request a docs improvement
 ---
 
 ## What file is affected?
-[Example: README.md, 04-skills-and-agents/README.zh-CN.md]
+[Example: README.md, 04-skills-and-agents/README.md]
 
 ## What is wrong?
 - [ ] unclear instruction

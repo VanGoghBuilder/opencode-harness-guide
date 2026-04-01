@@ -72,7 +72,7 @@
 
 如果任务会动到根文档，按这个顺序：
 1. `README.md`
-2. `README.zh-CN.md`
+2. `README.md`
 3. `CATALOG.md`
 4. `CATALOG.zh-CN.md`
 5. 只有确实影响 reporting / contribution / governance 时，再动 support docs
@@ -118,7 +118,7 @@
 
 ## 这个案例配合这些文件一起用
 
-- [../README.zh-CN.md](../README.zh-CN.md)
+- [../README.md](../README.md)
 - [../CATALOG.zh-CN.md](../CATALOG.zh-CN.md)
 - [../AGENTS.md](../AGENTS.md)
-- [../.opencode/README.zh-CN.md](../.opencode/README.zh-CN.md)
+- [../.opencode/README.md](../.opencode/README.md)

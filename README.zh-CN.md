@@ -1,6 +1,6 @@
 # OpenCode Harness Guide 中文版
 
-**语言 / Language：** [简体中文](README.zh-CN.md) | [English](README.md)
+**语言 / Language：** [简体中文](README.md) | [English](README.en.md)
 
 从这里开始。不要先把所有文档看一遍。先把 repo 写清楚，再选一个任务模板，不够用时再往后加。
 
@@ -26,7 +26,7 @@
 ## 如果你想直接复制现成的 OpenCode starter pack
 
 从这些文件开始：
-- [.opencode/README.zh-CN.md](.opencode/README.zh-CN.md)
+- [.opencode/README.md](.opencode/README.md)
 - [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
 - [.opencode/commands/review-readme.md](.opencode/commands/review-readme.md)
 - [.opencode/commands/review-module.md](.opencode/commands/review-module.md)
@@ -45,17 +45,17 @@
 
 | 如果你现在要解决…… | 打开这个 | 然后这样做 |
 |---|---|---|
-| 让 agent 停止猜 | [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md) | 建立或修正 `AGENTS.md` |
-| 写清 repo 里的真实事实 | [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md) | 跑 facts checklist |
-| 更稳地发任务给 agent | [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md) | 选一个任务模板 |
-| 创建 command、agent 或 skill | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) | 在 `.opencode/` 里创建对应文件 |
-| 给系统加内部自动化 | [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md) | 把检查分成 automate/manual |
-| 安全接外部系统 | [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md) | 写 local integration notes |
-| 让团队也能照着用 | [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md) | 跑 onboarding checklist |
-| 把这套做法迁移到别的技术栈 | [08-cross-stack-templates/README.zh-CN.md](08-cross-stack-templates/README.zh-CN.md) | 先分清哪些内容通用，哪些要等真实命令出现再写 |
-| 跑一个更大的编排任务 | [09-advanced-workflows/README.zh-CN.md](09-advanced-workflows/README.zh-CN.md) | 从 kickoff template 开始 |
-| 诚实地写命令文档 | [10-cli-and-terminal/README.zh-CN.md](10-cli-and-terminal/README.zh-CN.md) | 逐条验证命令对应真实文件 |
-| 判断该用 built-in、plugin、MCP 还是 OMO | [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md) | 先选下一层，再决定要不要复制 starter files |
+| 让 agent 停止猜 | [01-getting-started/README.md](01-getting-started/README.md) | 建立或修正 `AGENTS.md` |
+| 写清 repo 里的真实事实 | [02-project-context/README.md](02-project-context/README.md) | 跑 facts checklist |
+| 更稳地发任务给 agent | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | 选一个任务模板 |
+| 创建 command、agent 或 skill | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | 在 `.opencode/` 里创建对应文件 |
+| 给系统加内部自动化 | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) | 把检查分成 automate/manual |
+| 安全接外部系统 | [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md) | 写 local integration notes |
+| 让团队也能照着用 | [07-team-workflows/README.md](07-team-workflows/README.md) | 跑 onboarding checklist |
+| 把这套做法迁移到别的技术栈 | [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md) | 先分清哪些内容通用，哪些要等真实命令出现再写 |
+| 跑一个更大的编排任务 | [09-advanced-workflows/README.md](09-advanced-workflows/README.md) | 从 kickoff template 开始 |
+| 诚实地写命令文档 | [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md) | 逐条验证命令对应真实文件 |
+| 判断该用 built-in、plugin、MCP 还是 OMO | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | 先选下一层，再决定要不要复制 starter files |
 
 ---
 
@@ -80,16 +80,16 @@
 ## 如果你只想要一个简单学习顺序
 
 按这个顺序读：
-1. [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
-2. [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md)
-3. [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md)
-4. [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md)
-5. [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md)
-6. [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md)
-7. [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md)
-8. [08-cross-stack-templates/README.zh-CN.md](08-cross-stack-templates/README.zh-CN.md)
-9. [09-advanced-workflows/README.zh-CN.md](09-advanced-workflows/README.zh-CN.md)
-10. [10-cli-and-terminal/README.zh-CN.md](10-cli-and-terminal/README.zh-CN.md)
+1. [01-getting-started/README.md](01-getting-started/README.md)
+2. [02-project-context/README.md](02-project-context/README.md)
+3. [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
+4. [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
+5. [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
+6. [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
+7. [07-team-workflows/README.md](07-team-workflows/README.md)
+8. [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md)
+9. [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
+10. [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 
 不需要下一层时，就停下，不要为了“看全”继续往后加复杂度。
 
@@ -98,7 +98,7 @@
 ## 如果你想减少要看的根文档
 
 只看这 2 个：
-- 主入口：[README.zh-CN.md](README.zh-CN.md)
+- 主入口：[README.md](README.md)
 - 完整目录：[CATALOG.zh-CN.md](CATALOG.zh-CN.md)
 
 ---

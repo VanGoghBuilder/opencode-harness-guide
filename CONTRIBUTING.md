@@ -26,7 +26,7 @@ Do not assume this repo is under a final open-source license yet. Check `LICENSE
    - `README.md`
    - `CATALOG.md`
 4. If the change affects bilingual entry docs, update the Chinese side too:
-   - `README.zh-CN.md`
+   - `README.md`
    - `CATALOG.zh-CN.md`
 5. Run a link check or equivalent verification
 

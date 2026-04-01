@@ -7,28 +7,28 @@
 ## 主根文档
 
 - [README.md](README.md)
+- [README.en.md](README.en.md)
 - [CATALOG.md](CATALOG.md)
-- [README.zh-CN.md](README.zh-CN.md)
 - [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
 
-README 是主入口。CATALOG 是完整目录。
+README.md 是中文主入口。README.en.md 是英文辅助入口。CATALOG 是完整目录。
 
 ---
 
 ## 模块文档
 
-- [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
-- [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md)
-- [03-commands-and-prompts/README.zh-CN.md](03-commands-and-prompts/README.zh-CN.md)
-- [04-skills-and-agents/README.zh-CN.md](04-skills-and-agents/README.zh-CN.md)
-- [05-hooks-and-automation/README.zh-CN.md](05-hooks-and-automation/README.zh-CN.md)
-- [06-integrations-and-mcp/README.zh-CN.md](06-integrations-and-mcp/README.zh-CN.md)
-- [07-team-workflows/README.zh-CN.md](07-team-workflows/README.zh-CN.md)
-- [08-cross-stack-templates/README.zh-CN.md](08-cross-stack-templates/README.zh-CN.md)
-- [09-advanced-workflows/README.zh-CN.md](09-advanced-workflows/README.zh-CN.md)
-- [10-cli-and-terminal/README.zh-CN.md](10-cli-and-terminal/README.zh-CN.md)
+- [01-getting-started/README.md](01-getting-started/README.md)
+- [02-project-context/README.md](02-project-context/README.md)
+- [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
+- [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
+- [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
+- [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
+- [07-team-workflows/README.md](07-team-workflows/README.md)
+- [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md)
+- [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
+- [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 
-`01` 到 `10` 的英文模块也都存在。
+`01` 到 `10` 里，`README.md` 现在是中文主入口，`README.en.md` 是英文辅助入口。
 
 ---
 
@@ -56,7 +56,7 @@ README 是主入口。CATALOG 是完整目录。
 
 ## 现成的 `.opencode` starter files
 
-- [.opencode/README.zh-CN.md](.opencode/README.zh-CN.md)
+- [.opencode/README.md](.opencode/README.md)
 - [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
 - [.opencode/commands/review-readme.md](.opencode/commands/review-readme.md)
 - [.opencode/commands/review-module.md](.opencode/commands/review-module.md)
@@ -88,7 +88,7 @@ README 是主入口。CATALOG 是完整目录。
 ---
 
 ## 真实案例
-- [examples/README.zh-CN.md](examples/README.zh-CN.md)
+- [examples/README.md](examples/README.md)
 
 
 - [examples/docs-repo-harness.zh-CN.md](examples/docs-repo-harness.zh-CN.md)

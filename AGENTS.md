@@ -12,10 +12,10 @@ It separates verified facts from provisional conventions.
 - Public documentation identity in progress: `opencode-harness-guide`
 - Current state: documentation-first rewrite in progress, with the content being reframed around harness engineering
 - Present root docs: `AGENTS.md`, `README.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`, `.opencode/README.md`
-- Present Chinese entry docs: `README.zh-CN.md`, `CATALOG.zh-CN.md`
+- Present Chinese primary entry docs: `README.md`, `CATALOG.zh-CN.md`, `.opencode/README.md`, `examples/README.md`
 - Present license-status file: `LICENSE`
-- Present numbered modules: `01-getting-started/README.md` through `10-cli-and-terminal/README.md`
-- Present Chinese module entry docs: `01-getting-started/README.zh-CN.md` through `10-cli-and-terminal/README.zh-CN.md`
+- Present numbered module primary entry docs: `01-getting-started/README.md` through `10-cli-and-terminal/README.md`
+- Present English auxiliary module entry docs: `01-getting-started/README.en.md` through `10-cli-and-terminal/README.en.md`
 - Present starter templates:
   - `01-getting-started/templates/AGENTS.md`
   - `02-project-context/templates/PROJECT-FACTS-CHECKLIST.md`

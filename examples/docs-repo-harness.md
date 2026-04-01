@@ -72,7 +72,7 @@ Use them like this:
 
 If the task touches root docs, use this order:
 1. `README.md`
-2. `README.zh-CN.md`
+2. `README.md`
 3. `CATALOG.md`
 4. `CATALOG.zh-CN.md`
 5. support docs only if the change affects reporting, contribution, or governance

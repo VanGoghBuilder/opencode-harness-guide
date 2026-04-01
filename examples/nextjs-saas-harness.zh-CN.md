@@ -135,5 +135,5 @@ Check:
 
 ## 这个案例要配合这些文件一起用
 
-- [../README.zh-CN.md](../README.zh-CN.md)
+- [../README.md](../README.md)
 - [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)

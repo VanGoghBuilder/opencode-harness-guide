@@ -7,11 +7,11 @@ Use this file when you want to know what files already exist before creating a n
 ## Main root docs
 
 - [README.md](README.md)
+- [README.en.md](README.en.md)
 - [CATALOG.md](CATALOG.md)
-- [README.zh-CN.md](README.zh-CN.md)
 - [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
 
-README is the main entry. CATALOG is the full inventory.
+README.md is the Chinese primary entry. README.en.md is the English auxiliary entry. CATALOG is the full inventory.
 
 ---
 
@@ -28,7 +28,7 @@ README is the main entry. CATALOG is the full inventory.
 - [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
 - [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 
-Chinese module pairs exist for all `01` through `10` module READMEs.
+For modules `01` through `10`, `README.md` is now the Chinese primary entry and `README.en.md` is the English auxiliary entry.
 
 ---
 

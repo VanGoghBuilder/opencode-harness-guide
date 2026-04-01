@@ -1,29 +1,31 @@
-# OpenCode Harness Guide
+# OpenCode Harness Guide 中文版
 
-**Language / 语言：** [English](README.md) | [简体中文](README.zh-CN.md)
+**语言 / Language：** [简体中文](README.md) | [English](README.en.md)
 
-Start here. Do not start by reading every file. First make the repo readable, then use one task template, then add more only when needed.
+从这里开始。不要先把所有文档看一遍。先把 repo 写清楚，再选一个任务模板，不够用时再往后加。
 
 ---
 
-## Start now
+## 现在开始
 
-Do this in order:
+按这个顺序做：
 
-1. Copy [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
-2. Fill it with [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
-3. Use one task template:
+1. 复制 [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
+2. 用 [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md) 填事实
+3. 选一个任务模板：
    - [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md)
    - [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md)
-4. If the task is multi-file or risky, start from [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
+4. 如果任务是多文件或风险更高，就从 [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) 开始
 
-If your repo does not prove a command exists, keep it as `TBD`.
+只要 repo 不能证明某个命令存在，就继续写成 `TBD`。
+
+说明：当前很多 templates 和 support docs 仍然主要是英文版，中文文档会直接带你跳到这些英文文件，但不会假装它们已经有完整中文版。
 
 ---
 
-## If you need a ready-made OpenCode starter pack
+## 如果你想直接复制现成的 OpenCode starter pack
 
-Copy from:
+从这些文件开始：
 - [.opencode/README.md](.opencode/README.md)
 - [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
 - [.opencode/commands/review-readme.md](.opencode/commands/review-readme.md)
@@ -35,49 +37,49 @@ Copy from:
 - [.opencode/agents/repo-facts-checker.md](.opencode/agents/repo-facts-checker.md)
 - [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
 
-Keep the same `.opencode/` folder structure when you copy them.
+复制时保留同样的 `.opencode/` 目录结构。
 
 ---
 
-## Pick the next thing you need
+## 按你现在的任务选入口
 
-| If you need to... | Open this | Then do this |
+| 如果你现在要解决…… | 打开这个 | 然后这样做 |
 |---|---|---|
-| stop the agent from guessing | [01-getting-started/README.md](01-getting-started/README.md) | create or fix `AGENTS.md` |
-| write down repo facts | [02-project-context/README.md](02-project-context/README.md) | run the facts checklist |
-| ask for work in a controlled way | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | choose one task template |
-| create a command, agent, or skill | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | create the file in `.opencode/` |
-| add internal automation safely | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) | classify checks into automate/manual |
-| connect an external system | [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md) | write local integration notes |
-| make the repo usable for teammates | [07-team-workflows/README.md](07-team-workflows/README.md) | run the onboarding checklist |
-| reuse the harness in another stack | [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md) | keep stack-specific claims behind real file evidence |
-| run a bigger task | [09-advanced-workflows/README.md](09-advanced-workflows/README.md) | start from the kickoff template |
-| document commands honestly | [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md) | verify every command against real files |
-| decide built-in vs plugin vs MCP vs OMO | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | choose the next layer and copy starter files only if needed |
+| 让 agent 停止猜 | [01-getting-started/README.md](01-getting-started/README.md) | 建立或修正 `AGENTS.md` |
+| 写清 repo 里的真实事实 | [02-project-context/README.md](02-project-context/README.md) | 跑 facts checklist |
+| 更稳地发任务给 agent | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | 选一个任务模板 |
+| 创建 command、agent 或 skill | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | 在 `.opencode/` 里创建对应文件 |
+| 给系统加内部自动化 | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) | 把检查分成 automate/manual |
+| 安全接外部系统 | [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md) | 写 local integration notes |
+| 让团队也能照着用 | [07-team-workflows/README.md](07-team-workflows/README.md) | 跑 onboarding checklist |
+| 把这套做法迁移到别的技术栈 | [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md) | 先分清哪些内容通用，哪些要等真实命令出现再写 |
+| 跑一个更大的编排任务 | [09-advanced-workflows/README.md](09-advanced-workflows/README.md) | 从 kickoff template 开始 |
+| 诚实地写命令文档 | [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md) | 逐条验证命令对应真实文件 |
+| 判断该用 built-in、plugin、MCP 还是 OMO | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | 先选下一层，再决定要不要复制 starter files |
 
 ---
 
 
-## If you want a stronger vibe coding workflow
+## 如果你想用更强的方式跑 vibe coding
 
-Use this loop:
-1. write down repo facts first
-2. start from the kickoff template
-3. require a plan before edits
-4. split UI / logic / external lookup if needed
-5. verify before you accept output
+按这个顺序做：
+1. 先把 repo facts 写清楚
+2. 从 kickoff template 开始
+3. 先要求 plan，再允许改文件
+4. 必要时把 UI、逻辑、查资料分开给不同 agent
+5. 没验证前不要接受输出
 
-Use these files together:
+把这几个文件一起用：
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
-- [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
-- [examples/long-running-app-harness.md](examples/long-running-app-harness.md)
+- [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
+- [examples/long-running-app-harness.zh-CN.md](examples/long-running-app-harness.zh-CN.md)
 - [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 
 ---
 
-## If you want one simple learning order
+## 如果你只想要一个简单学习顺序
 
-Read in this order:
+按这个顺序读：
 1. [01-getting-started/README.md](01-getting-started/README.md)
 2. [02-project-context/README.md](02-project-context/README.md)
 3. [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
@@ -89,31 +91,31 @@ Read in this order:
 9. [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
 10. [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
 
-Stop as soon as the next layer is not needed yet.
+不需要下一层时，就停下，不要为了“看全”继续往后加复杂度。
 
 ---
 
-## If you want fewer root docs
+## 如果你想减少要看的根文档
 
-Use only these:
-- main entry: [README.md](README.md)
-- full inventory: [CATALOG.md](CATALOG.md)
-
----
-
-## Verified repo facts
-
-- this is a documentation-first repo
-- English and Chinese entry docs exist
-- modules `01` through `10` exist
-- starter templates exist
-- `.opencode` starter pack examples now exist
-- no package manager is currently verified for this repo itself
-- no install, lint, test, typecheck, or build commands are currently verified for this repo itself
+只看这 2 个：
+- 主入口：[README.md](README.md)
+- 完整目录：[CATALOG.zh-CN.md](CATALOG.zh-CN.md)
 
 ---
 
-## Before you contribute or report something sensitive
+## 当前这个 repo 已验证的事实
+
+- 这是一个 documentation-first 仓库
+- 中英文入口文档都存在
+- `01` 到 `10` 模块都存在
+- starter templates 存在
+- `.opencode` starter pack 示例已经存在
+- 当前没有已验证 package manager
+- 当前没有已验证 install / lint / test / typecheck / build 命令
+
+---
+
+## 在贡献或报告敏感问题前先看
 
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [SECURITY.md](SECURITY.md)
@@ -121,4 +123,4 @@ Use only these:
 - [LICENSE](LICENSE)
 - [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
 
-This repository is public, but it is **not yet under a final open-source license**.
+这个仓库已经公开，但**还没有最终开源许可证**。

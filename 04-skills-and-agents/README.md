@@ -1,278 +1,275 @@
-# Skills and Agents
+# Skills 与 Agents
 
-This chapter answers 4 concrete questions:
+这一章只回答 4 个问题：
 
-1. When should you **just use a built-in OpenCode agent**?
-2. When should you **create a custom agent file**?
-3. When should you **create a custom command file**?
-4. When should you **create a `SKILL.md`**?
+1. 什么时候**直接用 OpenCode 内建 agent**
+2. 什么时候**创建一个自定义 agent 文件**
+3. 什么时候**创建一个自定义 command 文件**
+4. 什么时候**创建一个 `SKILL.md`**
 
-If you only want to know what file to create, what to put in it, and how to call it, follow the sections below in order.
+如果你只想知道“现在我该建什么文件、怎么写、怎么调”，按下面顺序做。
 
 ---
 
-## First, separate these 4 things
+## 先分清 4 种东西
 
-### 1. Built-in agents
-The main built-in agents to care about are:
-- **primary agents**: `build`, `plan`
-- **subagents**: `general`, `explore`
+### 1. 内建 agents
+官方内建的重点是：
+- **primary agents**：`build`、`plan`
+- **subagents**：`general`、`explore`
 
-How to use them:
-- switch primary agents in OpenCode with **Tab**
-- manually invoke a subagent by writing `@explore` or `@general` in your message
+怎么用：
+- 切换主 agent：在 OpenCode 会话里用 **Tab** 切换 primary agent
+- 手动调用 subagent：在消息里直接写 `@explore` 或 `@general`
 
-Example:
+例子：
 ```text
-@explore find every pricing-related implementation in this repo
+@explore 帮我找一下这个仓库里所有 pricing 相关的实现和文件
 ```
 
-Use built-in agents when:
-- you only need repo search or analysis
-- you want a plan before any edits
-- you want read-only exploration
+什么时候直接用内建 agent：
+- 只是查代码、读文件、做分析
+- 只是想先出 plan，不想改文件
+- 只是想把 repo 搜一遍
 
-If that is enough, do **not** create new files yet.
+如果只是这些，不要先创建新文件。
 
 ---
 
-### 2. Custom agents
-Create a custom agent when you need a **reusable role** with stable behavior.
+### 2. 自定义 agent
+当你需要一个**长期复用的角色**时，再建 agent。
 
-Good reasons to create one:
-- you repeatedly do the same type of work, for example `docs-review` or `security-audit`
-- you want a stable role with fixed permissions and instructions
-- you want to call it directly with `@name`
+适合建 agent 的情况：
+- 你反复做同一类工作，例如 `docs-review`、`security-audit`
+- 你希望这个角色总是用同样的语气、边界和权限
+- 你希望它能被 `@名字` 直接调用
 
-Create one of these files:
-- project-local: `.opencode/agents/<name>.md`
-- global: `~/.config/opencode/agents/<name>.md`
+要创建什么文件：
+- 项目内：`.opencode/agents/<name>.md`
+- 全局：`~/.config/opencode/agents/<name>.md`
 
-Minimal example: `.opencode/agents/docs-review.md`
+最小例子：创建 `.opencode/agents/docs-review.md`
 
 ```md
 ---
-description: Review docs for repo-reality drift
+description: 审查文档是否与仓库现实一致
 mode: subagent
 permission:
   edit: deny
   bash: deny
 ---
-You are a documentation review agent.
-Only do these things:
-- check whether commands were invented
-- check whether README / INDEX / CATALOG are in sync
-- check whether present facts and future plans are mixed together
-Do not modify files. Output only the issue list.
+你是一个文档审查 agent。
+只做这些事：
+- 检查是否发明了不存在的命令
+- 检查 present facts 和 future plans 是否混在一起
+- 检查 README / INDEX / CATALOG 是否同步
+不要修改文件，只给出问题列表。
 ```
 
-How to call it:
+怎么调用：
 ```text
-@docs-review check whether the latest README changes invented any commands
+@docs-review 帮我检查这次 README 改动有没有发明不存在的命令
 ```
 
-If you do not want to write the file manually, the official command is:
+如果你不想手写，也可以直接运行官方命令：
 ```bash
 opencode agent create
 ```
-That interactive flow helps you generate the agent file.
+它会交互式帮你创建 agent 文件。
 
 ---
 
-### 3. Custom commands
-Create a custom command when you need a **repeatable entrypoint in the TUI**.
+### 3. 自定义 command
+当你已经有一个**经常重复的用户入口动作**时，再建 command。
 
-Good reasons to create one:
-- you keep typing the same long prompt
-- you want to run `/something` directly
-- you want one fixed prompt template to target the same agent every time
+适合建 command 的情况：
+- 你每次都输入一大段类似 prompt
+- 你想在 TUI 里直接敲 `/xxx`
+- 你想把固定模板绑定到一个 agent 或当前 agent
 
-Create one of these files:
-- project-local: `.opencode/commands/<name>.md`
-- global: `~/.config/opencode/commands/<name>.md`
+要创建什么文件：
+- 项目内：`.opencode/commands/<name>.md`
+- 全局：`~/.config/opencode/commands/<name>.md`
 
-Minimal example: `.opencode/commands/review-docs.md`
+最小例子：创建 `.opencode/commands/review-docs.md`
 
 ```md
 ---
-description: Review documentation consistency
+description: 审查文档一致性
 agent: plan
 ---
-Check the current repository docs and report only these issues:
-- invented commands
-- README / INDEX / CATALOG drift
-- present facts mixed with future plans
-Do not modify files.
+请检查当前仓库文档，重点看：
+- 有没有发明不存在的命令
+- README / INDEX / CATALOG 是否同步
+- present facts 和 future plans 是否分开
+只输出问题列表，不要改文件。
 ```
 
-How to call it:
+怎么调用：
 ```text
 /review-docs
 ```
 
-If you want arguments, use `$ARGUMENTS` or `$1`, `$2`, ...
-
-Example:
+如果要传参数，可以这样写：
 
 ```md
 ---
-description: Review one file for documentation drift
+description: 审查指定文件的文档一致性
 agent: plan
 ---
-Review $ARGUMENTS and report:
-- invented commands
-- mismatch with repo reality
-- required navigation updates
+请审查 $ARGUMENTS 这个文件，检查：
+- 是否发明命令
+- 是否与仓库现实冲突
+- 是否需要更新导航
 ```
 
-Call it like this:
+调用时：
 ```text
 /review-docs README.md
 ```
 
-Important distinction:
-- **command** = user-facing entrypoint
-- **agent** = execution role
-- a command can target an agent
+重点记住：
+- **command 是用户入口**
+- **agent 是执行角色**
+- command 可以绑定 agent
 
 ---
 
-### 4. Skills (`SKILL.md`)
-Create a skill when you need a **reusable method** that agents can load on demand.
+### 4. Skill (`SKILL.md`)
+当很多 agent 都要按同一套步骤做事时，再建 skill。
 
-Good reasons to create one:
-- the reusable thing is a method, checklist, or procedure
-- more than one agent may need the same method
-- you want the agent to load instructions only when needed
+适合建 skill 的情况：
+- 不是固定角色，而是一套固定步骤
+- 这套步骤会被多个 agent 一起用
+- 你不想每次都重新写同一套规则
 
-Official file locations:
-- project-local: `.opencode/skills/<name>/SKILL.md`
-- global: `~/.config/opencode/skills/<name>/SKILL.md`
+官方要求你创建这样的文件结构：
+- 项目内：`.opencode/skills/<name>/SKILL.md`
+- 全局：`~/.config/opencode/skills/<name>/SKILL.md`
 
-Minimal example: `.opencode/skills/doc-audit/SKILL.md`
+最小例子：创建 `.opencode/skills/doc-audit/SKILL.md`
 
 ```md
 ---
 name: doc-audit
-description: Audit documentation against repo reality
+description: 审查文档是否与仓库现实一致
 ---
-## When to use
-Use this when checking whether README, INDEX, CATALOG, and AGENTS stay aligned.
+## 什么时候用
+当你要检查 README、INDEX、CATALOG、AGENTS 是否一致时使用。
 
-## Steps
-1. Check for invented commands
-2. Check for mixed present facts and future plans
-3. Check whether root navigation is still in sync
-4. Output issues only; do not edit files unless explicitly asked
+## 执行步骤
+1. 先检查是否发明了不存在的命令
+2. 再检查 facts / plans 是否混在一起
+3. 再检查根导航是否同步
+4. 输出问题列表，不直接改文件
 ```
 
-Official rules to remember:
-- `name` must match the directory name
-- `name` must be lowercase letters, numbers, and single `-`
-- `SKILL.md` must be uppercase exactly
+官方要求注意：
+- `name` 必须和目录名一致
+- `name` 只能是小写字母、数字和单个 `-`
+- `SKILL.md` 文件名必须全大写
 
-How it gets called:
-- skills are not the same as `/commands`
-- skills are loaded through the native `skill` tool
-- as a user, the practical phrasing is:
+怎么调用：
+- 对用户来说，一般不是 `/command` 那样直接敲
+- skill 是 **agent 通过 `skill` 工具加载** 的
+- 你通常会在提示词里要求：
+  - “先加载 `doc-audit` skill，再做检查”
+  - 或者让 agent 自己发现并加载
 
-```text
-Load the `doc-audit` skill first, then review README and INDEX for drift.
-```
-
-Internal call shape:
+内部调用方式长这样：
 ```text
 skill({ name: "doc-audit" })
 ```
 
+你作为用户，更实用的说法是：
+```text
+先加载 doc-audit skill，然后检查 README 和 INDEX 是否一致。
+```
+
 ---
 
-## Which one should you choose right now?
+## 现在到底该选哪一种？
 
-Follow this order:
+按这个顺序判断：
 
-### I only need this once
-Create nothing.
-Just use:
-- `plan` / `build`
-- `@explore` / `@general`
+### 只想先做一次
+不要建任何文件。
+直接：
+- 用 `plan` / `build`
+- 或者 `@explore` / `@general`
 
-### I keep repeating the same user-facing prompt
-Create:
+### 我总是要重复打一段 prompt
+建：
 - `.opencode/commands/<name>.md`
 
-### I need a stable reusable role
-Create:
+### 我需要一个固定角色，能反复 `@名字` 调用
+建：
 - `.opencode/agents/<name>.md`
 
-### I need a reusable method that agents can load when needed
-Create:
+### 很多 agent 都要按同一套步骤做事
+建：
 - `.opencode/skills/<name>/SKILL.md`
 
 ---
 
-## The safest beginner order
+## 一个最实用的入门顺序
 
-If this is your first pass, do it in this order:
+如果你现在是第一次整理这块，按这个顺序做：
 
-1. **Do not start with a skill**
-2. Start with one command:
+1. **先不要建 skill，也不要建 agent**
+2. 先建一个 command：
    - `.opencode/commands/review-docs.md`
-3. Use it 3 to 5 times
-4. If you discover the repeated thing is the role, create:
-   - `.opencode/agents/docs-review.md`
-5. If you discover the repeated thing is the method, create:
-   - `.opencode/skills/doc-audit/SKILL.md`
+3. 连续用 3 到 5 次
+4. 如果你发现“不是 prompt 在重复，而是角色在重复”，再建 `.opencode/agents/docs-review.md`
+5. 如果你发现“不是角色在重复，而是方法在重复”，再把方法提炼成 `.opencode/skills/doc-audit/SKILL.md`
 
-This is the safest order because it delays complexity until repetition is real.
+这样最稳，不容易一上来就把系统搞复杂。
 
 ---
 
-## Minimal practical exercise
+## 直接照做的最小实践
 
-### Goal
-Add one reusable “documentation review” entrypoint to your project.
+### 目标：给你的项目增加一个“文档审查入口”
 
-### Step 1: create a command file
-Create:
+#### 第一步：创建 command 文件
+创建：
 - `.opencode/commands/review-docs.md`
 
-Put this in it:
-
+内容：
 ```md
 ---
-description: Review documentation consistency
+description: 审查文档一致性
 agent: plan
 ---
-Check the current repository docs and report only these issues:
-- invented commands
-- README / INDEX / CATALOG drift
-- present facts mixed with future plans
-Do not modify files.
+请检查当前仓库文档，重点看：
+- 有没有发明不存在的命令
+- README / INDEX / CATALOG 是否同步
+- present facts 和 future plans 是否分开
+只输出问题列表，不要改文件。
 ```
 
-### Step 2: call it in OpenCode
+#### 第二步：在 OpenCode 里运行
 ```text
 /review-docs
 ```
 
-### Step 3: if you also need deeper repo search
-Add this in the chat:
+#### 第三步：如果你总是需要更深的 repo 搜索
+直接在消息里加：
 ```text
-@explore find every file related to README navigation
+@explore 帮我找出所有和 README 导航相关的文件
 ```
 
-### Step 4: if this role becomes stable
-Create:
+#### 第四步：如果这个流程稳定复用很多次
+再创建：
 - `.opencode/agents/docs-review.md`
 
-### Step 5: if the stable thing is really the method
-Create:
+#### 第五步：如果最后你发现复用的是“方法”而不是“角色”
+再创建：
 - `.opencode/skills/doc-audit/SKILL.md`
 
 ---
 
-## Official docs to verify behavior
+## 直接看这些官方文档
 
 - Agents: <https://opencode.ai/docs/agents/>
 - Commands: <https://opencode.ai/docs/commands/>
@@ -281,8 +278,9 @@ Create:
 
 ---
 
-## Files in this repo you can copy from
+## 这个仓库里你可以直接参考的文件
 
 - [templates/SPECIALIZATION-DECISION-CHECKLIST.md](templates/SPECIALIZATION-DECISION-CHECKLIST.md)
 - [templates/skills/self-assessment/SKILL.md](templates/skills/self-assessment/SKILL.md)
 - [templates/skills/self-assessment/README.md](templates/skills/self-assessment/README.md)
+

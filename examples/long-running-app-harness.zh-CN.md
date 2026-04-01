@@ -167,8 +167,8 @@ handoff note 至少包含：
 
 ## 这个案例配合这些文件一起用
 
-- [../README.zh-CN.md](../README.zh-CN.md)
-- [../09-advanced-workflows/README.zh-CN.md](../09-advanced-workflows/README.zh-CN.md)
+- [../README.md](../README.md)
+- [../09-advanced-workflows/README.md](../09-advanced-workflows/README.md)
 - [../03-commands-and-prompts/templates/PLAN-REQUEST.md](../03-commands-and-prompts/templates/PLAN-REQUEST.md)
 - [../.opencode/commands/start-harness-task.md](../.opencode/commands/start-harness-task.md)
 - [../.opencode/agents/harness-planner.md](../.opencode/agents/harness-planner.md)

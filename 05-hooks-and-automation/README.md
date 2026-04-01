@@ -1,30 +1,30 @@
-# Hooks and Automation
+# Hooks 与自动化
 
-## Demo case: classify this repo's repeated checks
+## 演示案例：给这个 docs-first repo 分类重复检查
 
-This repository is docs-first. It does not have a verified package manager or test suite, but it does have many repeated documentation integrity checks. Use [`templates/AUTOMATION-BOUNDARY-CHECKLIST.md`](templates/AUTOMATION-BOUNDARY-CHECKLIST.md) to decide which checks should be automated now and which ones should stay manual.
+这个仓库没有 verified package manager，也没有 test suite，但它确实有很多重复的文档完整性检查。用 [`templates/AUTOMATION-BOUNDARY-CHECKLIST.md`](templates/AUTOMATION-BOUNDARY-CHECKLIST.md) 判断哪些检查现在该自动化，哪些应该继续手动处理。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
-1. **List repeated repo tasks**
-2. **Sort them into three buckets**
+1. **列出重复任务**
+2. **分 3 个桶**
    - automate now
    - keep manual
    - candidate only
-3. **Automate only checks with evidence and clear outcomes**
+3. **只自动化有证据、结果明确的检查**
    - markdown link validation
-   - root navigation drift checks
-   - secret exposure checks
-   - checks that unsupported commands stay marked `TBD`
-4. **Keep subjective or unsupported work manual**
+   - 根导航漂移检查
+   - secret 暴露检查
+   - 确保未验证命令继续写成 `TBD`
+4. **把主观或不受支持的工作留给人工**
    - broad quality judgments
    - subjective content review
-   - auto-merge behavior
-   - any flow that assumes unverified tooling
-5. **Write the official boundary clearly**
-   - document plugins as the extension layer
-   - document hooks as automation points inside that layer
-6. **Put the boundary where future agents can read it**
-   - keep the docs honest about what exists and what does not
+   - auto-merge 行为
+   - 任何依赖未验证 tooling 的流程
+5. **把官方边界写清楚**
+   - plugins 写成扩展层
+   - hooks 写成扩展层里的自动化触发点
+6. **把这条边界写进 repo，让后续 agent 能看到**
+   - 对存在与不存在的内容都保持诚实

@@ -1,27 +1,27 @@
-# Team Workflows
+# 团队工作流
 
-## Demo case: onboard a new contributor using only repo docs
+## 演示案例：只靠 repo 文档 onboarding 一个新 contributor
 
-A new contributor needs to update one module README and keep navigation honest without asking a teammate for hidden rules. Use [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md) to make the repo sufficient for that onboarding task without relying on private knowledge or committed secrets.
+一个新 contributor 需要更新一个模块 README，并保持导航和事实边界一致，而且不能靠同事补充隐藏规则。用 [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md) 把缺失规则、缺失导航和缺失 onboarding 说明补回 repo，而不是继续依赖私有记忆。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
-1. **Pick one realistic newcomer task**
-2. **Attempt it using only repo docs**
-3. **Record every point where outside help was needed**
-4. **Classify each gap**
+1. **挑一个真实 newcomer task**
+2. **只依赖 repo 文档尝试完成**
+3. **记录每一个必须靠外部帮助的地方**
+4. **给每个缺口分类**
    - missing rule
    - missing navigation
    - missing template
    - missing support doc link
-5. **Patch the repo, not the memory gap**
-   - add harness rules and repo facts
-   - add shared execution contracts
-   - add onboarding notes or navigation links
-6. **Keep private data local**
-   - secrets and tokens
-   - personal preference settings
-   - machine-specific private data
-7. **Repeat later with a different task**
+5. **修补 repo，而不是接受记忆缺口**
+   - 补 harness 规则和 repo facts
+   - 补 shared execution contracts
+   - 补 onboarding notes 或导航链接
+6. **把私有数据留在本地**
+   - secrets 和 tokens
+   - 个人偏好配置
+   - 机器专属私有数据
+7. **过一段时间换另一个任务再测一次**

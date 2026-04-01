@@ -1,32 +1,32 @@
-# Advanced Workflows
+# 高级工作流
 
-## Demo case: expand a thin module into a real harness playbook
+## 演示案例：把一个薄弱模块 README 扩成真正的 harness playbook
 
-A module README is too thin for a new contributor to use, and your task is to rewrite it so they can follow it without asking for hidden context. Use [`templates/ADVANCED-WORKFLOW-CHECKLIST.md`](templates/ADVANCED-WORKFLOW-CHECKLIST.md) and [`templates/OMO-VIBE-CODING-KICKOFF.md`](templates/OMO-VIBE-CODING-KICKOFF.md) to rewrite it into a usable playbook built around one real demo case and clear workflow boundaries.
+一个模块 README 概念是对的，但只有一个很短的 exercise，没有 worked demo。用 [`templates/ADVANCED-WORKFLOW-CHECKLIST.md`](templates/ADVANCED-WORKFLOW-CHECKLIST.md) 和 [`templates/OMO-VIBE-CODING-KICKOFF.md`](templates/OMO-VIBE-CODING-KICKOFF.md) 把它改写成一个围绕真实 demo case 的可执行 playbook，并把边界写清楚。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
-1. **Explore the current state**
-   - read the module
-   - read related templates
-   - inspect root navigation expectations
-2. **Define the rewrite goal**
-   - what failure should this module prevent?
-   - what should the reader be able to do afterward?
-3. **Set a planning gate**
-   - outline sections before rewriting
-4. **Rewrite around one demo case**
+1. **先看当前状态**
+   - 读模块
+   - 读相关模板
+   - 看根导航希望它承担什么角色
+2. **定义改写目标**
+   - 这个模块要防止哪类失败？
+   - 读者读完后应该会做什么？
+3. **设置 planning gate**
+   - 先列出改写结构
+4. **围绕一个 demo case 重写**
    - situation
    - goal
    - artifacts
    - steps
    - failure modes
-5. **Route unmet needs honestly**
-   - internal extension behavior belongs with plugins
-   - outside systems belong with MCP
-   - stronger community orchestration belongs with oh-my-opencode
-   - unclear stop conditions go back to planning
-6. **Verify links, file references, and claims**
-7. **Do one clarity pass**
+5. **把边界写实，不要混写**
+   - 内部扩展行为归 plugins
+   - 外部系统归 MCP
+   - 更强社区编排归 oh-my-opencode
+   - stop condition 不清楚就回 planning
+6. **验证 links、file references 和 claims**
+7. **再做一轮 clarity review**
