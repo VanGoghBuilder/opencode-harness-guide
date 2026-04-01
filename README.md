@@ -70,6 +70,7 @@ Use this loop:
 Use these files together:
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
+- [examples/long-running-app-harness.md](examples/long-running-app-harness.md)
 - [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 
 ---

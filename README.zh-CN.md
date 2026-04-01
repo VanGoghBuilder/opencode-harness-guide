@@ -72,6 +72,7 @@
 把这几个文件一起用：
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
+- [examples/long-running-app-harness.zh-CN.md](examples/long-running-app-harness.zh-CN.md)
 - [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 
 ---
