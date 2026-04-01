@@ -1,12 +1,12 @@
-# Team Workflows
+# 团队工作流
 
-## Demo case：只靠 repo 文档 onboarding 一个新 contributor
+## 演示案例：只靠 repo 文档 onboarding 一个新 contributor
 
 一个新 contributor 需要更新一个模块 README，并保持导航和事实边界一致，而且不能靠同事补充隐藏规则。用 [`templates/TEAM-ONBOARDING-CHECKLIST.md`](templates/TEAM-ONBOARDING-CHECKLIST.md) 把缺失规则、缺失导航和缺失 onboarding 说明补回 repo，而不是继续依赖私有记忆。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **挑一个真实 newcomer task**
 2. **只依赖 repo 文档尝试完成**

@@ -1,4 +1,4 @@
-# Skills and Agents
+# Skills 与 Agents
 
 这一章只回答 4 个问题：
 
@@ -284,4 +284,3 @@ agent: plan
 - [templates/skills/self-assessment/SKILL.md](templates/skills/self-assessment/SKILL.md)
 - [templates/skills/self-assessment/README.md](templates/skills/self-assessment/README.md)
 
-如果你愿意，我下一步可以继续直接帮你把这章的**英文版也改成同样风格**，并且顺手给你补一个真正可复制的 `.opencode/agents/docs-review.md` 和 `.opencode/commands/review-docs.md` 示例文件。 

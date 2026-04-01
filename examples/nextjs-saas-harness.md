@@ -13,7 +13,7 @@ Create `AGENTS.md` in the project root and put in the facts that agents must not
 
 - Stack: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
 - Architecture: Server Components by default. Client Components only for interactivity.
-- Current verified command: `npm run dev`
+- Current verified commands: `npm run dev`, `npm run lint`, `npm run build`
 
 ## Hard rules
 - All queries use Supabase with RLS enabled.

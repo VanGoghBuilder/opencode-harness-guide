@@ -1,23 +1,15 @@
-## Summary
-
+## What did you change?
 - 
 
-## Why this change
-
+## Why did you change it?
 - 
 
-## Files added or updated
-
+## What files should reviewers check first?
 - 
 
-## Checks completed
-
-- [ ] Links point to real files
-- [ ] Present facts are separate from future plans
-- [ ] No commands or toolchains were invented
-- [ ] Root navigation was updated if needed (`README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `CATALOG.md`)
+## Before submitting, confirm these
+- [ ] links point to real files
+- [ ] present facts are separate from future plans
+- [ ] no commands or toolchains were invented
+- [ ] root navigation was updated if needed
 - [ ] Chinese entry docs were updated too if the change affects bilingual navigation or user-facing structure
-
-## Notes
-
-- 

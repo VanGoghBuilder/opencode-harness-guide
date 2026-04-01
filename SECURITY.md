@@ -1,57 +1,54 @@
-# Security Policy
+# Security
 
-This repository is primarily a documentation-and-templates project, but security still matters here.
-In particular, examples, starter templates, local integration notes, and copied configuration patterns can create risk if they encourage unsafe handling of secrets, permissions, or external integrations.
-
----
-
-## What should be reported
-
-Please report issues such as:
-
-- exposed secrets or tokens in tracked files
-- documentation that suggests unsafe secret handling
-- examples that encourage dangerous permission or integration patterns
-- instructions that could cause users to publish sensitive data accidentally
-- security-sensitive inaccuracies in integration or automation guidance
+Use this file when you think something in this repository may expose secrets, private configuration, or unsafe public guidance.
 
 ---
 
-## What should not be reported here as a repository vulnerability
+## Report these here
 
-The following are usually documentation quality issues, not security incidents:
-
-- broken links
-- style inconsistencies
-- missing examples
-- planned features that do not exist yet
-
-Those should go through the normal issue process instead.
+Use the security path if you find:
+- a real secret committed to the repo
+- a token or credential exposed in docs or examples
+- instructions that could cause unsafe disclosure of secrets
+- guidance that would make a public exploit easier
 
 ---
 
-## How to report responsibly
+## Do not report these as security issues
 
-Please do **not** open a public issue for a real secret exposure or sensitive vulnerability.
-
-At the moment, this repository does **not** publish a dedicated private security mailbox or reporting portal.
-Until one exists, avoid posting sensitive details publicly.
-
-Instead:
-
-1. read the security reporting guidance in [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
-2. include the affected file paths
-3. describe the risk clearly and briefly
-4. avoid reposting any secret value in full
-
-If a tracked secret appears in this repository, limit disclosure first and avoid publishing the secret in a public issue.
-
-> Current limitation: this repository documents the reporting boundary, but it does **not** yet offer a dedicated private reporting address inside the repo. Until maintainers publish one, the safest action is to avoid public disclosure of sensitive details.
+Use normal docs or issue flows instead if the problem is only:
+- a typo
+- a broken internal link
+- a missing explanation
+- a request for a new feature
 
 ---
 
-## Scope reminder
+## What to do
 
-This policy covers the contents of this repository.
-It does not replace the official OpenCode security posture or vendor/service security policies.
-For product-level behavior, also check official OpenCode docs and the relevant third-party service documentation.
+1. Do **not** post secret values in a public issue
+2. Read [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
+3. Record only:
+   - affected file path
+   - what kind of secret or risk is exposed
+   - what should be removed or rotated
+4. If the issue is real and sensitive, stop spreading details publicly
+
+---
+
+## Current repo limitation
+
+This repository does **not** yet publish a dedicated private security mailbox or reporting portal.
+That means this file can define the boundary, but it cannot yet give you a built-in private contact route.
+
+Until a private route exists:
+- avoid public disclosure of sensitive details
+- do not paste full secret values into issues or discussions
+
+---
+
+## Related files
+
+- [SUPPORT.md](SUPPORT.md)
+- [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)

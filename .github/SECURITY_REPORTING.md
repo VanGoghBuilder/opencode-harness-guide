@@ -1,16 +1,12 @@
 # Security Reporting
 
-If you found a real secret exposure or a security-sensitive problem in this repository, please avoid filing a normal public issue first.
+If the problem is sensitive, do this instead of opening a normal public issue:
 
-This repository does **not** yet publish a dedicated private security mailbox or reporting form inside the repo itself.
-Read [../SECURITY.md](../SECURITY.md) before proceeding.
+1. Read [../SECURITY.md](../SECURITY.md)
+2. Record only:
+   - affected file path
+   - short risk description
+   - what should be removed, corrected, or rotated
+3. Do **not** paste full secret values in public
 
-When reporting, include:
-
-- the affected file path
-- a short description of the risk
-- what should be removed, corrected, or rotated
-
-Do not paste full secret values into public threads.
-
-If the problem is not security-sensitive, use the normal issue templates instead.
+If the issue is not sensitive, use the normal issue templates.

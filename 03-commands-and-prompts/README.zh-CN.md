@@ -1,6 +1,6 @@
-# Commands and Prompts
+# 命令与执行合同
 
-## Demo case：把一个模糊 docs 任务改写成执行合同
+## 演示案例：把一个模糊 docs 任务改写成执行合同
 
 有人只说：“帮我 review 一下这个项目并改进文档。”
 
@@ -15,7 +15,7 @@
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **先判断任务类型**
    - planning

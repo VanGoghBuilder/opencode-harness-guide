@@ -1,105 +1,55 @@
-# OpenCode Documentation Style Guide
+# Documentation Style Guide
 
-Use this guide when writing or editing documentation in this repository.
-Its job is to keep the docs beginner-friendly, honest, and internally consistent.
-
----
-
-## Audience
-
-Write for people using OpenCode for the first time.
-Assume they want a fast on-ramp, plain language, and examples they can adapt without guessing.
+Use this file when you are writing or rewriting docs in this repo.
 
 ---
 
-## Tone
+## Write like this
 
-- plain
-- factual
-- calm
-- beginner-friendly
-- honest about what is missing
+When you create a user-facing doc, prefer this order:
+1. tell the reader what to do first
+2. point to the exact file, template, or command
+3. say what to verify next
+4. keep unsupported things marked as `TBD`
 
-Avoid hype, vague claims, and unnecessary jargon.
-
----
-
-## Core terminology
-
-Use these terms consistently:
-
-- **Verified fact**: something supported by real files in the repository now
-- **TBD**: something intentionally left unresolved until real files or decisions exist
-- **Not yet present**: something the repo does not contain today
-- **Starter template**: a copyable beginning point that still needs local adaptation
-
-Do not mix these casually. The distinction between present and planned is one of the repo’s core promises.
+If a paragraph only explains an idea but does not help the user act, cut it or move it lower.
 
 ---
 
-## Recommended document structure
+## Use these words consistently
 
-For root docs and module READMEs, prefer this shape where it fits:
+- **Verified fact** = supported by a real file in the repo now
+- **TBD** = intentionally unresolved because the repo does not prove it yet
+- **Not yet present** = the repo does not contain it now
+- **Starter template** = safe to copy, but still needs local editing
 
-1. purpose
-2. who it is for
-3. what you can finish in 15 minutes
-4. core concept or workflow
-5. what it does not assume
-6. suggested next step
-
-Not every file needs every section, but this is the default pattern.
+Do not blur these.
 
 ---
 
-## Naming and headings
+## Before you claim a command exists
 
-- keep filenames descriptive and stable
-- prefer kebab-case for doc filenames when creating new docs
-- keep section titles short and useful
-- avoid clever heading names that hide the real topic
-
-When possible, use the same module names in `README.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, and module titles.
+Check which file proves it.
+If no real file proves it, write `TBD` instead.
 
 ---
 
-## Rules for claims about tooling
+## Before you add a new root-facing file
 
-- do not invent install, lint, test, typecheck, build, or single-test commands
-- do not imply a package manager exists unless real files prove it
-- do not imply a stack is chosen unless the repo documents it clearly
-- do not write future plans as if they are already implemented
+Update these if needed:
+- `README.md`
+- `QUICK_REFERENCE.md`
+- `INDEX.md`
+- `CATALOG.md`
 
-When in doubt, mark something `TBD` or `Not yet present`.
-
----
-
-## Link rules
-
-- prefer relative links to files that actually exist
-- do not add links to planned files until those files are created
-- keep root docs cross-linked so readers do not need to hunt
-
-If you add a new root doc, update the relevant indexes and entry points.
+If the file changes the bilingual entry path, update the Chinese pair too.
 
 ---
 
-## Template-writing rules
+## Before you merge a doc change
 
-- say what the template is for
-- say whether it is safe to adapt now
-- say what must be replaced locally, if applicable
-- keep placeholders explicit
-- keep templates small unless a larger template adds real value
-
-Starter templates should be easy to copy into a real project with minimal cleanup.
-
----
-
-## Final check before merging doc changes
-
-- Does the doc help a first-time OpenCode user faster than before?
-- Are present facts and future plans clearly separated?
-- Are all links real?
-- Did you avoid inventing commands or tooling?
-- Did you update root indexes if you added a new file?
+Check:
+- are the links real?
+- did you avoid inventing commands?
+- did you keep present facts separate from future plans?
+- if the doc is user-facing, does it tell the reader what to do next?

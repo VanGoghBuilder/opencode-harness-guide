@@ -1,40 +1,38 @@
 # Self-Assessment Skill Template
 
-This folder contains a starter `SKILL.md` you can copy and adapt if you want a simple guided quiz for OpenCode learners.
+Use this folder if you want a starter skill that asks a learner a few questions and points them to the next module.
 
 ---
 
-## What this artifact is
+## What to copy
 
-- `SKILL.md` is a **template artifact** in this repository
-- it is **not** automatically installed or active in OpenCode just because it exists here
-- you should treat it as an example to adapt inside a real skill setup
+Use:
+- [SKILL.md](SKILL.md)
 
----
-
-## What it is for
-
-Use this starter if you want a small reusable interaction that helps someone answer:
-
-- how experienced am I with OpenCode?
-- which module should I read next?
-- which capability gaps should I focus on first?
+Copy it into a real skill location such as:
+- `.opencode/skills/<name>/SKILL.md`
+- `~/.config/opencode/skills/<name>/SKILL.md`
 
 ---
 
-## How to use it safely
+## What to change
 
-1. read [`SKILL.md`](SKILL.md)
-2. copy the structure into your own skill setup
-3. adjust the questions and scoring to match your team or learning path
-4. keep the output grounded in files and guidance that actually exist in your repository
+Edit these parts before you rely on it:
+- the skill `name`
+- the `description`
+- the questions
+- the scoring logic
+- the module links it recommends
+
+Keep the output tied to files that actually exist in your repo.
 
 ---
 
 ## What not to assume
 
-Do not assume this repository provides a built-in command or already-registered local skill loader for this file.
-This folder is part of the documentation-first starter set.
+- this file is not auto-installed just because it exists in this repo
+- this file is not a `/command`
+- this file is only a starter example
 
 ---
 

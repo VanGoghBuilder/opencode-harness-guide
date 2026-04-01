@@ -1,12 +1,12 @@
-# Project Context
+# 项目上下文
 
-## Demo case：把 repo audit 变成 system of record
+## 演示案例：把 repo audit 变成 system of record
 
 一个仓库有文档、有目录、可能还有 `.github/`，但没有明显 build system，也没有明确命令说明。用 [`templates/PROJECT-FACTS-CHECKLIST.md`](templates/PROJECT-FACTS-CHECKLIST.md) 审计仓库，只把已验证事实写进 `AGENTS.md`，其余内容继续标成 `TBD`、not yet present 或 future direction。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **打开 checklist**
    - 不要凭记忆填写

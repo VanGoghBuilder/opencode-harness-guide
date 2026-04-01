@@ -1,25 +1,21 @@
-# Pull Request Generator
+# PR Request
 
-Copy this template into your chat with OpenCode to generate a structured, comprehensive Pull Request description.
+Copy this into OpenCode when you want a pull request summary drafted from the current branch.
 
-## 📝 Request
+```markdown
+Please analyze my current branch and draft a PR description.
 
-Please analyze my current branch and recent commits to draft a comprehensive Pull Request description.
+Include:
+1. Summary
+2. Motivation
+3. Changes made
+4. How to test
+5. Impact
 
-### 🎯 Goal
-Create a PR description that clearly communicates the intent, scope, and technical details of these changes.
+Rules:
+- do not invent issue numbers
+- do not claim tests passed unless they actually passed
+- keep the summary grounded in the actual branch diff
 
-### 📋 Constraints
-- Use the following sections:
-  1.  **Summary**: A one-paragraph overview of the changes.
-  2.  **Motivation**: Why these changes were necessary.
-  3.  **Changes made**: A bulleted list of technical changes.
-  4.  **How to test**: Step-by-step instructions for testing (if applicable).
-  5.  **Impact**: Any breaking changes, performance implications, or new dependencies.
-
-### 📂 Context
-- [Optional: Mention related issue tracking numbers or broader project goals, e.g., "Part of the Q3 performance improvements"]
-- [Optional: Provide specific details about the branch, e.g., "The main logic is in src/core/auth.ts"]
-
-### 📤 Output Format
-Provide only the Markdown for the PR description, ready to be copied into the GitHub interface.
+Output only the Markdown body for the PR.
+```

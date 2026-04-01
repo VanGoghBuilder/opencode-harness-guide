@@ -1,12 +1,12 @@
-# CLI and Terminal Usage
+# CLI 与终端使用
 
-## Demo case：审计一个命令区块是否诚实
+## 演示案例：审计一个命令区块是否诚实
 
 一个 repo 文档列出了 install、lint、test、build 等命令，但仓库里未必真的有支撑这些命令的文件。把这段命令文档改成“反映现实”，让新 contributor 能一眼看出哪些命令已验证、哪些缺失、哪些仍是 `TBD`，同时把 shell safety boundary 写清楚。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **打开命令文档**
    - `AGENTS.md`

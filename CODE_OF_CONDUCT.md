@@ -1,51 +1,42 @@
 # Code of Conduct
 
-`opencode-harness-guide` is meant to be beginner-friendly, practical, and safe to learn from.
-That standard applies to collaboration too.
+Use this file to understand the minimum collaboration standard for this repository.
 
 ---
 
-## Our expectations
+## Do this
 
-Please contribute in a way that is:
-
-- respectful
-- clear
-- constructive
-- welcoming to beginners
-- focused on improving the repository
-
-Good collaboration here means helping others understand, not showing off or winning arguments.
+- be respectful
+- be clear
+- be constructive
+- write for beginners, not for insiders only
+- improve the repo instead of showing off knowledge
 
 ---
 
-## Unacceptable behavior
+## Do not do this
 
-Examples of unacceptable behavior include:
-
-- harassment or personal attacks
-- insulting or dismissive language toward beginners
-- hostile review behavior
-- intentionally misleading documentation changes
-- posting private or sensitive information without permission
+- attack people
+- dismiss beginners
+- review in a hostile way
+- submit intentionally misleading documentation
+- post private or sensitive information without permission
 
 ---
 
-## Repository-specific standard
+## Repo-specific rule
 
-Because this repo teaches OpenCode usage, contributors should be especially careful not to:
-
-- invent commands or unsupported product behavior
-- blur the line between verified facts and future plans
-- post unsafe integration examples casually
-
-Accuracy and clarity are part of good conduct here.
+Because this repo teaches OpenCode usage, contributors must not:
+- invent commands
+- invent product behavior
+- blur verified facts with future plans
+- post unsafe examples casually
 
 ---
 
-## Reporting problems
+## If you need to report a problem
 
-If you encounter a serious conduct issue, start with [CONTRIBUTING.md](CONTRIBUTING.md) and [SUPPORT.md](SUPPORT.md).
-At the moment, this repository does not publish a dedicated private conduct-reporting channel, so contributors should avoid posting sensitive personal details in public threads.
-
-For security-sensitive reports, use [SECURITY.md](SECURITY.md) instead of a public thread.
+Read:
+- [SUPPORT.md](SUPPORT.md)
+- [SECURITY.md](SECURITY.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)

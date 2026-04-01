@@ -1,12 +1,12 @@
-# Integrations and MCP
+# 集成与 MCP
 
-## Demo case：记录一个安全的 GitHub 集成，而不泄露 token
+## 演示案例：记录一个安全的 GitHub 集成，而不泄露 token
 
 团队希望 OpenCode 通过 MCP server 去读取 PR 和 issue 元数据，同时不把任何真实 token 提交进仓库。用 [`templates/LOCAL-INTEGRATION-NOTES.md`](templates/LOCAL-INTEGRATION-NOTES.md) 只记录 setup 形状和安全边界，让团队成员能按说明完成集成，而不会暴露凭证，也不会给 server 过大的权限。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **先命名外部系统**
    - 例如：GitHub

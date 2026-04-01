@@ -1,12 +1,12 @@
-# Advanced Workflows
+# 高级工作流
 
-## Demo case：把一个薄弱模块 README 扩成真正的 harness playbook
+## 演示案例：把一个薄弱模块 README 扩成真正的 harness playbook
 
 一个模块 README 概念是对的，但只有一个很短的 exercise，没有 worked demo。用 [`templates/ADVANCED-WORKFLOW-CHECKLIST.md`](templates/ADVANCED-WORKFLOW-CHECKLIST.md) 和 [`templates/OMO-VIBE-CODING-KICKOFF.md`](templates/OMO-VIBE-CODING-KICKOFF.md) 把它改写成一个围绕真实 demo case 的可执行 playbook，并把边界写清楚。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **先看当前状态**
    - 读模块

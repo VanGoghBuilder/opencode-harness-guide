@@ -13,7 +13,7 @@
 
 - Stack: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
 - Architecture: Server Components by default. Client Components only for interactivity.
-- 当前已验证命令: `npm run dev`
+- 当前已验证命令: `npm run dev`、`npm run lint`、`npm run build`
 
 ## Hard rules
 - 所有查询都使用开启 RLS 的 Supabase。

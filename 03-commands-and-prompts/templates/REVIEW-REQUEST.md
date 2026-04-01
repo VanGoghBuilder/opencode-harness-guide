@@ -1,23 +1,20 @@
 # Review Request
 
-Use this as a **feedback-loop contract** when you want the agent to evaluate work instead of immediately changing it.
+Copy this into OpenCode when you want analysis or critique without immediate changes.
 
-Use this prompt when you want a review focused on findings and risks instead of a generic summary.
+```markdown
+Please review [file / branch / change set].
 
----
+Check:
+- invented commands or unsupported assumptions
+- mismatch between present facts and future plans
+- missing navigation or missing linked files
+- risky logic, security, or verification gaps
 
-Please review this change set.
+Output:
+- problem list only
+- no file edits
+- say which files need follow-up
+```
 
-Focus on:
-
-1. factual inconsistencies
-2. wording that could confuse beginners
-3. missing links, missing files, or drift between docs
-4. assumptions that are written as if they are already true
-5. the smallest high-value fixes to make now
-
-Constraints:
-
-- cite file paths
-- prefer concrete findings over broad opinions
-- do not recommend large rewrites unless they are necessary
+Use this when you want a clean issue list before editing.

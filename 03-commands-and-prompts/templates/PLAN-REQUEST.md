@@ -1,23 +1,35 @@
 # Plan Request
 
-Use this as an **execution contract** when you want the agent to explore first and plan before changing anything.
+Copy this into OpenCode when you want analysis and a plan before any file changes.
 
-Use this prompt when you want OpenCode to inspect a repository, identify unknowns, and propose the smallest useful plan.
+```markdown
+[analyze-mode]
+ANALYSIS MODE. Gather context before diving deep:
+
+CONTEXT GATHERING (parallel):
+- Fire 1-3 `explore` agents to find the current implementation and related files.
+- Fire 1 `librarian` agent if external docs or third-party APIs are involved.
+- Use direct tools for targeted searches while the background agents run.
+
+SYNTHESIZE findings before proceeding.
+Present:
+- files to modify
+- approach
+- edge cases
+- verification plan
+
+DO NOT START IMPLEMENTING UNTIL I APPROVE THE PLAN.
 
 ---
 
-Please inspect this repository before proposing changes.
+### Intent
+[Describe the actual task]
 
-In your response, cover:
+### Constraints
+- Follow `AGENTS.md`
+- Do not invent commands
+- Keep unknowns as `TBD`
+- [Add task-specific constraints]
+```
 
-1. what is already verified by real files
-2. what is still unclear or `TBD`
-3. the smallest useful implementation plan
-4. which files are likely to change
-5. what should be verified after the change
-
-Constraints:
-
-- do not invent commands or missing tooling
-- keep future direction separate from present reality
-- prefer a small plan over broad scaffolding
+Use this when the task is bigger than a tiny local edit.

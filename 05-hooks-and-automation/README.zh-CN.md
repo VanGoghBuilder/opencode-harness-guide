@@ -1,12 +1,12 @@
-# Hooks and Automation
+# Hooks 与自动化
 
-## Demo case：给这个 docs-first repo 分类重复检查
+## 演示案例：给这个 docs-first repo 分类重复检查
 
 这个仓库没有 verified package manager，也没有 test suite，但它确实有很多重复的文档完整性检查。用 [`templates/AUTOMATION-BOUNDARY-CHECKLIST.md`](templates/AUTOMATION-BOUNDARY-CHECKLIST.md) 判断哪些检查现在该自动化，哪些应该继续手动处理。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **列出重复任务**
 2. **分 3 个桶**

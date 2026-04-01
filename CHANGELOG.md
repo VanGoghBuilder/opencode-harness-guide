@@ -1,45 +1,38 @@
 # Changelog
 
-All notable documentation milestones for `opencode-harness-guide` should be recorded here.
-
-This is a lightweight changelog for the rewrite, not a product release log.
+Use this file to see what major documentation layers were added or changed.
 
 ---
 
 ## 2026-03-30
 
-### Added
+Added:
+- root docs
+- root support docs
+- issue and PR support files
+- modules `01` through `10`
+- starter templates across the repo
 
-- Root docs: `README.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `AGENTS.md`
-- Root support docs: `QUICK_REFERENCE.md`, `INDEX.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`
-- Repository support docs: `SECURITY.md`, `CODE_OF_CONDUCT.md`, `LICENSE`
-- Review support: `.github/pull_request_template.md`
-- Issue intake: `.github/ISSUE_TEMPLATE/*` and `.github/SECURITY_REPORTING.md`
-- Numbered modules `01` through `10`
-- Starter templates for project context, prompts, specialization, automation, integrations, team onboarding, cross-stack readiness, and advanced workflow planning, including the starter `AGENTS.md`
-
-### Changed
-
-- Expanded the root README into a more complete onboarding entry point
-- Strengthened the roadmap, catalog, and agent guidance to match the expanded repo structure
-- Clarified present-versus-planned wording across the repository
+Changed:
+- expanded the repo from a small doc set into a fuller harness guide scaffold
+- clarified present-versus-planned wording
 
 ## 2026-03-31
 
-### Added
+Added:
+- `SUPPORT.md`
+- plugin and OMO guides
 
-- `SUPPORT.md` to clarify support, reporting, and public-vs-sensitive issue boundaries
-- `PLUGINS-AND-OH-MY-OPENCODE.md` and `PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md` to explain OpenCode plugin capability boundaries and introduce oh-my-opencode as a community plugin/orchestration layer
+Changed:
+- made reporting and navigation links easier to follow
+- clarified that the repo is public but not yet under a final open-source license
 
-### Changed
+## 2026-04-01
 
-- Made security/reporting navigation more clickable across `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, and `CODE_OF_CONDUCT.md`
-- Clarified that the repository is public but not yet under a final open-source license
-- Updated `AGENTS.md`, `INDEX.md`, `CATALOG.md`, and the PR template to reflect the current public support surface
-- Updated root navigation, quick-reference paths, and module cross-links to surface plugin terminology, hooks vs plugins, MCP vs plugins, and oh-my-opencode guidance
+Added:
+- operational Next.js SaaS harness example
+- more direct templates for plan, review, commit, PR, automation, and integration notes
 
-### Still planned
-
-- richer quickstart walkthroughs
-- deeper automation and integration examples
-- stack-specific starter kits once verified commands exist
+Changed:
+- rewrote root docs, guides, modules, and examples into a more action-first style
+- aligned English and Chinese entry docs more closely

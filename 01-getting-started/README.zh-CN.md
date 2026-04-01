@@ -1,12 +1,12 @@
-# Getting Started
+# 开始搭建 Harness
 
-## Demo case：你接手一个“半空白”仓库的前 15 分钟
+## 演示案例：你接手一个“半空白”仓库的前 15 分钟
 
 你打开一个仓库，能看到 `README.md`、几个目录、一些文档，但没有明显的 package manifest，也没有命令说明。使用 [`templates/AGENTS.md`](templates/AGENTS.md) 给这个仓库建立一个最小可用的 harness 入口，让 agent 停止猜测。完成后，仓库里应该出现一个 starter `AGENTS.md`，明确说明现在真实存在什么、现在还没有什么，以及 agent 不应该发明什么。
 
 ---
 
-## Step-by-step workflow
+## 操作步骤
 
 1. **先看根目录**
    - 先列出顶层文件和目录

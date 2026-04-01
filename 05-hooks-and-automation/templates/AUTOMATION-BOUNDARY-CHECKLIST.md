@@ -1,28 +1,23 @@
 # Automation Boundary Checklist
 
-Use this checklist before you automate a check, trigger, or repeated workflow.
+Use this checklist before automating a repeated task.
 
----
+## Automate now only if all are true
 
-## Why automate this
+- [ ] the task repeats often
+- [ ] the result is easy to verify
+- [ ] failure is cheap and obvious
+- [ ] the repo already has the files or commands this automation depends on
 
-- [ ] The workflow is repeated often enough to justify automation
-- [ ] The automation protects something important
-- [ ] The expected result is clear and checkable
+## Keep manual if any are true
 
-## Why not automate this yet
+- [ ] the task needs subjective judgment
+- [ ] the task depends on commands the repo does not verify
+- [ ] the task could do damage if it runs blindly
+- [ ] the task hides a decision humans should still make
 
-- [ ] The workflow is still changing a lot
-- [ ] The repository lacks the files or tooling needed to check it
-- [ ] The automation would mostly add noise or friction
+## Final call
 
-## Safety checks
-
-- [ ] The automated step will not invent missing project facts
-- [ ] The step will not assume commands that are still `TBD`
-- [ ] The step is understandable to future contributors
-- [ ] The failure message will help someone act on it
-
-## Good final question
-
-If this automation fails tomorrow, will a new contributor understand why and know what to do next?
+- [ ] automate now
+- [ ] keep manual
+- [ ] wait until repo reality is clearer

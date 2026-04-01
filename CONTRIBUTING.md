@@ -1,82 +1,75 @@
 # Contributing
 
-Thanks for helping improve `opencode-harness-guide`.
-This repository is a documentation-first rewrite for first-time OpenCode users, so the best contributions are usually the ones that make the project easier to enter, easier to trust, and easier to copy from.
-
-Before contributing, also read [LICENSE](LICENSE). This repository is public, but it does **not yet publish a final open-source license**, so reuse and downstream expectations should not be assumed beyond what that file currently states.
-
----
-
-## What good contributions look like
-
-Good contributions usually do one or more of these:
-
-- improve beginner clarity
-- add or refine copyable starter templates
-- make navigation easier from the root
-- fix wording drift between root docs, modules, and templates
-- keep present facts separate from future plans
+If you want to improve this repository, use this order.
 
 ---
 
 ## Before you change anything
 
-Check these first:
+1. Read [README.md](README.md)
+2. Read [AGENTS.md](AGENTS.md)
+3. Read [LICENSE](LICENSE)
+4. If the change affects public docs, also read:
+   - [INDEX.md](INDEX.md)
+   - [CATALOG.md](CATALOG.md)
+   - [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 
-1. what files already exist
-2. whether the thing you want to describe is already real in the repo
-3. whether the change belongs in a root doc, a module, or a starter template
-4. whether you are adding facts or future direction
-
-If a command, toolchain, or stack choice is not verified, do not write it as if it already exists.
-
----
-
-## Writing and editing rules
-
-- follow [STYLE_GUIDE.md](STYLE_GUIDE.md)
-- use [AGENTS.md](AGENTS.md) for repo-grounded agent guidance
-- prefer small, reviewable changes
-- keep docs framework-agnostic unless the repo has real stack-specific material
-- update indexes when you add a new root doc or template
-- when you add or remove a root-facing learning asset, update the full navigation surface: `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, and `CATALOG.md`
+Do not assume this repo is under a final open-source license yet. Check `LICENSE` first.
 
 ---
 
-## Suggested contribution flow
+## If you want to add or rewrite docs
 
-1. start from [README.md](README.md) and [INDEX.md](INDEX.md)
-2. find the module or root doc you need to improve
-3. make the smallest useful change
-4. check links, headings, and present-vs-planned wording
-5. update `CATALOG.md` or `AGENTS.md` if repository facts changed materially
-6. if the change affects the beginner path or starter-template set, update `README.md`, `QUICK_REFERENCE.md`, and `INDEX.md` too
-
-For public issues, use the repository issue templates.
-For security-sensitive reports, use [SECURITY.md](SECURITY.md) and [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md) instead of a normal issue.
-For serious conduct issues, use [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SUPPORT.md](SUPPORT.md) first and avoid posting sensitive personal details in public threads.
-
-> Current limitation: this repository does not yet publish a dedicated private reporting channel for security or conduct issues. If a report requires private handling, do not post sensitive details publicly.
-
----
-
-## Common anti-patterns
-
-- inventing commands that no file defines
-- adding stack-specific guidance before the stack exists in the repo
-- expanding a small beginner doc into a giant reference wall
-- leaving new files unindexed from the root
-- writing future aspirations as current repository facts
+1. Verify the repo fact first
+   - if a command is not defined by a real file, keep it as `TBD`
+2. Edit the target file
+3. Update navigation if the change affects root-facing docs:
+   - `README.md`
+   - `QUICK_REFERENCE.md`
+   - `INDEX.md`
+   - `CATALOG.md`
+4. If the change affects bilingual entry docs, update the Chinese side too:
+   - `README.zh-CN.md`
+   - `QUICK_REFERENCE.zh-CN.md`
+   - `INDEX.zh-CN.md`
+   - `CATALOG.zh-CN.md`
+5. Run a link check or equivalent verification
 
 ---
 
-## Pull request guidance
+## If you want to add a new starter asset
 
-Keep pull requests small and easy to review.
-If your change adds a new doc, include:
+Create the file in the right place:
+- starter repo entry → `01-getting-started/templates/`
+- facts / context → `02-project-context/templates/`
+- execution contracts → `03-commands-and-prompts/templates/`
+- routing / skills / agents → `04-skills-and-agents/templates/`
+- automation / integration / orchestration → `05` to `09` template folders
 
-- why it is needed
-- which existing docs it connects to
-- whether it changes present facts or just adds guidance
+Then update:
+1. `CATALOG.md`
+2. `INDEX.md`
+3. `README.md` if it is a root-facing asset
+4. Chinese entry docs if the asset is user-facing in the main path
 
-If a change introduces a new convention, document it close to the files that will rely on it.
+---
+
+## If you want to report a sensitive issue
+
+Do not open a normal public issue first.
+Read:
+- [SECURITY.md](SECURITY.md)
+- [SUPPORT.md](SUPPORT.md)
+- [.github/SECURITY_REPORTING.md](.github/SECURITY_REPORTING.md)
+
+---
+
+## What good contributions look like here
+
+Ship changes that make the repo:
+- easier to start from
+- easier to trust
+- easier to copy from
+- harder for agents to misread
+
+Avoid changes that only make the repo sound smarter while making it harder to operate.

@@ -1,31 +1,26 @@
 # Local Integration Notes
 
-Use this template before sharing an integration setup across a project.
-It is for safe documentation, not for storing secrets.
+Fill this out when you add an MCP server or any external capability.
 
----
+## Integration name
+[Example: GitHub MCP, Postgres MCP]
 
-## Integration overview
+## What this integration is for
+[Example: read PR metadata, inspect schema, query issues]
 
-- External tool or service: `TBD`
-- Why this integration exists: `TBD`
-- Current status: `TBD / planned / partially configured`
+## What to install or configure locally
+- MCP server name:
+- local config file or setup path:
 
-## Local-only requirements
+## Environment variables to set locally
+- [VAR_NAME]
+- [VAR_NAME]
 
-- Secret or token needed: `TBD`
-- Permission scope needed: `TBD`
-- Where the secret should live locally: `TBD`
-- What must stay out of version control: `TBD`
+Do not put real secret values in this file.
 
-## Shared repository guidance
+## Permission scope
+- read-only / write-capable
+- what actions require human confirmation
 
-- Which file documents the setup: `TBD`
-- Which steps are safe to share: `TBD`
-- Which steps are environment-specific: `TBD`
-
-## Safety reminders
-
-- Do not commit real secrets
-- Do not imply the integration works until it is actually configured
-- Replace placeholder text with real facts only when you verify them
+## How a teammate should use it
+[Short instruction they can follow without guessing]

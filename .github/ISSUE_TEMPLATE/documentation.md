@@ -1,23 +1,20 @@
 ---
-name: Documentation improvement
-about: Suggest a documentation fix or improvement
-title: "[Docs] "
-labels: [documentation]
-assignees: []
+name: Documentation
+about: Report a docs problem or request a docs improvement
 ---
 
-## File or section
+## What file is affected?
+[Example: README.md, 04-skills-and-agents/README.zh-CN.md]
 
-<!-- Which file or heading needs work? -->
+## What is wrong?
+- [ ] unclear instruction
+- [ ] invented command or unsupported claim
+- [ ] broken navigation or missing link
+- [ ] English and Chinese drift
+- [ ] missing example or missing next step
 
-## What is unclear or incorrect
+## What should the repo say instead?
+[Write the exact correction or the exact missing step if you can]
 
-<!-- Be specific -->
-
-## Suggested improvement
-
-<!-- Optional proposed wording or direction -->
-
-## Notes
-
-<!-- Optional context -->
+## What did you try?
+[Describe how you found the problem]
