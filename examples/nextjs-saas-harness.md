@@ -1,43 +1,39 @@
-# Next.js SaaS Harness — OpenCode Harness Case
+# Next.js SaaS Harness Case
 
-> A real-world example of applying the OpenCode Engineering Harness to a Next.js + Supabase + Stripe SaaS application.
-> Copy this structure to your project root to ground your agents in reality.
+Use this when your project looks like a typical SaaS app and you want a concrete OpenCode harness instead of general advice.
 
-## 1. The Map (`AGENTS.md`)
+---
 
-This is your minimal harness entry point. It tells the agent what is real and what rules to follow.
+## Step 1: write the repo entry point
+
+Create `AGENTS.md` in the project root and put in the facts that agents must not guess.
 
 ```markdown
 # Repository Harness Context
 
-- **Stack**: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
-- **Architecture**: Server Components by default. Client Components only for interactivity.
-- **State**: Greenfield, basic scaffolding exists, `npm run dev` works.
+- Stack: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
+- Architecture: Server Components by default. Client Components only for interactivity.
+- Current verified command: `npm run dev`
 
-## Critical Harness Rules
-
-### Database & Auth
-- All queries MUST use the Supabase client with RLS enabled. Never bypass RLS.
-- Migrations live in `supabase/migrations/`. Do not modify the database directly via SQL prompts.
-- Use `createServerClient()` from `@supabase/ssr` in Server Components.
-
-### Code Style & Constraints
-- Immutable patterns only: use spread operator, never mutate objects directly.
-- Server Components: no `'use client'` directive, no `useState`/`useEffect`.
-- Prefer Zod schemas for all API route and form input validation.
-
-### Automation Boundaries
-- `npm run lint` and `npm run build` MUST pass before claiming a task is complete.
-- Do NOT automate PR merging.
+## Hard rules
+- All queries use Supabase with RLS enabled.
+- Migrations live in `supabase/migrations/`.
+- Never trust client-side price data.
+- Server Components: no `'use client'`, `useState`, or `useEffect`.
+- `npm run lint` and `npm run build` must pass before you accept a change.
 ```
 
-## 2. The Execution Contract (`PLAN-REQUEST.md`)
+Do this first. If this file is wrong, every later step gets weaker.
 
-When you want the agent to build a new feature (e.g., adding a pricing page), use this contract instead of a vague prompt.
+---
+
+## Step 2: start feature work with a kickoff contract
+
+When you want to build a real feature, do not say “add pricing page.” Start with a contract.
+
+Use [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md) and fill it like this:
 
 ```markdown
-# Harness Execution Contract
-
 [analyze-mode]
 ANALYSIS MODE. Gather context before diving deep:
 
@@ -45,58 +41,100 @@ CONTEXT GATHERING (parallel):
 - Fire 1-3 `explore` agents to map the current Stripe billing implementation in `src/lib/stripe/`.
 - Fire 1 `librarian` agent to check the latest Next.js 15 Server Action patterns if needed.
 
-SYNTHESIZE findings before proceeding. Present a concrete plan (files to modify, components to create, API routes needed).
-
+SYNTHESIZE findings before proceeding. Present a concrete plan.
 DO NOT START IMPLEMENTING UNTIL I APPROVE THE PLAN.
+
+### Intent
+Implement `/pricing` with Free / Pro / Enterprise tiers using server-side Stripe pricing data.
+
+### Constraints
+- Fetch prices server-side.
+- Use existing UI component patterns.
+- Run `lsp_diagnostics` on changed files.
+- Run `npm run build` before calling the task complete.
+```
 
 ---
 
-### 🎯 Intent
-Implement the `/pricing` page displaying 3 tiers (Free, Pro, Enterprise) fetching dynamic pricing data from Stripe.
+## Step 3: route work by job type
 
-### 📋 Constraints
-- Fetch prices server-side. Never trust client-side price data.
-- Use Shadcn/ui components for the pricing cards.
-- Ensure `lsp_diagnostics` are clean after implementation.
-```
+Do not keep UI, billing logic, and external docs in one mixed stream.
 
-## 3. Feedback Loops & Verification
+Route them like this:
+- UI layout and card styling → `visual-engineering`
+- billing logic and webhook handling → logic-focused agent such as `ultrabrain`
+- Stripe API reference lookup → `librarian`
+- repo pattern search → `explore`
 
-Do not accept code blindly. Run the verification loop.
+If one prompt is trying to do all four, split it.
 
-1. **Diagnostics**: Ask the agent to run `lsp_diagnostics` on all modified files.
-2. **Build**: Ask the agent to run `npm run build` to catch Server/Client component boundary errors.
-3. **Review**: Use a review contract if the logic is complex:
+---
 
-```markdown
-# Review Contract
+## Step 4: verify before you accept output
 
-Please review the newly added Stripe webhook handler in `app/api/webhooks/stripe/route.ts`.
+For this kind of app, use a simple verification order:
 
-- Does it verify the Stripe signature correctly?
-- Does it handle the `checkout.session.completed` event immutably?
-- Are there any exposed secrets or unhandled errors?
-```
+1. run `lsp_diagnostics` on changed files
+2. run `npm run build`
+3. review risky server logic separately
 
-## 4. Capability Routing
-
-Instead of doing everything in one chat, route the work:
-- **UI Tweaks**: Route to the `visual-engineering` subagent to style the pricing cards with Tailwind.
-- **Billing Logic**: Route to the `ultrabrain` subagent to handle the webhook parsing and database updates.
-- **External Docs**: Use `librarian` to look up the exact Stripe API payload format.
-
-## 5. Integrations & MCP (`LOCAL-INTEGRATION-NOTES.md`)
-
-Document your external dependencies safely so the team can use the harness without leaking secrets.
+Use a review contract for the risky part, for example the Stripe webhook:
 
 ```markdown
-# External Capability Requirements
+Please review `app/api/webhooks/stripe/route.ts`.
 
-This project uses MCP for database inspection and GitHub issue tracking.
-
-- **Supabase DB**: Use the Postgres MCP server.
-  - Env var required: `POSTGRES_CONNECTION_STRING` (Do NOT commit this!)
-  - Scope: Read-only access to verify migrations applied correctly.
-- **GitHub**: Use the GitHub MCP server to read feature requests.
-  - Env var required: `GITHUB_PERSONAL_ACCESS_TOKEN`
+Check:
+- Stripe signature verification
+- immutable event handling
+- missing error handling
+- any secret exposure
 ```
+
+---
+
+## Step 5: document external capability without leaking secrets
+
+Use [../06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](../06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md).
+
+Record only:
+- MCP server name
+- env var names
+- permission scope
+- whether write actions require confirmation
+
+Example:
+
+```markdown
+- Supabase DB MCP
+  - Env var: POSTGRES_CONNECTION_STRING
+  - Scope: read-only inspection
+- GitHub MCP
+  - Env var: GITHUB_PERSONAL_ACCESS_TOKEN
+  - Scope: issue and PR reading
+```
+
+Do not put token values in the repo.
+
+---
+
+## Step 6: if the session goes wrong, reset at the right layer
+
+### The agent starts coding before planning
+Stop it. Go back to the kickoff contract and require the plan first.
+
+### The agent invents commands
+Go back to `AGENTS.md` and fix the facts layer.
+
+### The task mixes UI, billing, and docs lookup
+Split routing by job type.
+
+### The output sounds fine but is unverified
+Do not accept it until diagnostics and build checks pass.
+
+---
+
+## Use this case with these files
+
+- [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md)
+- [../VIBE-CODING-WITH-OMO.md](../VIBE-CODING-WITH-OMO.md)
+- [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)

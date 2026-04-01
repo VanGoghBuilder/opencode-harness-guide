@@ -50,7 +50,7 @@ Use this repo in five moves:
 
 ---
 
-## Which file answers which harness question
+## Open this file when you need...
 
 | Question | File |
 |----------|------|

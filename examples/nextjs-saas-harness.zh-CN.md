@@ -1,102 +1,140 @@
-# Next.js SaaS Harness — OpenCode Harness 案例
+# Next.js SaaS Harness 案例
 
-> 这是一个将 OpenCode Engineering Harness（工程脚手架）应用于 Next.js + Supabase + Stripe SaaS 项目的实战案例。
-> 复制此结构到你的项目根目录，让你的 Agent 锚定在真实的开发环境中。
+如果你的项目长得像一个典型 SaaS 应用，并且你想要的是一套可执行的 OpenCode harness，而不是泛泛建议，就直接照这个案例做。
 
-## 1. 地图层 (`AGENTS.md`)
+---
 
-这是你最小的 Harness 入口点。它告诉 Agent 什么是真实的，以及需要遵守什么规则。
+## 第 1 步：先写 repo 入口
+
+在项目根目录创建 `AGENTS.md`，把 agent 不允许猜的事实写进去。
 
 ```markdown
-# 仓库 Harness 上下文
+# Repository Harness Context
 
-- **技术栈**: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
-- **架构**: 默认使用 Server Components。只在需要交互的地方使用 Client Components。
-- **状态**: 绿地项目，基础脚手架已存在，`npm run dev` 运行正常。
+- Stack: Next.js 15 (App Router), TypeScript, Supabase (Auth + DB), Stripe (Billing), Tailwind CSS
+- Architecture: Server Components by default. Client Components only for interactivity.
+- 当前已验证命令: `npm run dev`
 
-## 关键 Harness 规则
-
-### 数据库与鉴权
-- 所有查询必须使用开启了 RLS 的 Supabase 客户端。严禁绕过 RLS。
-- 迁移文件放在 `supabase/migrations/`。不要通过 SQL 提示直接修改数据库。
-- 在 Server Components 中使用 `@supabase/ssr` 的 `createServerClient()`。
-
-### 代码风格与约束
-- 仅使用不可变模式（Immutable patterns）：使用展开运算符，绝对不要直接改变对象。
-- Server Components: 禁止使用 `'use client'` 指令，禁止使用 `useState`/`useEffect`。
-- 所有 API 路由和表单输入验证优先使用 Zod schemas。
-
-### 自动化边界
-- 在声称任务完成前，`npm run lint` 和 `npm run build` 必须通过。
-- 不要自动合并 PR。
+## Hard rules
+- 所有查询都使用开启 RLS 的 Supabase。
+- 迁移文件放在 `supabase/migrations/`。
+- 永远不要信任客户端价格数据。
+- Server Components: 不要用 `'use client'`、`useState`、`useEffect`。
+- 在接受改动前，`npm run lint` 和 `npm run build` 必须通过。
 ```
 
-## 2. 执行合同 (`PLAN-REQUEST.md`)
+先做这个。这个文件如果写错，后面每一步都会变弱。
 
-当你希望 Agent 开发新功能（例如添加定价页面）时，使用此合同，而不是模糊的提示词。
+---
+
+## 第 2 步：用 kickoff contract 启动功能开发
+
+当你要做真实功能时，不要只说“加一个 pricing page”。
+
+用 [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)，并按下面方式填：
 
 ```markdown
-# Harness 执行合同
-
 [analyze-mode]
 ANALYSIS MODE. Gather context before diving deep:
 
 CONTEXT GATHERING (parallel):
-- 派发 1-3 个 `explore` agent 去梳理 `src/lib/stripe/` 中当前的 Stripe 计费实现。
-- 派发 1 个 `librarian` agent 去查阅最新的 Next.js 15 Server Action 模式（如果需要）。
+- Fire 1-3 `explore` agents to map the current Stripe billing implementation in `src/lib/stripe/`.
+- Fire 1 `librarian` agent to check the latest Next.js 15 Server Action patterns if needed.
 
-SYNTHESIZE findings before proceeding. Present a concrete plan (files to modify, components to create, API routes needed).
-
+SYNTHESIZE findings before proceeding. Present a concrete plan.
 DO NOT START IMPLEMENTING UNTIL I APPROVE THE PLAN.
+
+### Intent
+实现 `/pricing` 页面，展示 Free / Pro / Enterprise 三档，并使用服务端 Stripe 价格数据。
+
+### Constraints
+- 价格必须服务端获取。
+- 遵循现有 UI 组件模式。
+- 对改动文件运行 `lsp_diagnostics`。
+- 在宣布完成前运行 `npm run build`。
+```
 
 ---
 
-### 🎯 意图
-实现 `/pricing` 页面，展示 3 个层级（Free, Pro, Enterprise），并从 Stripe 获取动态价格数据。
+## 第 3 步：按任务类型做路由
 
-### 📋 约束
-- 在服务端获取价格。永远不要信任客户端的价格数据。
-- 使用 Shadcn/ui 组件制作定价卡片。
-- 确保实现后 `lsp_diagnostics` 没有报错。
-```
+不要把 UI、计费逻辑和外部文档查询混在一个大 prompt 里。
 
-## 3. 反馈回路与验证
+这样拆：
+- UI 布局和卡片样式 → `visual-engineering`
+- billing logic 和 webhook 处理 → 更偏逻辑的 agent，例如 `ultrabrain`
+- Stripe API 文档查询 → `librarian`
+- repo 内模式搜索 → `explore`
 
-不要盲目接受代码。运行验证循环。
+如果一个 prompt 想同时做这四件事，就拆开。
 
-1. **诊断**: 要求 Agent 对所有修改过的文件运行 `lsp_diagnostics`。
-2. **构建**: 要求 Agent 运行 `npm run build` 以捕捉 Server/Client 组件的边界错误。
-3. **评审**: 如果逻辑复杂，使用评审合同：
+---
 
-```markdown
-# 评审合同
+## 第 4 步：没验证前不要接受输出
 
-请评审 `app/api/webhooks/stripe/route.ts` 中新添加的 Stripe webhook 处理器。
+这个类型的应用，按这个顺序验证：
 
-- 它是否正确验证了 Stripe 签名？
-- 它是否以不可变的方式处理了 `checkout.session.completed` 事件？
-- 是否有任何暴露的 secrets 或未处理的错误？
-```
+1. 对改动文件运行 `lsp_diagnostics`
+2. 运行 `npm run build`
+3. 把高风险服务端逻辑单独 review 一次
 
-## 4. 能力路由
-
-不要在一个对话里做所有事情，对工作进行路由分发：
-- **UI 调整**: 路由给 `visual-engineering` 子代理，用 Tailwind 设定定价卡片样式。
-- **计费逻辑**: 路由给 `ultrabrain` 子代理，处理 webhook 解析和数据库更新。
-- **外部文档**: 使用 `librarian` 查找准确的 Stripe API payload 格式。
-
-## 5. 集成与 MCP (`LOCAL-INTEGRATION-NOTES.md`)
-
-安全地记录外部依赖，这样团队就可以使用 harness 而不泄露 secrets。
+例如对 Stripe webhook 用一个 review contract：
 
 ```markdown
-# 外部能力需求
+Please review `app/api/webhooks/stripe/route.ts`.
 
-此项目使用 MCP 进行数据库检查和 GitHub Issue 追踪。
-
-- **Supabase DB**: 使用 Postgres MCP server。
-  - 需要环境变量: `POSTGRES_CONNECTION_STRING` (绝对不要提交这个！)
-  - 范围: 只读访问，用于验证迁移是否正确应用。
-- **GitHub**: 使用 GitHub MCP server 读取功能请求。
-  - 需要环境变量: `GITHUB_PERSONAL_ACCESS_TOKEN`
+Check:
+- Stripe signature verification
+- immutable event handling
+- missing error handling
+- any secret exposure
 ```
+
+---
+
+## 第 5 步：记录外部能力，但不要泄露 secrets
+
+使用 [../06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md](../06-integrations-and-mcp/templates/LOCAL-INTEGRATION-NOTES.md)。
+
+只记录：
+- MCP server 名称
+- env var 名称
+- 权限范围
+- 写操作是否需要确认
+
+例如：
+
+```markdown
+- Supabase DB MCP
+  - Env var: POSTGRES_CONNECTION_STRING
+  - Scope: read-only inspection
+- GitHub MCP
+  - Env var: GITHUB_PERSONAL_ACCESS_TOKEN
+  - Scope: issue and PR reading
+```
+
+不要把 token value 提交进仓库。
+
+---
+
+## 第 6 步：如果 session 跑偏了，就回到正确层修
+
+### agent 在出 plan 前就开始写代码
+停下来。回到 kickoff contract，要求先出 plan。
+
+### agent 开始猜命令
+回到 `AGENTS.md`，修 facts layer。
+
+### 一个任务把 UI、billing、docs lookup 混在一起
+按 job type 重新拆分路由。
+
+### 输出听起来没问题，但没有验证
+在 diagnostics 和 build 过之前，不要接受。
+
+---
+
+## 这个案例要配合这些文件一起用
+
+- [../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
+- [../VIBE-CODING-WITH-OMO.zh-CN.md](../VIBE-CODING-WITH-OMO.zh-CN.md)
+- [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
