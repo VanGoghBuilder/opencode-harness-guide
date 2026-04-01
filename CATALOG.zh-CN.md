@@ -88,6 +88,8 @@ README 是主入口。CATALOG 是完整目录。
 ---
 
 ## 真实案例
+- [examples/README.zh-CN.md](examples/README.zh-CN.md)
+
 
 - [examples/docs-repo-harness.zh-CN.md](examples/docs-repo-harness.zh-CN.md)
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)

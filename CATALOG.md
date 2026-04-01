@@ -88,6 +88,8 @@ These templates are still mainly English-only.
 ---
 
 ## Worked examples
+- [examples/README.md](examples/README.md)
+
 
 - [examples/docs-repo-harness.md](examples/docs-repo-harness.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
