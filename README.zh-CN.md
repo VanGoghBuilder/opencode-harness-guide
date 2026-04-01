@@ -26,11 +26,15 @@
 ## 如果你想直接复制现成的 OpenCode starter pack
 
 从这些文件开始：
-- [.opencode/README.md](.opencode/README.md)
+- [.opencode/README.zh-CN.md](.opencode/README.zh-CN.md)
 - [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
+- [.opencode/commands/review-readme.md](.opencode/commands/review-readme.md)
+- [.opencode/commands/review-module.md](.opencode/commands/review-module.md)
 - [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 - [.opencode/agents/docs-review.md](.opencode/agents/docs-review.md)
+- [.opencode/agents/doc-link-checker.md](.opencode/agents/doc-link-checker.md)
 - [.opencode/agents/harness-planner.md](.opencode/agents/harness-planner.md)
+- [.opencode/agents/repo-facts-checker.md](.opencode/agents/repo-facts-checker.md)
 - [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
 
 复制时保留同样的 `.opencode/` 目录结构。

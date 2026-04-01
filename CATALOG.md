@@ -58,9 +58,13 @@ These templates are still mainly English-only.
 
 - [.opencode/README.md](.opencode/README.md)
 - [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
+- [.opencode/commands/review-readme.md](.opencode/commands/review-readme.md)
+- [.opencode/commands/review-module.md](.opencode/commands/review-module.md)
 - [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 - [.opencode/agents/docs-review.md](.opencode/agents/docs-review.md)
+- [.opencode/agents/doc-link-checker.md](.opencode/agents/doc-link-checker.md)
 - [.opencode/agents/harness-planner.md](.opencode/agents/harness-planner.md)
+- [.opencode/agents/repo-facts-checker.md](.opencode/agents/repo-facts-checker.md)
 - [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
 
 ---
