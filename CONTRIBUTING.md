@@ -10,9 +10,8 @@ If you want to improve this repository, use this order.
 2. Read [AGENTS.md](AGENTS.md)
 3. Read [LICENSE](LICENSE)
 4. If the change affects public docs, also read:
-   - [INDEX.md](INDEX.md)
+   - [README.md](README.md)
    - [CATALOG.md](CATALOG.md)
-   - [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 
 Do not assume this repo is under a final open-source license yet. Check `LICENSE` first.
 
@@ -25,13 +24,9 @@ Do not assume this repo is under a final open-source license yet. Check `LICENSE
 2. Edit the target file
 3. Update navigation if the change affects root-facing docs:
    - `README.md`
-   - `QUICK_REFERENCE.md`
-   - `INDEX.md`
    - `CATALOG.md`
 4. If the change affects bilingual entry docs, update the Chinese side too:
    - `README.zh-CN.md`
-   - `QUICK_REFERENCE.zh-CN.md`
-   - `INDEX.zh-CN.md`
    - `CATALOG.zh-CN.md`
 5. Run a link check or equivalent verification
 
@@ -48,9 +43,8 @@ Create the file in the right place:
 
 Then update:
 1. `CATALOG.md`
-2. `INDEX.md`
-3. `README.md` if it is a root-facing asset
-4. Chinese entry docs if the asset is user-facing in the main path
+2. `README.md` if it is a root-facing asset
+3. Chinese entry docs if the asset is user-facing in the main path
 
 ---
 

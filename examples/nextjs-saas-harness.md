@@ -135,6 +135,5 @@ Do not accept it until diagnostics and build checks pass.
 
 ## Use this case with these files
 
-- [../PLUGINS-AND-OH-MY-OPENCODE.md](../PLUGINS-AND-OH-MY-OPENCODE.md)
-- [../VIBE-CODING-WITH-OMO.md](../VIBE-CODING-WITH-OMO.md)
+- [../README.md](../README.md)
 - [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)

@@ -1,31 +1,21 @@
 # OpenCode Harness 目录
 
-当你想知道“这个 repo 里已经有什么文件，不需要再发明什么”时，就看这个文件。
+当你想知道这个仓库里已经有什么文件时，就看这个文件。
 
 ---
 
-## 如果你要找根入口文档，用这些
+## 主根文档
 
-- [README.zh-CN.md](README.zh-CN.md)
-- [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
-- [INDEX.zh-CN.md](INDEX.zh-CN.md)
-- [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md)
-- [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
-- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
-- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md)
-
-对应的英文根文档：
 - [README.md](README.md)
-- [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-- [INDEX.md](INDEX.md)
-- [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md)
 - [CATALOG.md](CATALOG.md)
-- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
-- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
+- [README.zh-CN.md](README.zh-CN.md)
+- [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
+
+README 是主入口。CATALOG 是完整目录。
 
 ---
 
-## 如果你要找模块文档，用这些
+## 模块文档
 
 - [01-getting-started/README.zh-CN.md](01-getting-started/README.zh-CN.md)
 - [02-project-context/README.zh-CN.md](02-project-context/README.zh-CN.md)
@@ -42,7 +32,7 @@
 
 ---
 
-## 如果你要找可以复制的 starter assets，用这些
+## 可以直接复制的 starter assets
 
 - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
 - [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
@@ -60,11 +50,22 @@
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 
-这些模板和大多数 support docs 目前仍主要是英文。中文文档会直接带你跳过去，但不会假装它们已经完整翻译。
+这些模板目前仍主要是英文。
 
 ---
 
-## 如果你要找 support / governance 文件，用这些
+## 现成的 `.opencode` starter files
+
+- [.opencode/README.md](.opencode/README.md)
+- [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
+- [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
+- [.opencode/agents/docs-review.md](.opencode/agents/docs-review.md)
+- [.opencode/agents/harness-planner.md](.opencode/agents/harness-planner.md)
+- [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
+
+---
+
+## Support / governance 文件
 
 - [STYLE_GUIDE.md](STYLE_GUIDE.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -82,16 +83,7 @@
 
 ---
 
-## 如果你要看 worked example，用这些
+## 真实案例
 
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
-
----
-
-## 当前仍然不能假设的事
-
-不要假设：
-- 已经选定 package manager
-- 当前 repo 已经有 build、lint、typecheck、test 命令
-- stack-specific harness kit 已经存在

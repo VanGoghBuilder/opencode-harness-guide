@@ -4,28 +4,18 @@ Use this file when you want to know what files already exist before creating a n
 
 ---
 
-## If you want a root entry doc, use one of these
+## Main root docs
 
 - [README.md](README.md)
-- [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-- [INDEX.md](INDEX.md)
-- [LEARNING-ROADMAP.md](LEARNING-ROADMAP.md)
 - [CATALOG.md](CATALOG.md)
-- [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md)
-- [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
-
-Chinese root entry docs:
 - [README.zh-CN.md](README.zh-CN.md)
-- [QUICK_REFERENCE.zh-CN.md](QUICK_REFERENCE.zh-CN.md)
-- [INDEX.zh-CN.md](INDEX.zh-CN.md)
-- [LEARNING-ROADMAP.zh-CN.md](LEARNING-ROADMAP.zh-CN.md)
 - [CATALOG.zh-CN.md](CATALOG.zh-CN.md)
-- [PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
-- [VIBE-CODING-WITH-OMO.zh-CN.md](VIBE-CODING-WITH-OMO.zh-CN.md)
+
+README is the main entry. CATALOG is the full inventory.
 
 ---
 
-## If you want a module, use one of these
+## Modules
 
 - [01-getting-started/README.md](01-getting-started/README.md)
 - [02-project-context/README.md](02-project-context/README.md)
@@ -42,7 +32,7 @@ Chinese module pairs exist for all `01` through `10` module READMEs.
 
 ---
 
-## If you want a file to copy, use one of these starter assets
+## Starter assets you can copy
 
 - [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
 - [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
@@ -60,11 +50,22 @@ Chinese module pairs exist for all `01` through `10` module READMEs.
 - [09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md](09-advanced-workflows/templates/ADVANCED-WORKFLOW-CHECKLIST.md)
 - [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 
-These templates are still mainly English-only. The Chinese docs link to them honestly as English files.
+These templates are still mainly English-only.
 
 ---
 
-## If you want support or governance files, use these
+## Ready-made `.opencode` starter files
+
+- [.opencode/README.md](.opencode/README.md)
+- [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
+- [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
+- [.opencode/agents/docs-review.md](.opencode/agents/docs-review.md)
+- [.opencode/agents/harness-planner.md](.opencode/agents/harness-planner.md)
+- [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
+
+---
+
+## Support and governance files
 
 - [STYLE_GUIDE.md](STYLE_GUIDE.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -82,16 +83,7 @@ These templates are still mainly English-only. The Chinese docs link to them hon
 
 ---
 
-## If you want a worked example
+## Worked examples
 
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
 - [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
-
----
-
-## What is still not safe to assume
-
-Do not assume:
-- a package manager is chosen
-- build, lint, typecheck, or test commands exist for this repo
-- stack-specific harness kits already exist

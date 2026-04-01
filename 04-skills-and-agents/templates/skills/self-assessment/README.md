@@ -40,4 +40,4 @@ Keep the output tied to files that actually exist in your repo.
 
 - [../../../README.md](../../../README.md)
 - [../../SPECIALIZATION-DECISION-CHECKLIST.md](../../SPECIALIZATION-DECISION-CHECKLIST.md)
-- [../../../../LEARNING-ROADMAP.md](../../../../LEARNING-ROADMAP.md)
+- [../../../../README.md](../../../../README.md)

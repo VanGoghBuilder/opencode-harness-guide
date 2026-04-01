@@ -31,7 +31,7 @@
 
 当你要做真实功能时，不要只说“加一个 pricing page”。
 
-用 [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)，并按下面方式填：
+用 [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)。下面这段英文可以直接复制，不用翻译后再改。
 
 ```markdown
 [analyze-mode]
@@ -126,7 +126,7 @@ Check:
 回到 `AGENTS.md`，修 facts layer。
 
 ### 一个任务把 UI、billing、docs lookup 混在一起
-按 job type 重新拆分路由。
+按 job type 重新分给不同 agent。
 
 ### 输出听起来没问题，但没有验证
 在 diagnostics 和 build 过之前，不要接受。
@@ -135,6 +135,5 @@ Check:
 
 ## 这个案例要配合这些文件一起用
 
-- [../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md](../PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md)
-- [../VIBE-CODING-WITH-OMO.zh-CN.md](../VIBE-CODING-WITH-OMO.zh-CN.md)
+- [../README.zh-CN.md](../README.zh-CN.md)
 - [../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](../09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)

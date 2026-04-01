@@ -136,12 +136,12 @@ agent: plan
 ---
 
 ### 4. Skill (`SKILL.md`)
-当你需要一个**可被 agent 按需加载的可复用方法**时，再建 skill。
+当很多 agent 都要按同一套步骤做事时，再建 skill。
 
 适合建 skill 的情况：
-- 不是要一个单独角色，而是要一套固定方法
-- 这个方法会被多个 agent 复用
-- 你希望 agent 在需要时加载它，而不是每次都手写规则
+- 不是固定角色，而是一套固定步骤
+- 这套步骤会被多个 agent 一起用
+- 你不想每次都重新写同一套规则
 
 官方要求你创建这样的文件结构：
 - 项目内：`.opencode/skills/<name>/SKILL.md`
@@ -206,7 +206,7 @@ skill({ name: "doc-audit" })
 建：
 - `.opencode/agents/<name>.md`
 
-### 我需要一套可复用的方法，让 agent 按需加载
+### 很多 agent 都要按同一套步骤做事
 建：
 - `.opencode/skills/<name>/SKILL.md`
 
@@ -223,7 +223,7 @@ skill({ name: "doc-audit" })
 4. 如果你发现“不是 prompt 在重复，而是角色在重复”，再建 `.opencode/agents/docs-review.md`
 5. 如果你发现“不是角色在重复，而是方法在重复”，再把方法提炼成 `.opencode/skills/doc-audit/SKILL.md`
 
-这个顺序最稳，不容易过早复杂化。
+这样最稳，不容易一上来就把系统搞复杂。
 
 ---
 

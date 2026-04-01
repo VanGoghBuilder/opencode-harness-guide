@@ -11,8 +11,8 @@ It separates verified facts from provisional conventions.
 - Repository path: `/Users/vangogh/Documents/code/opencode-howto`
 - Public documentation identity in progress: `opencode-harness-guide`
 - Current state: documentation-first rewrite in progress, with the content being reframed around harness engineering
-- Present root docs: `AGENTS.md`, `README.md`, `QUICK_REFERENCE.md`, `INDEX.md`, `LEARNING-ROADMAP.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`, `PLUGINS-AND-OH-MY-OPENCODE.md`
-- Present Chinese entry docs: `README.zh-CN.md`, `QUICK_REFERENCE.zh-CN.md`, `INDEX.zh-CN.md`, `LEARNING-ROADMAP.zh-CN.md`, `CATALOG.zh-CN.md`, `PLUGINS-AND-OH-MY-OPENCODE.zh-CN.md`
+- Present root docs: `AGENTS.md`, `README.md`, `CATALOG.md`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SUPPORT.md`, `.opencode/README.md`
+- Present Chinese entry docs: `README.zh-CN.md`, `CATALOG.zh-CN.md`
 - Present license-status file: `LICENSE`
 - Present numbered modules: `01-getting-started/README.md` through `10-cli-and-terminal/README.md`
 - Present Chinese module entry docs: `01-getting-started/README.zh-CN.md` through `10-cli-and-terminal/README.zh-CN.md`
@@ -117,8 +117,8 @@ Prefer a documentation-first shape with strong navigation from the root.
 ### Provisional structure target
 
 - Root `README.md` with the harness definition, audience, and fastest starting path
-- `LEARNING-ROADMAP.md` or equivalent harness build path
-- `CATALOG.md`, `INDEX.md`, or another browseable harness map
+- `README.md` or equivalent harness build path
+- `CATALOG.md`, `CATALOG.md`, or another browseable harness map
 - Numbered lesson or module directories if sequential learning is chosen
 - Copy-paste examples, prompts, templates, or config artifacts in obvious locations
 

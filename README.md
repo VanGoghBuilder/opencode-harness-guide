@@ -2,80 +2,108 @@
 
 **Language / 语言：** [English](README.md) | [简体中文](README.zh-CN.md)
 
-Start by copying `AGENTS.md`, filling the facts checklist, and choosing one execution contract. Use the rest of the repo only when the next layer is actually needed.
-
-**[Start now](#start-now)** | **[Pick your next task](#pick-your-next-task)** | **[Browse files](INDEX.md)** | **[Browse assets](CATALOG.md)**
+Start here. Do not start by reading every file. First make the repo readable, then use one task template, then add more only when needed.
 
 ---
 
 ## Start now
 
-If you are starting from zero, do this in order:
+Do this in order:
 
 1. Copy [01-getting-started/templates/AGENTS.md](01-getting-started/templates/AGENTS.md)
-2. Fill in facts with [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
-3. Use one execution contract from [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
-4. If the task is larger than one file, use [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
+2. Fill it with [02-project-context/templates/PROJECT-FACTS-CHECKLIST.md](02-project-context/templates/PROJECT-FACTS-CHECKLIST.md)
+3. Use one task template:
+   - [03-commands-and-prompts/templates/PLAN-REQUEST.md](03-commands-and-prompts/templates/PLAN-REQUEST.md)
+   - [03-commands-and-prompts/templates/REVIEW-REQUEST.md](03-commands-and-prompts/templates/REVIEW-REQUEST.md)
+4. If the task is multi-file or risky, start from [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 
 If your repo does not prove a command exists, keep it as `TBD`.
 
 ---
 
-## Pick your next task
+## If you need a ready-made OpenCode starter pack
+
+Copy from:
+- [.opencode/README.md](.opencode/README.md)
+- [.opencode/commands/review-docs.md](.opencode/commands/review-docs.md)
+- [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
+- [.opencode/agents/docs-review.md](.opencode/agents/docs-review.md)
+- [.opencode/agents/harness-planner.md](.opencode/agents/harness-planner.md)
+- [.opencode/skills/doc-audit/SKILL.md](.opencode/skills/doc-audit/SKILL.md)
+
+Keep the same `.opencode/` folder structure when you copy them.
+
+---
+
+## Pick the next thing you need
 
 | If you need to... | Open this | Then do this |
 |---|---|---|
 | stop the agent from guessing | [01-getting-started/README.md](01-getting-started/README.md) | create or fix `AGENTS.md` |
-| document what is real in the repo | [02-project-context/README.md](02-project-context/README.md) | run the facts checklist |
-| ask for work in a controlled way | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | choose a plan/review/commit/PR template |
-| route work to the right capability | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | decide prompt vs skill vs agent |
+| write down repo facts | [02-project-context/README.md](02-project-context/README.md) | run the facts checklist |
+| ask for work in a controlled way | [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md) | choose one task template |
+| create a command, agent, or skill | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | create the file in `.opencode/` |
 | add internal automation safely | [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md) | classify checks into automate/manual |
-| connect external systems safely | [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md) | write local integration notes |
+| connect an external system | [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md) | write local integration notes |
 | make the repo usable for teammates | [07-team-workflows/README.md](07-team-workflows/README.md) | run the onboarding checklist |
-| keep the harness portable across stacks | [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md) | verify what is universal vs stack-specific |
-| run a larger orchestrated task | [09-advanced-workflows/README.md](09-advanced-workflows/README.md) | start from the kickoff template |
+| reuse the harness in another stack | [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md) | keep stack-specific claims behind real file evidence |
+| run a bigger task | [09-advanced-workflows/README.md](09-advanced-workflows/README.md) | start from the kickoff template |
 | document commands honestly | [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md) | verify every command against real files |
-| understand plugins, hooks, MCP, and OMO | [PLUGINS-AND-OH-MY-OPENCODE.md](PLUGINS-AND-OH-MY-OPENCODE.md) | choose built-in vs plugin vs MCP |
-| run vibe coding with a stronger harness | [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md) | follow the 5-step loop |
+| decide built-in vs plugin vs MCP vs OMO | [04-skills-and-agents/README.md](04-skills-and-agents/README.md) | choose the next layer and copy starter files only if needed |
 
 ---
 
-## Use one of these starting patterns
 
-### Pattern 1: Repo has docs but no clear commands
-- start with [01-getting-started/README.md](01-getting-started/README.md)
-- then [02-project-context/README.md](02-project-context/README.md)
-- keep command sections as `TBD`
+## If you want a stronger vibe coding workflow
 
-### Pattern 2: Repo already has commands, but agent output is inconsistent
-- start with [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
-- then [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
-- add stronger review and routing rules before adding more automation
+Use this loop:
+1. write down repo facts first
+2. start from the kickoff template
+3. require a plan before edits
+4. split UI / logic / external lookup if needed
+5. verify before you accept output
 
-### Pattern 3: Repo already has context and contracts, but work still gets chaotic
-- start with [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
-- then [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
-- if needed, add a community orchestration layer through [VIBE-CODING-WITH-OMO.md](VIBE-CODING-WITH-OMO.md)
-
----
-
-## Real examples
-
+Use these files together:
+- [09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md](09-advanced-workflows/templates/OMO-VIBE-CODING-KICKOFF.md)
 - [examples/nextjs-saas-harness.md](examples/nextjs-saas-harness.md)
-- [examples/nextjs-saas-harness.zh-CN.md](examples/nextjs-saas-harness.zh-CN.md)
-
-Use these as reference structures, not as blind copy-paste.
+- [.opencode/commands/start-harness-task.md](.opencode/commands/start-harness-task.md)
 
 ---
 
-## What is verified in this repo right now
+## If you want one simple learning order
+
+Read in this order:
+1. [01-getting-started/README.md](01-getting-started/README.md)
+2. [02-project-context/README.md](02-project-context/README.md)
+3. [03-commands-and-prompts/README.md](03-commands-and-prompts/README.md)
+4. [04-skills-and-agents/README.md](04-skills-and-agents/README.md)
+5. [05-hooks-and-automation/README.md](05-hooks-and-automation/README.md)
+6. [06-integrations-and-mcp/README.md](06-integrations-and-mcp/README.md)
+7. [07-team-workflows/README.md](07-team-workflows/README.md)
+8. [08-cross-stack-templates/README.md](08-cross-stack-templates/README.md)
+9. [09-advanced-workflows/README.md](09-advanced-workflows/README.md)
+10. [10-cli-and-terminal/README.md](10-cli-and-terminal/README.md)
+
+Stop as soon as the next layer is not needed yet.
+
+---
+
+## If you want fewer root docs
+
+Use only these:
+- main entry: [README.md](README.md)
+- full inventory: [CATALOG.md](CATALOG.md)
+
+---
+
+## Verified repo facts
 
 - this is a documentation-first repo
-- English and Chinese root docs exist
+- English and Chinese entry docs exist
 - modules `01` through `10` exist
 - starter templates exist
-- plugin and vibe-coding guides exist
-- no package manager is currently verified
+- `.opencode` starter pack examples now exist
+- no package manager is currently verified for this repo itself
 - no install, lint, test, typecheck, or build commands are currently verified for this repo itself
 
 ---

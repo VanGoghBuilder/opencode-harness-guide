@@ -38,8 +38,6 @@ If no real file proves it, write `TBD` instead.
 
 Update these if needed:
 - `README.md`
-- `QUICK_REFERENCE.md`
-- `INDEX.md`
 - `CATALOG.md`
 
 If the file changes the bilingual entry path, update the Chinese pair too.
